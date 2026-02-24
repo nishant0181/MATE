@@ -1,0 +1,40 @@
+import React from "react";
+import { Outlet } from "react-router";
+
+export default function Navbar() {
+  return (
+    <>
+      <header className=" z-50 bg-black font-Inter sticky top-0 text-white flex justify-between p-4  max-w-360 mx-auto ">
+        {/* <a href="/" className="flex items-center">
+          <div className="logo-wrapper">
+            <span className="MATE">MATE</span>
+            <span className="X">X</span>
+          </div>
+        </a> */}
+        {/* <a className="cursor-pointer text-xl " href="http://">
+          M A T E X
+        </a> */}
+
+        <a href="/" className="text-2xl font-Inter font-medium tracking-[3.5px] text-[#f4efe6]"> 
+          MATE
+        </a>
+
+        <div className="block md:hidden">☰</div>
+
+        <nav className="hidden md:block ">
+          <ul className="flex  text-sm ">
+            <li className="px-4 py-2 rounded-xl cursor-pointer"><a href="#noteSection">Notes</a></  li>
+            <li className="px-4 py-2 rounded-xl cursor-pointer">Tutorials</li>
+            <li className="px-4 py-2 rounded-xl cursor-pointer">Books</li>
+            <li className="px-4 py-2 rounded-xl cursor-pointer">PYQS</li>
+            <li className="px-4 py-2 rounded-xl cursor-pointer">Upload</li>
+            <li className="px-4 py-2 rounded-xl cursor-pointer">GTU</li>
+            <li className="px-4 py-2 rounded-xl cursor-pointer">About US</li>
+            <li></li>
+          </ul>
+        </nav>
+      </header>
+      <Outlet />
+    </>
+  );
+}
