@@ -22,8 +22,8 @@ export default function NoteSection() {
       <div className="relative bg-black w-full  flex flex-col items-center   bg-[url('/Images/Hero.svg')]  bg-cover bg-center bg-no-repeat">
                 <div className=" bg-[linear-gradient(0deg,transparent_0%,#000000_97%)]  w-full absolute top-0  z-20 h-16  md:h-28 "></div>
         <div className=" mx-auto  mt-18 flex flex-col items-center gap-15 bg-black/50 p-6 rounded-lg z-30">
-          <div>
-            <h1 className="text-5xl font-bold  text-center tracking-wider">
+          <div className="mt-4">
+            <h1 className="text-5xl font-bold  text-center tracking-wider text-amber-200">
               Welcome to Mate Notes!
             </h1>
             <p className="text-lg text-center text-gray-300">
@@ -127,8 +127,8 @@ export default function NoteSection() {
 
       {/* Cards Section */}
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-white mb-2">Available Notes</h2>
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl  font-bold  mb-2 text-green-100">Available Notes</h2>
           <p className="text-gray-400">Browse through our collection of study materials</p>
         </div>
         

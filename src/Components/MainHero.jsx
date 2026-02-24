@@ -24,8 +24,8 @@ export default function Main() {
             </svg>
           </div>
 
-          <div className=" tracking-tight max-w-3xl mx-auto font-extrabold text-center md:leading-20 font-Inter text-6xl md:text-7xl">
-            <span className=" max-w-xs relative">
+          <div className="text-amber-200 shadow-amber-300 tracking-tight max-w-3xl mx-auto font-extrabold text-center md:leading-20 font-Inter text-6xl md:text-7xl">
+            <span className=" max-w-xs relative text-shadow-amber-200">
               Your unfair advantage in learning
               <img
                 src="/Images/RoundedArrow.svg"
@@ -49,14 +49,14 @@ export default function Main() {
           </p>
           <div className="p-10 flex gap-4">
             <Link
-              className="bg-[#1F1F23] hover:bg-[#2a2d2f] text-white font-bold py-2 px-4 rounded-2xl cursor-pointer"
+              className="bg-[#1F1F23] hover:bg-[#2a2d2f] text-amber-100 font-bold py-2 px-4 rounded-2xl cursor-pointer"
               to="/notes"
             >
               Visit Notes
             </Link>
 
             <Link
-              className="bg-[#1F1F23] hover:bg-[#2a2d2f] text-white font-bold py-2 px-4 rounded-2xl cursor-pointer"
+              className="bg-[#1F1F23] hover:bg-[#2a2d2f] text-amber-100 font-bold py-2 px-4 rounded-2xl cursor-pointer"
               to="/notes"
             >
               Get Started
