@@ -5,7 +5,6 @@ import SelectionFilterMenu from "./SelectionFilterMenu";
 import CardofNote from "./CardofNote";
 
 export default function NoteSection() {
-
   return (
     <section
       id="noteSection"
@@ -23,8 +22,7 @@ export default function NoteSection() {
             </p>
           </div>
 
-
-<InputFilter />
+          <InputFilter />
           <SelectionFilterMenu />
         </div>
       </div>
@@ -33,7 +31,7 @@ export default function NoteSection() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="mb-8 text-center">
           <h2 className="text-3xl  font-bold  mb-2 text-green-100">
-           The Legendary Notes
+            The Legendary Notes
           </h2>
           <p className="text-gray-400">
             Browse through our collection of study materials
@@ -42,8 +40,16 @@ export default function NoteSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <CardofNote
-            title="Mathematics Notes"
+            title="Maths 1 "
             description="Comprehensive notes on calculus and algebra"
+            subject="Mathematics"
+            year="First Year"
+            university="University of Technology"
+            pages="45"
+          ></CardofNote>
+          <CardofNote
+            title="Maths 2 "
+            description="Comprehensive notes on differential equations and linear algebra"
             subject="Mathematics"
             year="First Year"
             university="University of Technology"

@@ -3,10 +3,10 @@ import React from "react";
 export default function CardofNote({title, description, subject, year, university, pages}) {
   return (
     <>
-      <div className="bg-[#0c0c0c] border border-[#222323] rounded-lg p-6 hover:border-[#ffff] transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-amber-500/20">
+      <div className="bg-[#0c0c0c] border border-[#222323] rounded-lg p-7 hover:border-[#ffff] transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-amber-500/20">
         <div className="flex items-start justify-between mb-4">
           <div>
-            <h3 className="text-lg font-bold text-white mb-2">
+            <h3 className="text-xl font-bold text-white mb-2">
               {title}
             </h3>
             <p className="text-sm text-gray-400 mb-3">
@@ -21,8 +21,17 @@ export default function CardofNote({title, description, subject, year, universit
           <span className="text-xs bg-[#1F1F23] text-amber-400 px-3 py-1 rounded-full">
             {year}
           </span>
+            <span className="text-xs bg-[#1F1F23] text-amber-400 px-3 py-1 rounded-full">
+              {university}
+            </span>
+            <span className="text-xs bg-[#1F1F23] text-amber-400 px-3 py-1 rounded-full">
+              {pages} pages
+            </span>
         </div>
-        <div className="text-sm text-gray-500">{university} • {pages} pages</div>
+      
+        <button type="button" className="mt-4 w-full py-2 bg-[#1F1F23] text-white rounded-md hover:bg-[#2a2a2a] transition-colors">
+          View Notes
+        </button>
       </div>
     </>
   );
