@@ -49,14 +49,14 @@ export default function Main() {
           </p>
           <div className="p-10 flex gap-4">
             <Link
-              className="bg-[#1F1F23] hover:bg-[#2a2d2f] text-amber-100 font-bold py-2 px-4 rounded-2xl cursor-pointer"
+              className="bg-[#1F1F23] hover:bg-[#2a2d2f] text-green-100 font-bold py-2 px-4 rounded-2xl cursor-pointer"
               to="/notes"
             >
               Visit Notes
             </Link>
 
             <Link
-              className="bg-[#1F1F23] hover:bg-[#2a2d2f] text-amber-100 font-bold py-2 px-4 rounded-2xl cursor-pointer"
+              className="bg-[#1F1F23] hover:bg-[#2a2d2f] text-green-100 font-bold py-2 px-4 rounded-2xl cursor-pointer"
               to="/notes"
             >
               Get Started
