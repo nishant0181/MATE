@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import InputFilter from "./InputFilter";
 import SelectionFilterMenu from "./SelectionFilterMenu";
 import CardofNote from "./CardofNote";
+import NotesData from "../../Data/NotesData";
+
 
 export default function NoteSection() {
+
+  const [data, setData] = useState([]);
+  
+
+useEffect(() => {
+  setData(NotesData());
+}, []);
+
+
   return (
     <section
       id="noteSection"
@@ -39,22 +50,18 @@ export default function NoteSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <CardofNote
-            title="Maths 1 "
-            description="Comprehensive notes on calculus and algebra"
-            subject="Mathematics"
-            year="First Year"
-            university="University of Technology"
-            pages="45"
-          ></CardofNote>
-          <CardofNote
-            title="Maths 2 "
-            description="Comprehensive notes on differential equations and linear algebra"
-            subject="Mathematics"
-            year="First Year"
-            university="University of Technology"
-            pages="45"
-          ></CardofNote>
+          {data.map((note) => (
+            <CardofNote
+              key={note.title}
+              title={note.title}
+              description={note.description}
+              subject={note.subject}
+              year={note.year}
+              university={note.university}
+              pages={note.pages}
+            />
+          ))}
+   
         </div>
       </div>
     </section>

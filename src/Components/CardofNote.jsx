@@ -1,11 +1,27 @@
 import React from "react";
-
 export default function CardofNote({title, description, subject, year, university, pages}) {
   return (
     <>
-      <div className="bg-[#0c0c0c] border border-[#222323] rounded-lg p-7 hover:border-[#ffff] transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-amber-500/20">
-        <div className="flex items-start justify-between mb-4">
-          <div>
+
+         <div className="relative z-50  border border-[#222323] rounded-lg p-7 hover:border-[#ffff] transition-all duration-300  hover:shadow-lg hover:shadow-amber-500/20
+         
+         
+         
+         
+               -full w-full  bg-[radial-gradient(#242426_1px,transparent_1px)] bg-size-[16px_16px]
+         
+          ">  
+         
+         
+        <div className="z-60 flex items-start justify-between mb-4
+        
+        
+        
+        
+        
+  
+        ">
+          <div className="">
             <h3 className="text-xl font-bold text-white mb-2">
               {title}
             </h3>
@@ -29,10 +45,14 @@ export default function CardofNote({title, description, subject, year, universit
             </span>
         </div>
       
-        <button type="button" className="mt-4 w-full py-2 bg-[#1F1F23] text-white rounded-md hover:bg-[#2a2a2a] transition-colors">
+        <button type="button" className="cursor-pointer mt-10 w-full py-2 bg-[#1F1F23] text-white rounded-md hover:bg-[#2a2a2a] transition-colors">
           View Notes
         </button>
-      </div>
+      </div>  
+       
+
+
+ 
     </>
   );
 }
