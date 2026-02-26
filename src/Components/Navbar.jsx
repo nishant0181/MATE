@@ -4,7 +4,7 @@ import { Outlet } from "react-router";
 export default function Navbar() {
   return (
     <>
-      <header className=" z-50 bg-black font-Inter sticky top-0 text-white flex justify-between p-4  max-w-360 mx-auto ">
+      <header className=" z-60 bg-black font-Inter sticky top-0 text-white flex justify-between p-4  max-w-360 mx-auto ">
         {/* <a href="/" className="flex items-center">
           <div className="logo-wrapper">
             <span className="MATE">MATE</span>

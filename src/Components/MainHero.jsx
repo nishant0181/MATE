@@ -61,8 +61,9 @@ export default function Main() {
             >
               Get Started
             </Link>
-          </div>
         </div>
+          </div>
+
       </section>
     </>
   );

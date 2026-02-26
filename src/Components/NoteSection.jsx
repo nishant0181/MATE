@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 
 import InputFilter from "./InputFilter";
 import SelectionFilterMenu from "./SelectionFilterMenu";
@@ -8,12 +8,8 @@ import NotesData from "../../Data/NotesData";
 
 export default function NoteSection() {
 
-  const [data, setData] = useState([]);
-  
-
-useEffect(() => {
-  setData(NotesData());
-}, []);
+const [data] = useState(NotesData());
+const [filteredData, setFilteredData] = useState(data);
 
 
   return (
@@ -33,8 +29,8 @@ useEffect(() => {
             </p>
           </div>
 
-          <InputFilter />
-          <SelectionFilterMenu />
+          <InputFilter setFilteredData={setFilteredData} />
+          <SelectionFilterMenu data={data} filteredData={filteredData} setFilteredData={setFilteredData}  />
         </div>
       </div>
 
@@ -50,15 +46,18 @@ useEffect(() => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {data.map((note) => (
+          {filteredData.map((note,index) => (
             <CardofNote
-              key={note.title}
+              key={index}
               title={note.title}
               description={note.description}
               subject={note.subject}
               year={note.year}
               university={note.university}
               pages={note.pages}
+              url={note.url}
+              semester={note.semester}
+              branch={note.branch}
             />
           ))}
    

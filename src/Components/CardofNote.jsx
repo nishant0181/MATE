@@ -1,33 +1,27 @@
 import React from "react";
-export default function CardofNote({title, description, subject, year, university, pages}) {
+export default function CardofNote({
+  title,
+  description,
+  subject,
+  year,
+  university,
+  pages,
+  url,
+  semester,
+  branch
+}) {
   return (
     <>
-
-         <div className="relative z-50  border border-[#222323] rounded-lg p-7 hover:border-[#ffff] transition-all duration-300  hover:shadow-lg hover:shadow-amber-500/20
+      <div
+        className="relative z-0 flex flex-col  border border-[#222323] rounded-lg p-7 hover:border-[#ffff] transition-all duration-300  hover:shadow-lg hover:shadow-amber-500/20
          
-         
-         
-         
-               -full w-full  bg-[radial-gradient(#242426_1px,transparent_1px)] bg-size-[16px_16px]
-         
-          ">  
-         
-         
-        <div className="z-60 flex items-start justify-between mb-4
-        
-        
-        
-        
-        
   
-        ">
+               h-full w-full  bg-[radial-gradient(#242426_1px,transparent_1px)] bg-size-[16px_16px] "
+      >
+        <div className="z-60 flex items-start justify-between mb-4">
           <div className="">
-            <h3 className="text-xl font-bold text-white mb-2">
-              {title}
-            </h3>
-            <p className="text-sm text-gray-400 mb-3">
-              {description}
-            </p>
+            <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+            <p className="text-sm text-gray-400 mb-3">{description}</p>
           </div>
         </div>
         <div className="flex flex-wrap gap-2 mb-4">
@@ -37,22 +31,28 @@ export default function CardofNote({title, description, subject, year, universit
           <span className="text-xs bg-[#1F1F23] text-amber-400 px-3 py-1 rounded-full">
             {year}
           </span>
-            <span className="text-xs bg-[#1F1F23] text-amber-400 px-3 py-1 rounded-full">
-              {university}
-            </span>
-            <span className="text-xs bg-[#1F1F23] text-amber-400 px-3 py-1 rounded-full">
-              {pages} pages
-            </span>
+          <span className="text-xs bg-[#1F1F23] text-amber-400 px-3 py-1 rounded-full">
+            {semester}
+          </span>
+          <span className="text-xs bg-[#1F1F23] text-amber-400 px-3 py-1 rounded-full">
+            {branch}
+          </span>
+          <span className="text-xs bg-[#1F1F23] text-amber-400 px-3 py-1 rounded-full">
+            {university}
+          </span>
+          <span className="text-xs bg-[#1F1F23] text-amber-400 px-3 py-1 rounded-full">
+            {pages} pages
+          </span>
         </div>
-      
-        <button type="button" className="cursor-pointer mt-10 w-full py-2 bg-[#1F1F23] text-white rounded-md hover:bg-[#2a2a2a] transition-colors">
+
+        <a
+          className="cursor-pointer mx-auto text-center  mt-10 w-full py-2 bg-[#1F1F23] text-white rounded-md 
+        hover:bg-[#2a2a2a] transition-colors"
+          href={url}
+          target="blank">
           View Notes
-        </button>
-      </div>  
-       
-
-
- 
+        </a>
+      </div>
     </>
   );
 }
