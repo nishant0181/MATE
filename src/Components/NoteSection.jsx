@@ -1,16 +1,13 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 
 import InputFilter from "./InputFilter";
 import SelectionFilterMenu from "./SelectionFilterMenu";
 import CardofNote from "./CardofNote";
 import NotesData from "../../Data/NotesData";
 
-
 export default function NoteSection() {
-
-const [data] = useState(NotesData());
-const [filteredData, setFilteredData] = useState(data);
-
+  const [data] = useState(NotesData());
+  const [filteredData, setFilteredData] = useState(data);
 
   return (
     <section
@@ -30,7 +27,11 @@ const [filteredData, setFilteredData] = useState(data);
           </div>
 
           <InputFilter setFilteredData={setFilteredData} />
-          <SelectionFilterMenu data={data} filteredData={filteredData} setFilteredData={setFilteredData}  />
+          <SelectionFilterMenu
+            data={data}
+            filteredData={filteredData}
+            setFilteredData={setFilteredData}
+          />
         </div>
       </div>
 
@@ -46,21 +47,26 @@ const [filteredData, setFilteredData] = useState(data);
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredData.map((note,index) => (
-            <CardofNote
-              key={index}
-              title={note.title}
-              description={note.description}
-              subject={note.subject}
-              year={note.year}
-              university={note.university}
-              pages={note.pages}
-              url={note.url}
-              semester={note.semester}
-              branch={note.branch}
-            />
-          ))}
-   
+          {filteredData.length === 0 ? (
+            <p className="text-gray-400 text-center col-span-full py-10">
+              No notes found matching your criteria kindly try different filters or search terms.
+            </p>
+          ) : (
+            filteredData.map((note, index) => (
+              <CardofNote
+                key={index}
+                title={note.title}
+                description={note.description}
+                subject={note.subject}
+                year={note.year}
+                university={note.university}
+                pages={note.pages}
+                url={note.url}
+                semester={note.semester}
+                branch={note.branch}
+              />
+            ))
+          )}
         </div>
       </div>
     </section>

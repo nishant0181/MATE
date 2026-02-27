@@ -24,7 +24,7 @@ export default function Main() {
             </svg>
           </div>
 
-          <div className="text-amber-200 shadow-amber-300 tracking-tight max-w-3xl mx-auto font-extrabold text-center md:leading-20 font-Inter text-6xl md:text-7xl">
+          <div className="text-amber-400 shadow-amber-300 tracking-tight max-w-3xl mx-auto font-extrabold text-center md:leading-20 font-Inter text-6xl md:text-7xl">
             <span className=" max-w-xs relative text-shadow-amber-200">
               Your unfair advantage in learning
               <img
@@ -63,8 +63,8 @@ export default function Main() {
             </Link>
         </div>
           </div>
-
       </section>
+
     </>
   );
 }
