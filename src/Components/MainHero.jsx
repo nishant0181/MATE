@@ -24,8 +24,8 @@ export default function Main() {
             </svg>
           </div>
 
-          <div className="text-amber-400 shadow-amber-300 tracking-tight max-w-3xl mx-auto font-extrabold text-center md:leading-20 font-Inter text-6xl md:text-7xl">
-            <span className=" max-w-xs relative text-shadow-amber-200">
+          <div className=" shadow-amber-300 tracking-tight max-w-3xl mx-auto font-extrabold text-center md:leading-20 font-Inter text-6xl md:text-7xl">
+            <span className=" max-w-xs relative text-shadow-amber-200 text-amber-300">
               Your unfair advantage in learning
               <img
                 src="/Images/RoundedArrow.svg"
@@ -34,7 +34,7 @@ export default function Main() {
               />
             </span>
             <br />{" "}
-            <span className=" font-serif font-extralight italic text-center  tracking-wide ">
+            <span className=" font-serif font-extralight italic text-center  tracking-wide  ">
               {" "}
               <FlipFadeText
                 words={["reimagined", "minimal", "refined", "optimized"]}
