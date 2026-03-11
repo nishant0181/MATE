@@ -3,13 +3,23 @@ import React, { useState } from "react";
 import InputFilter from "./InputFilter";
 import SelectionFilterMenu from "./SelectionFilterMenu";
 import CardofNote from "./CardofNote";
+import PDFViewer from "./PDFViewer";
 import NotesData from "../../Data/NotesData";
 
 export default function NoteSection() {
   const [data] = useState(NotesData());
   const [filteredData, setFilteredData] = useState(data);
+  const [selectedPDF, setSelectedPDF] = useState(null); // { url, title }
 
   return (
+    <>
+      {selectedPDF && (
+        <PDFViewer
+          url={selectedPDF.url}
+          title={selectedPDF.title}
+          onClose={() => setSelectedPDF(null)}
+        />
+      )}
     <section
       id="noteSection"
       className="md:max-w-350  font-Inter mx-auto text-white select-none "
@@ -64,11 +74,13 @@ export default function NoteSection() {
                 url={note.url}
                 semester={note.semester}
                 branch={note.branch}
+                onViewPDF={setSelectedPDF}
               />
             ))
           )}
         </div>
       </div>
     </section>
+    </>
   );
 }

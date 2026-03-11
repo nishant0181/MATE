@@ -8,7 +8,8 @@ export default function CardofNote({
   pages,
   url,
   semester,
-  branch
+  branch,
+  onViewPDF,
 }) {
   return (
     <>
@@ -45,13 +46,12 @@ export default function CardofNote({
           </span>
         </div>
 
-        <a
-          className="cursor-pointer mx-auto text-center  mt-10 w-full py-2 bg-[#1F1F23] text-white rounded-md 
-        hover:bg-[#2a2a2a] transition-colors"
-          href={url}
-          target="blank">
-          View Notes
-        </a>
+        <button
+          onClick={() => onViewPDF({ url, title })}
+          className="cursor-pointer mx-auto text-center mt-10 w-full py-2 bg-amber-500 hover:bg-amber-400 text-black font-semibold rounded-md transition-colors"
+        >
+          📄 View Notes
+        </button>
       </div>
     </>
   );

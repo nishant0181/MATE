@@ -1,7 +1,7 @@
 export default function NotesData() {
   return [
     {
-      "title": "Maths 1 ",
+      "title": "Maths 1....! ",
       "description": "Comprehensive notes on calculus and algebra",
       "subject": "Mathematics",
       "year": "1st Year",
@@ -9,7 +9,7 @@ export default function NotesData() {
       "branch": "Electrical Engineering",
       "university": "GTU",
       "pages": "45",
-      "url": "https://example.com/maths1-notes"
+      "url": "https://cdn.jsdelivr.net/gh/nishant0181/MATE-Notes-Storage@main/sem1/engineering-maths-unit1.pdf"
     },
     {
       "title": "Maths 2 ",
@@ -20,7 +20,7 @@ export default function NotesData() {
       "branch": "Electrical Engineering",
       "university": "GTU",
       "pages": "45",
-      "url": "https://example.com/maths2-notes"
+      "url": "https://cdn.jsdelivr.net/gh/nishant0181/MATE-Notes-Storage@main/sem1/BE01000021.pdf"
     },
     {
       "title": "Physics 1 ",
@@ -64,7 +64,7 @@ export default function NotesData() {
       "subject": "Physics",
       "year": "1st Year",
       "semester": "4th Semester",
-      "branch": "Electrical Engineering", 
+      "branch": "Electrical Engineering",
       "university": "GTU",
       "pages": "50",
       "url": "https://example.com/physics4-notes"
@@ -88,7 +88,7 @@ export default function NotesData() {
       "subject": "Physics",
       "year": "2nd Year",
       "semester": "6th Semester",
-      "branch": "Electrical Engineering", 
+      "branch": "Electrical Engineering",
       "university": "University of Technology",
       "pages": "50",
       "url": "https://example.com/physics6-notes"
