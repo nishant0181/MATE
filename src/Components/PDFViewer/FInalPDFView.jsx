@@ -5,7 +5,14 @@ import PDFViewer from "./PDFViewer.tsx";
 export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
   useEffect(() => {
     if (!isOpen) {
+      document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
       return undefined;
+    }
+
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     }
 
     const handleKeyDown = (event) => {
@@ -29,22 +36,23 @@ export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
   return createPortal(
     <div
       onClick={() => setIsOpen(false)}
-      className="fixed inset-0 z-70 flex items-center justify-center bg-black/80 p-4"
+      className="fixed inset-0 z-70 flex  justify-center bg-black/80 "
     >
       <div
         className="relative w-full max-w-6xl"
         onClick={(event) => event.stopPropagation()}
       >
+
         <button
           type="button"
-          className="absolute -top-12 right-0 rounded bg-[#1F1F23] px-3 py-1 text-sm font-semibold text-white hover:bg-[#2a2a2a]"
+          className="absolute top-4 -right-16 rounded bg-[#1F1F23] px-3 py-1 text-sm font-semibold text-white hover:bg-[#2a2a2a]"
           onClick={() => setIsOpen(false)}
         >
-          Close X
+          Back
         </button>
         <PDFViewer documentUrl={documentUrl} />
       </div>
     </div>,
-    portalRoot
+    portalRoot,
   );
 }

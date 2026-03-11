@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import ZoomToolbar from "./ZoomToolbar";
 import RotateToolbar from "./RotateToolbar";
 import { ExportToolbar } from "./ExportToolbar";
+import PageControls from "./PageNavigation";
 // Import the essential plugins
 import {
   Viewport,
@@ -40,9 +41,7 @@ type PDFViewerProps = {
   documentUrl?: string;
 };
 
-export default function PDFViewer({
-  documentUrl = "",
-}: PDFViewerProps) {
+export default function PDFViewer({ documentUrl = "" }: PDFViewerProps) {
   const plugins = useMemo(
     () => [
       createPluginRegistration(DocumentManagerPluginPackage, {
@@ -86,14 +85,7 @@ export default function PDFViewer({
 
   // 3. Wrap your UI with the <EmbedPDF> provider
   return (
-    <div
-      style={{
-        height: "500px",
-        border: "1px solid black",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+    <div className="h-dvh flex flex-col ">
       <EmbedPDF engine={engine} plugins={plugins}>
         {({ activeDocumentId }) =>
           activeDocumentId && (
@@ -101,6 +93,7 @@ export default function PDFViewer({
               {({ isLoaded }) =>
                 isLoaded && (
                   <div
+                    className=""
                     style={{
                       display: "flex",
                       height: "100%",
@@ -108,11 +101,22 @@ export default function PDFViewer({
                     }}
                   >
                     <ZoomToolbar documentId={activeDocumentId} />{" "}
-                    <RotateToolbar documentId={activeDocumentId} />
-                    <ExportToolbar documentId={activeDocumentId} />
+                    <div className="flex justify-between items-center gap-4  bg-[#0c0c0c] px-4 py-2 rounded-lg shadow-lg z-10">
+                      <div className="text-sm font-Inter text-[#f4efe6]">
+                        {documentUrl.split("/").pop()}
+                      </div>
+                      <div className="hidden md:block">
+                        <PageControls documentId={activeDocumentId} />
+                      </div>
+
+                      <ExportToolbar documentId={activeDocumentId} />
+                    </div>
                     {/* 2. Add the component here with documentId */}
                     <div style={{ flex: 1, overflow: "hidden" }}>
-                      <Viewport documentId={activeDocumentId}>
+                      <Viewport
+                        documentId={activeDocumentId}
+                        className="scrollbar scrollbar-thumb-gray-600 scrollbar-track-gray-900  "
+                      >
                         <ZoomGestureWrapper documentId={activeDocumentId}>
                           <Scroller
                             documentId={activeDocumentId}
@@ -137,6 +141,10 @@ export default function PDFViewer({
                           />
                         </ZoomGestureWrapper>
                       </Viewport>
+                    </div>
+                    <RotateToolbar documentId={activeDocumentId} />
+                    <div className="block md:hidden">
+                      <PageControls documentId={activeDocumentId} />
                     </div>
                   </div>
                 )
