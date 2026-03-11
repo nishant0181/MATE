@@ -43,14 +43,8 @@ export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
         onClick={(event) => event.stopPropagation()}
       >
 
-        <button
-          type="button"
-          className="absolute top-4 -right-16 rounded bg-[#1F1F23] px-3 py-1 text-sm font-semibold text-white hover:bg-[#2a2a2a]"
-          onClick={() => setIsOpen(false)}
-        >
-          Back
-        </button>
-        <PDFViewer documentUrl={documentUrl} />
+      
+        <PDFViewer documentUrl={documentUrl} setIsOpen={setIsOpen} />
       </div>
     </div>,
     portalRoot,
