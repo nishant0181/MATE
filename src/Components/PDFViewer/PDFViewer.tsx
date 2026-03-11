@@ -39,9 +39,13 @@ import { ExportPluginPackage } from "@embedpdf/plugin-export/react";
 
 type PDFViewerProps = {
   documentUrl?: string;
+  setIsOpen?: (isOpen: boolean) => void;
 };
 
-export default function PDFViewer({ documentUrl = "" }: PDFViewerProps) {
+export default function PDFViewer({
+  documentUrl = "",
+  setIsOpen,
+}: PDFViewerProps) {
   const plugins = useMemo(
     () => [
       createPluginRegistration(DocumentManagerPluginPackage, {
@@ -102,20 +106,34 @@ export default function PDFViewer({ documentUrl = "" }: PDFViewerProps) {
                   >
                     <ZoomToolbar documentId={activeDocumentId} />{" "}
                     <div className="flex justify-between items-center gap-4  bg-[#0c0c0c] px-4 py-2 rounded-lg shadow-lg z-10">
+                      <div
+                       
+                        className="text-xl font-Inter font-medium tracking-[3.5px] text-[#f4efe6]"
+                      >
+                        MATE
+                      </div>
                       <div className="text-sm font-Inter text-[#f4efe6]">
-                        {documentUrl.split("/").pop()}
+                        {documentUrl.split("/").pop().split(".pdf")[0]}
                       </div>
                       <div className="hidden md:block">
                         <PageControls documentId={activeDocumentId} />
                       </div>
 
-                      <ExportToolbar documentId={activeDocumentId} />
+                      <div className="hidden items-center gap-2 md:flex">
+                        <ExportToolbar documentId={activeDocumentId} />
+                        <button
+                          onClick={() => setIsOpen && setIsOpen(false)}
+                          className="rounded bg-[#1F1F23] px-4 py-3 text-xs font-semibold text-white hover:bg-[#2a2a2a  cursor-pointer p-2 bg-[#2a2d2f] rounded-xl font-Inter text-xs]"
+                        >
+                          Back
+                        </button>
+                      </div>
                     </div>
                     {/* 2. Add the component here with documentId */}
                     <div style={{ flex: 1, overflow: "hidden" }}>
                       <Viewport
                         documentId={activeDocumentId}
-                        className="scrollbar scrollbar-thumb-gray-600 scrollbar-track-gray-900  "
+                        className=" scrollbar-thumb-[#313131] scrollbar-track-[#161616]  scrollbar-thin"
                       >
                         <ZoomGestureWrapper documentId={activeDocumentId}>
                           <Scroller
@@ -142,9 +160,23 @@ export default function PDFViewer({ documentUrl = "" }: PDFViewerProps) {
                         </ZoomGestureWrapper>
                       </Viewport>
                     </div>
-                    <RotateToolbar documentId={activeDocumentId} />
-                    <div className="block md:hidden">
+                    <div className='hidden md:block absolute right-2 bottom-2'>
+                      <RotateToolbar documentId={activeDocumentId} />
+                    </div>
+                    <div className="flex  md:hidden justify-between items-center gap-4  bg-[#0c0c0c] px-6 py-2 rounded-lg shadow-lg z-10">
+                      <button
+                        onClick={() => setIsOpen && setIsOpen(false)}
+                        className="flex items-center justify-center gap-2  px-4 py-2 text-xs font-semibold text-white hover:bg-[#2a2a2a] cursor-pointer p-2 bg-[#2a2d2f] rounded-xl font-Inter text-xs]"
+                      >
+                        <img className='w-6' src="/Images/back-square.svg" alt="back-square" />
+                        
+                      </button>
                       <PageControls documentId={activeDocumentId} />
+                      <div className="flex justify-between items-center gap-2">
+
+                      <ExportToolbar documentId={activeDocumentId} />
+                      <RotateToolbar documentId={activeDocumentId} />
+                      </div>
                     </div>
                   </div>
                 )
