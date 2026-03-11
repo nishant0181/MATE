@@ -21,21 +21,19 @@ export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
       return undefined;
     }
 
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
 
-      // Add a synthetic history entry so browser back closes modal first.
-      if (!hasModalHistoryEntry.current) {
-        window.history.pushState(
-          {
-            ...(window.history.state ?? {}),
-            pdfViewerOpen: true,
-          },
-          "",
-        );
-        hasModalHistoryEntry.current = true;
-      }
+    // Add a synthetic history entry so browser back closes modal first.
+    if (!hasModalHistoryEntry.current) {
+      window.history.pushState(
+        {
+          ...(window.history.state ?? {}),
+          pdfViewerOpen: true,
+        },
+        "",
+      );
+      hasModalHistoryEntry.current = true;
     }
 
     const handleKeyDown = (event) => {
@@ -57,11 +55,6 @@ export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("popstate", handlePopState);
-
-      if (!isOpen) {
-        document.body.style.overflow = "unset";
-        document.documentElement.style.overflow = "unset";
-      }
     };
   }, [closeModal, isOpen, setIsOpen]);
 
