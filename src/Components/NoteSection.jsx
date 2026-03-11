@@ -83,6 +83,7 @@ export default function NoteSection() {
           isOpen={isOpen}
           setIsOpen={setIsOpen}
           documentUrl={selectedPdfUrl}
+        
         />
       </section>
     </>
