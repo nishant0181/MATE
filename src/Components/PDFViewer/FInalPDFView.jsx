@@ -1,6 +1,10 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { Suspense, lazy, useCallback, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import PDFViewer from "./PDFViewer.tsx";
+import { loadPDFViewerModule } from "./pdfViewerPreload";
+
+const LazyPDFViewer = lazy(() =>
+  loadPDFViewerModule().then((module) => ({ default: module.default })),
+);
 
 export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
   const hasModalHistoryEntry = useRef(false);
@@ -75,7 +79,15 @@ export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
       >
 
       
-        <PDFViewer documentUrl={documentUrl} setIsOpen={setIsOpen} />
+        <Suspense
+          fallback={
+            <div className="grid h-full min-h-70 place-items-center text-white/80">
+              Preparing PDF viewer...
+            </div>
+          }
+        >
+          <LazyPDFViewer documentUrl={documentUrl} setIsOpen={setIsOpen} />
+        </Suspense>
       </div>
     </div>,
     portalRoot,
