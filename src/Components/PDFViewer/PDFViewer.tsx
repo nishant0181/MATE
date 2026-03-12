@@ -42,10 +42,27 @@ type PDFViewerProps = {
   setIsOpen?: (isOpen: boolean) => void;
 };
 
+const getDocumentName = (url: string) => {
+  if (!url) {
+    return "Untitled";
+  }
+
+  const fileName = decodeURIComponent(url.split("/").pop() ?? "");
+  const cleanedName = fileName.replace(/\.pdf$/i, "");
+  return cleanedName || "Untitled";
+};
+
+export function PDFEngineWarmup() {
+  usePdfiumEngine();
+  return null;
+}
+
 export default function PDFViewer({
   documentUrl = "",
   setIsOpen,
 }: PDFViewerProps) {
+  const documentName = useMemo(() => getDocumentName(documentUrl), [documentUrl]);
+
   const plugins = useMemo(
     () => [
       createPluginRegistration(DocumentManagerPluginPackage, {
@@ -56,7 +73,6 @@ export default function PDFViewer({
         ],
       }),
       createPluginRegistration(ViewportPluginPackage),
-      createPluginRegistration(ScrollPluginPackage),
       createPluginRegistration(RenderPluginPackage),
       createPluginRegistration(ZoomPluginPackage, {
         defaultZoomLevel: ZoomMode.FitPage,
@@ -84,7 +100,7 @@ export default function PDFViewer({
   const { engine, isLoading } = usePdfiumEngine();
 
   if (isLoading || !engine) {
-    return <div>Loading PDF Engine...</div>;
+    return <div className="text-white/80">Loading PDF...</div>;
   }
 
   // 3. Wrap your UI with the <EmbedPDF> provider
@@ -113,7 +129,7 @@ export default function PDFViewer({
                         MATE
                       </div>
                       <div className="text-sm font-Inter text-[#f4efe6]">
-                        {documentUrl.split("/").pop().split(".pdf")[0]}
+                        {documentName}
                       </div>
                       <div className="hidden md:block">
                         <PageControls documentId={activeDocumentId} />
@@ -123,7 +139,7 @@ export default function PDFViewer({
                         <ExportToolbar documentId={activeDocumentId} />
                         <button
                           onClick={() => setIsOpen && setIsOpen(false)}
-                          className="rounded bg-[#1F1F23] px-4 py-3 text-xs font-semibold text-white hover:bg-[#2a2a2a  cursor-pointer p-2 bg-[#2a2d2f] rounded-xl font-Inter text-xs]"
+                          className="cursor-pointer rounded bg-[#2a2d2f] px-4 py-3 text-xs font-semibold text-white hover:bg-[#2a2a2a]"
                         >
                           Back
                         </button>
@@ -166,7 +182,7 @@ export default function PDFViewer({
                     <div className="flex  md:hidden justify-between items-center gap-4  bg-[#0c0c0c] px-6 py-2 rounded-lg shadow-lg z-10">
                       <button
                         onClick={() => setIsOpen && setIsOpen(false)}
-                        className="flex items-center justify-center gap-2  px-4 py-2 text-xs font-semibold text-white hover:bg-[#2a2a2a] cursor-pointer p-2 bg-[#2a2d2f] rounded-xl font-Inter text-xs]"
+                        className="flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#2a2d2f] p-2 px-4 py-2 text-xs font-semibold text-white hover:bg-[#2a2a2a]"
                       >
                         <img className='w-6' src="/Images/back-square.svg" alt="back-square" />
                         

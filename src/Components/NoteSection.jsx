@@ -1,17 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import InputFilter from "./InputFilter";
 import SelectionFilterMenu from "./SelectionFilterMenu";
 import CardofNote from "./CardofNote";
-import NotesData from "../../Data/NotesData";
+import NotesData from "../../Data/NotesData.js";
 import FInalPDFView from "./PDFViewer/FInalPDFView.jsx";
+import PDFViewerWarmup from "./PDFViewer/PDFViewerWarmup.jsx";
+import { preloadPDFViewerChunk } from "./PDFViewer/pdfViewerPreload";
 
 export default function NoteSection() {
   const [data] = useState(NotesData());
   const [filteredData, setFilteredData] = useState(data);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedPdfUrl, setSelectedPdfUrl] = useState("");
+  const [warmPdfViewer, setWarmPdfViewer] = useState(false);
+
+  useEffect(() => {
+    const preloadTimer = window.setTimeout(() => {
+      void preloadPDFViewerChunk();
+      setWarmPdfViewer(true);
+    }, 1500);
+
+    return () => {
+      window.clearTimeout(preloadTimer);
+    };
+  }, []);
 
   const handleViewPDF = ({ url }) => {
+    void preloadPDFViewerChunk();
     setSelectedPdfUrl(url);
     setIsOpen(true);
   };
@@ -85,6 +100,7 @@ export default function NoteSection() {
           documentUrl={selectedPdfUrl}
         
         />
+        <PDFViewerWarmup enabled={warmPdfViewer} />
       </section>
     </>
   );
