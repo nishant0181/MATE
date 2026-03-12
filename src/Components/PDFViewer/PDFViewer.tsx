@@ -128,7 +128,7 @@ export default function PDFViewer({
                       >
                         MATE
                       </div>
-                      <div className="text-sm font-Inter text-[#f4efe6]">
+                      <div className="text-sm font-Inter text-amber-400">
                         {documentName}
                       </div>
                       <div className="hidden md:block">
@@ -180,18 +180,19 @@ export default function PDFViewer({
                       <RotateToolbar documentId={activeDocumentId} />
                     </div>
                     <div className="flex  md:hidden justify-between items-center gap-4  bg-[#0c0c0c] px-6 py-2 rounded-lg shadow-lg z-10">
-                      <button
+                     
+                      <RotateToolbar documentId={activeDocumentId} />
+                      <PageControls documentId={activeDocumentId} />
+                      <div className="flex justify-between items-center gap-2">
+
+                      <ExportToolbar documentId={activeDocumentId} />
+                       <button
                         onClick={() => setIsOpen && setIsOpen(false)}
                         className="flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#2a2d2f] p-2 px-4 py-2 text-xs font-semibold text-white hover:bg-[#2a2a2a]"
                       >
                         <img className='w-6' src="/Images/back-square.svg" alt="back-square" />
                         
                       </button>
-                      <PageControls documentId={activeDocumentId} />
-                      <div className="flex justify-between items-center gap-2">
-
-                      <ExportToolbar documentId={activeDocumentId} />
-                      <RotateToolbar documentId={activeDocumentId} />
                       </div>
                     </div>
                   </div>

@@ -26,7 +26,7 @@ export default function PageNavigation({ documentId }: { documentId: string }) {
           onChange={(e) => setPageInput(e.target.value)}
           min={1}
           max={state.totalPages}
-          className="h-6 w-8 rounded-md  bg-gray-900 px-2 text-center font-mono text-sm font-medium text-white shadow-sm border-1"
+          className="h-6 w-8 rounded-md  bg-[#2a2d2f] px-2 text-center font-mono text-xs font-medium text-white shadow-sm "
         />
         <span className="text-xs font-medium ">
           / {state.totalPages}

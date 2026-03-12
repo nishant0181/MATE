@@ -5,7 +5,7 @@ export default function RotateToolbar({ documentId }: { documentId: string }) {
   if (!rotate) return null
   const degrees = rotation * 90
   return (
-    <div className="bg-[#0c0c0c] rounded-lg shadow-lg z-10 flex items-center justify-center gap-2 p-2">
+    <div className="bg-[#2a2d2f] rounded-lg shadow-lg z-10 flex items-center justify-center gap-2 p-2">
     
       
      

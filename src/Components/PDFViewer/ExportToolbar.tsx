@@ -5,7 +5,7 @@ export const ExportToolbar = ({ documentId }) => {
  
   return (
     <button className='flex items-center justify-center gap-2 text-white cursor-pointer p-2 bg-[#2a2d2f] rounded-xl font-Inter text-xs'  onClick={() => exportApi?.download()} disabled={!exportApi}>
-      <img width={20} src="/Images/download-minimalistic.svg" alt="download-minimalistic" />
+      <img width={25} src="/Images/download-minimalistic.svg" alt="download-minimalistic" />
       <span className='hidden md:inline'>
 
       Download
