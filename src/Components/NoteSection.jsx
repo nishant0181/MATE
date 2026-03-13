@@ -78,7 +78,7 @@ export default function NoteSection() {
               </p>
             </div>
 
-            <InputFilter setFilteredData={setFilteredData} />
+            <InputFilter setFilteredData={setFilteredData} data={data} />
             <SelectionFilterMenu
               data={data}
               filteredData={filteredData}
@@ -101,6 +101,7 @@ export default function NoteSection() {
                 Using local notes data until Supabase env keys are configured.
               </p>
             )}
+ 
             {dataSource === "supabase" && isEmptyRemote && (
               <p className="mt-2 text-xs text-amber-300">
                 Supabase responded with 0 notes. Check your RLS select policy or confirm rows exist in the public schema.
