@@ -17,14 +17,17 @@ export default function CardofNote({
   return (
     <>
       <div
-        className="relative z-0 flex flex-col  border border-[#222323] rounded-lg p-7 hover:border-[#ffff] transition-all duration-300  hover:shadow-lg hover:shadow-amber-500/20
+        className="relative z-0 flex flex-col bg-[#151516]  border border-[#222323] rounded-lg p-7 hover:border-[#ffff] transition-all duration-300  hover:shadow-lg hover:shadow-amber-500/20
          
   
                h-full w-full  bg-[radial-gradient(#242426_1px,transparent_1px)] bg-size-[16px_16px] "
       >
         <div className="z-60 flex items-start justify-between mb-4">
           <div className="">
+          <div className="pb-8 flex items-center justify-between gap-3">
             <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+            <img src="/LogosForCards/Maths.png" alt="Maths Icon" className="w-10" />
+          </div>
             <p className="text-sm text-gray-400 mb-3">{description}</p>
           </div>
         </div>
@@ -51,7 +54,7 @@ export default function CardofNote({
 
         <button
           onClick={() => onViewPDF({ url, title })}
-          className="cursor-pointer mx-auto text-center mt-10 w-full py-2 bg-amber-400 hover:bg-amber-300 text-black font-semibold rounded-md transition-colors flex items-center justify-center gap-2 text-sm "
+          className="cursor-pointer mx-auto text-center mt-10 w-full py-2 bg-amber-400 hover:bg-amber-300 text-black font-semibold rounded-sm transition-colors flex items-center justify-center gap-2 text-sm "
         >
           View Notes
           <svg
