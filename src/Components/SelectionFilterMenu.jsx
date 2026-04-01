@@ -29,7 +29,6 @@ export default function SelectionFilterMenu({
           <Select
             value={university}
             onValueChange={(value) => {
-              console.log(value);
               setUniversity(value);
               setFilteredData(data.filter((note) => note.university === value));
               setDegree("");
@@ -173,7 +172,10 @@ export default function SelectionFilterMenu({
                   .filter((note) => note.branch === degree)
                   .filter((note) => note.year === year)
                   .filter((note) => note.semester === semester)
-                  .filter((note) => note.subject === value),
+                  .filter(
+                    (note) =>
+                      (note.subject ?? "").toLowerCase() === value.toLowerCase(),
+                  ),
               );
             }}
           >

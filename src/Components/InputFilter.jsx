@@ -1,12 +1,23 @@
 import React from "react";
 
-export default function InputFilter({setFilteredData, data}) {
+export default function InputFilter({ setFilteredData, data }) {
   const handleInputChange = (event) => {
-    const searchTerm = event.target.value.toLowerCase();
-    console.log(searchTerm);
+    const searchTerm = event.target.value.trim().toLowerCase();
 
-    setFilteredData(data.filter(note => note.title.toLowerCase().includes(searchTerm) || note.subject.toLowerCase().includes(searchTerm)));
+    if (!searchTerm) {
+      setFilteredData(data);
+      return;
+    }
+
+    setFilteredData(
+      data.filter((note) => {
+        const title = (note.title ?? "").toLowerCase();
+        const subject = (note.subject ?? "").toLowerCase();
+        return title.includes(searchTerm) || subject.includes(searchTerm);
+      }),
+    );
   };
+
   return (
     <>
       <input

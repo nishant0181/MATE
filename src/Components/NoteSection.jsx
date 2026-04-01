@@ -120,9 +120,9 @@ export default function NoteSection() {
                 filters or search terms.
               </p>
             ) : (
-              filteredData.map((note, index) => (
+              filteredData.map((note) => (
                 <CardofNote
-                  key={index}
+                  key={note.id}
                   title={note.title}
                   description={note.description}
                   subject={note.subject}

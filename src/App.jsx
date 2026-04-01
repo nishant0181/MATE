@@ -8,11 +8,9 @@ import { BrowserRouter, Routes, Route } from "react-router";
 function App() {
   return (
     <>
-
       <BrowserRouter>
-      <Navbar />
+        <Navbar />
         <Routes>
-          
           <Route path="/" index element={<Main />} />
           <Route path="/notes" element={<NoteSection />} />
         </Routes>

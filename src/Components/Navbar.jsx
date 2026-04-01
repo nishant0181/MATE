@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { Link } from "react-router";
 
 export default function Navbar() {
   return (
@@ -15,15 +15,20 @@ export default function Navbar() {
           M A T E X
         </a> */}
 
-        <a href="/" className="text-2xl font-Inter font-medium tracking-[3.5px] text-[#f4efe6]"> 
+        <Link
+          to="/"
+          className="text-2xl font-Inter font-medium tracking-[3.5px] text-[#f4efe6]"
+        >
           MATE
-        </a>
+        </Link>
 
         <div className="block md:hidden">☰</div>
 
         <nav className="hidden md:block ">
           <ul className="flex  text-sm ">
-            <li className="px-4 py-2 rounded-xl cursor-pointer"><a href="#noteSection">Notes</a></  li>
+            <li className="px-4 py-2 rounded-xl cursor-pointer">
+              <Link to="/notes">Notes</Link>
+            </li>
             <li className="px-4 py-2 rounded-xl cursor-pointer">Tutorials</li>
             <li className="px-4 py-2 rounded-xl cursor-pointer">Books</li>
             <li className="px-4 py-2 rounded-xl cursor-pointer">PYQS</li>
@@ -34,7 +39,6 @@ export default function Navbar() {
           </ul>
         </nav>
       </header>
-      <Outlet />
     </>
   );
 }
