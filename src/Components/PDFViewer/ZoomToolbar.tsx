@@ -17,7 +17,7 @@ export default function ZoomToolbar({ documentId }: ZoomToolbarProps) {
       className="text-white absolute top-1/2 -left-10 -translate-x-1/2 -translate-y-1/2 py-1 flex-col transform hidden md:flex items-center justify-center gap-2 bg-[#0c0c0c] rounded-lg shadow-lg z-10  "
     >
       <button
-        className="bg-gray-900 hover:bg-gray-300 text-white-800 font-bold py-1 px-3 rounded"
+        className="bg-[#2a2d2f] hover:bg-[#242424] text-white-800 font-bold py-1 px-3 rounded"
         // onClick={zoomProvides.zoomIn}
         onClick={() => {
           if (Math.round(zoomState.currentZoomLevel * 100) < 500) {
@@ -29,11 +29,11 @@ export default function ZoomToolbar({ documentId }: ZoomToolbarProps) {
       </button>
 
       <span className="text-sm font-medium">
-        {Math.round(zoomState.currentZoomLevel * 100)}%
+        {Math.round(zoomState.currentZoomLevel * 100)}
       </span>
 
       <button
-        className="bg-gray-900 hover:bg-gray-300 text-white-800 font-bold py-1 px-3 rounded"
+        className="bg-[#2a2d2f] hover:bg-[#242424] text-white-800 font-bold py-1 px-3 rounded"
         onClick={zoomProvides.zoomOut}
       >
         -

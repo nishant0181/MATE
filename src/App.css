@@ -190,3 +190,29 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+/* Custom Thin Dark Scrollbar */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #2a2a2a #0a0a0a;
+  }
+}

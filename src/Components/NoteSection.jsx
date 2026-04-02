@@ -64,11 +64,15 @@ export default function NoteSection() {
     <>
       <section
         id="noteSection"
-        className="md:max-w-350  font-Inter mx-auto text-white select-none "
+        className="md:max-w-350 scroll-smooth 
+        font-Inter mx-auto text-white select-none 
+        
+        
+        "
       >
         <div className="relative bg-black w-full  flex flex-col items-center   bg-[url('/Images/Hero.svg')]  bg-cover bg-center bg-no-repeat">
           <div className=" bg-[linear-gradient(0deg,transparent_0%,#000000_97%)]  w-full absolute top-0  z-20 h-16  md:h-28 "></div>
-          <div className=" mx-auto  mt-18 flex flex-col items-center gap-15 bg-black/50 p-6 rounded-lg z-30">
+          <div className=" mx-auto  mt-18 flex flex-col items-center gap-15 bg-black/50 p-4 rounded-lg z-30">
             <div className="mt-4">
               <h1 className="text-5xl font-bold  text-center tracking-wider text-amber-300">
                 Welcome to Mate Notes!
@@ -109,7 +113,7 @@ export default function NoteSection() {
             )}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center ">
             {isLoading ? (
               <p className="text-gray-400 text-center col-span-full py-10">
                 Loading notes...

@@ -18,12 +18,12 @@ export default function CardofNote({
         className="relative z-0 flex flex-col bg-[#151516]  border  border-[#3c3c3c] rounded-lg p-7 hover:border-[#ffff] transition-all duration-300  hover:shadow-lg hover:shadow-amber-500/20
          
   
-               h-full w-full  bg-[radial-gradient(#242426_1px,transparent_1px)] bg-size-[16px_16px] "
+               h-full max-w-[400px]  bg-[radial-gradient(#323236_1px,transparent_1px)] bg-size-[16px_16px] "
       >
         <div className="z-60 flex items-start justify-between mb-4">
           <div className="">
             <div className="pb-8 flex items-center justify-between gap-3">
-              <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
               <img
                 src="/LogosForCards/Maths.png"
                 alt="Maths Icon"
@@ -56,7 +56,7 @@ export default function CardofNote({
 
         <button
           onClick={() => onViewPDF({ url, title })}
-          className="mx-auto text-center mt-10 transition-colors duration-300 bg-[#e5e5e5]  hover:bg-[#cfcfcf]  font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-4  py-2 px-4 rounded-md cursor-pointer justify-center w-full
+          className="mx-auto text-center mt-5 md:mt-10 transition-colors duration-300 bg-[#e5e5e5]  hover:bg-[#cfcfcf]  font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-4  py-2 px-4 rounded-md cursor-pointer justify-center w-full
           "
         >
           View Notes

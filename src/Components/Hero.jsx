@@ -6,10 +6,10 @@ export default function Hero() {
   return (
     <>
       <section className="md:max-w-350  font-Inter mx-auto text-white select-none">
-        <div className="relative bg-black w-full  flex flex-col items-center   bg-[url('/Images/Hero.svg')]  bg-cover bg-center bg-no-repeat">
+        <div className="relative overflow-hidden bg-black w-full flex flex-col items-center bg-[url('/Images/Hero.svg')] bg-cover bg-center bg-no-repeat">
           <div className=" bg-[linear-gradient(0deg,transparent_0%,#000000_97%)]  w-full absolute top-0  z-20 h-16  md:h-28 "></div>
 
-          <div className=" mt-32 mb-10  text-[12px] md:text-sm font-Inter   text-amber-50  bg-[#1F1F23] rounded-xl px-3 py-1.5 flex items-center justify-center gap-2">
+          <div className=" mt-15 lg:mt-32 mb-10  text-[12px] md:text-sm font-Inter   text-amber-50  bg-[#1F1F23] rounded-xl px-3 py-1.5 flex items-center justify-center gap-2">
             Now it&apos;s time for comeback
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -24,13 +24,13 @@ export default function Hero() {
             </svg>
           </div>
 
-          <div className=" shadow-amber-300 tracking-tight max-w-3xl mx-auto font-extrabold text-center md:leading-20 font-Inter text-6xl md:text-7xl">
+          <div className="px-4 md:px-0 shadow-amber-300 tracking-tight max-w-3xl mx-auto font-extrabold text-center leading-tight md:leading-20 font-Inter max-[370px]:text-5xl text-6xl lg:text-7xl">
             <span className=" max-w-xs relative text-shadow-amber-200 text-amber-300">
               Your unfair advantage in learning
               <img
                 src="/Images/RoundedArrow.svg"
                 alt="Rounded Arrow"
-                className="absolute -right-19  -bottom-10 w-15 h-15 invert-100"
+                className="absolute -right-20 sm:-right-14 -bottom-5 md:-right-28 md:-bottom-10  w-12 h-12 md:w-15 md:h-15 invert-100 md:rotate-0 -rotate-40"
               />
             </span>
             <br />{" "}
@@ -43,14 +43,13 @@ export default function Hero() {
               />
             </span>
           </div>
-          <p className=" font-Inter   md:text-s  text-center leading-8 mt-14 md:mt-4 text-gray-300">
-            Preparing for exams is already challenging enough. <br /> Avoid
-            further complications by ditching outdated study methods
+          <p className="px-6 md:px-0 font-Inter text-sm md:text-base text-center leading-7 md:leading-8 mt-14 md:mt-4 text-gray-300 max-w-2xl mx-auto">
+            Preparing for exams is already challenging enough.{" "}
+            <br className="hidden md:block" /> Avoid further complications by
+            ditching outdated study methods
           </p>
 
-
-
-          <div className="p-10 flex items-center gap-4">
+          <div className="p-10 flex flex-wrap justify-center items-center gap-2 md:gap-4">
             <Link to="/notes">
               <div className="bg-[#e5e5e5]  hover:bg-[#cfcfcf]  font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-2  py-2 px-4 rounded-md cursor-pointer">
                 <svg

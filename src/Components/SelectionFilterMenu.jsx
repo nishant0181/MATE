@@ -20,7 +20,7 @@ export default function SelectionFilterMenu({
 
   return (
     <>
-      <div className="max-w-4xl md:max-w-6xl  bg-[#0c0c0c] rounded-lg p-7 md:p-16   border border-[#222323] flex flex-wrap justify-center gap-4">
+      <div className="max-w-4xl md:max-w-6xl  bg-[#0c0c0c] rounded-lg p-7 md:p-16   border border-[#222323] flex flex-wrap  justify-center gap-4">
           
         <div  >
           <label className="block text-sm font-medium text-gray-100 mb-2">
@@ -92,6 +92,8 @@ export default function SelectionFilterMenu({
           </Select>
         </div>
 
+<div className="flex flex-wrap justify-center gap-2 ">
+ 
         <div>
           <label className="block text-sm font-medium text-gray-100 mb-2">
             YEAR
@@ -108,9 +110,11 @@ export default function SelectionFilterMenu({
                   .filter((note) => note.branch === degree)
                   .filter((note) => note.year === value),
               );
+              setSemester("");
+              setSubject("");
             }}
           >
-            <SelectTrigger className="w-38 bg-[#161616] border-[#383838] text-white">
+            <SelectTrigger className="max-[430px]:w-28 w-38 bg-[#161616] border-[#383838] text-white">
               <SelectValue placeholder="Select Year" />
             </SelectTrigger>
             <SelectContent className="bg-[#161616] border-[#383838]">
@@ -141,7 +145,7 @@ export default function SelectionFilterMenu({
               setSubject("");
             }}
           >
-            <SelectTrigger className="w-38 bg-[#161616] border-[#383838] text-white">
+            <SelectTrigger className="max-[430px]:w-28 w-38 bg-[#161616] border-[#383838] text-white">
               <SelectValue placeholder="Select Semester" />
             </SelectTrigger>
             <SelectContent className="bg-[#161616] border-[#383838]">
@@ -156,7 +160,9 @@ export default function SelectionFilterMenu({
             </SelectContent>
           </Select>
         </div>
-        
+  
+</div>       
+
         <div>
           <label className="block text-sm font-medium text-gray-100  mb-2">
             SUBJECT

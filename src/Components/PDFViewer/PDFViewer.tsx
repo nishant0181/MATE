@@ -36,6 +36,7 @@ import {
 import { Rotation } from "@embedpdf/models";
 import { Rotate, RotatePluginPackage } from "@embedpdf/plugin-rotate/react";
 import { ExportPluginPackage } from "@embedpdf/plugin-export/react";
+import PDFLoadingSkeleton from "./PDFLoadingSkeleton";
 
 type PDFViewerProps = {
   documentUrl?: string;
@@ -100,7 +101,7 @@ export default function PDFViewer({
   const { engine, isLoading } = usePdfiumEngine();
 
   if (isLoading || !engine) {
-    return <div className="text-white/80 h-full w-full flex items-center justify-center">Loading PDF...</div>;
+    return <PDFLoadingSkeleton documentUrl={documentUrl} setIsOpen={setIsOpen} />;
   }
 
   // 3. Wrap your UI with the <EmbedPDF> provider
@@ -111,7 +112,7 @@ export default function PDFViewer({
           activeDocumentId && (
             <DocumentContent documentId={activeDocumentId}>
               {({ isLoaded }) =>
-                isLoaded && (
+                isLoaded ? (
                   <div
                     className=""
                     style={{
@@ -139,8 +140,9 @@ export default function PDFViewer({
                         <ExportToolbar documentId={activeDocumentId} />
                         <button
                           onClick={() => setIsOpen && setIsOpen(false)}
-                          className="cursor-pointer rounded bg-[#2a2d2f] px-4 py-3 text-xs font-semibold text-white hover:bg-[#2a2a2a]"
+                          className="cursor-pointer rounded-md bg-[#2a2d2f] hover:bg-[#242424] px-4 py-2 text-xs font-semibold text-white  flex items-center gap-2"
                         >
+                          <img className='w-6' src="/Images/back-square.svg" alt="back-square" />
                           Back
                         </button>
                       </div>
@@ -196,6 +198,8 @@ export default function PDFViewer({
                       </div>
                     </div>
                   </div>
+                ) : (
+                  <PDFLoadingSkeleton documentUrl={documentUrl} setIsOpen={setIsOpen} />
                 )
               }
             </DocumentContent>

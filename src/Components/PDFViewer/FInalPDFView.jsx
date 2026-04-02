@@ -1,6 +1,7 @@
 import React, { Suspense, lazy, useCallback, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { loadPDFViewerModule } from "./pdfViewerPreload";
+import PDFLoadingSkeleton from "./PDFLoadingSkeleton";
 
 const LazyPDFViewer = lazy(() =>
   loadPDFViewerModule().then((module) => ({ default: module.default })),
@@ -79,13 +80,7 @@ export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
       >
 
       
-        <Suspense
-          fallback={
-            <div className="grid h-full min-h-70 place-items-center text-white/80">
-              Preparing PDF viewer...
-            </div>
-          }
-        >
+        <Suspense fallback={<PDFLoadingSkeleton documentUrl={documentUrl} setIsOpen={setIsOpen} />}>
           <LazyPDFViewer documentUrl={documentUrl} setIsOpen={setIsOpen} />
         </Suspense>
       </div>
