@@ -75,6 +75,8 @@ export default function Hero() {
               <div className=" bg-[#151515] text-white leading-tight font-Figtree flex items-center gap-2  font-medium text-sm py-2 px-6 rounded-md border border-[#373737]  cursor-pointer">
                 <img src="/Images/dashboard.svg" alt="dashboard" />
                 DashBoard
+
+                
               </div>
             </Link>
           </div>
