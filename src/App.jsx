@@ -1,5 +1,6 @@
 import "./App.css";
-import Main from "./Components/MainHero";
+
+import MainPage from "./Components/MainPage";
 import Navbar from "./Components/Navbar";
 import NoteSection from "./Components/NoteSection";
 import React from "react";
@@ -11,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" index element={<Main />} />
+          <Route path="/" index element={<MainPage />} />
           <Route path="/notes" element={<NoteSection />} />
         </Routes>
       </BrowserRouter>

@@ -26,6 +26,7 @@ export default function Navbar() {
 
         <nav className="hidden md:block ">
           <ul className="flex  text-sm ">
+            <li className="px-4 py-2 rounded-xl cursor-pointer">DashBoard</li>
             <li className="px-4 py-2 rounded-xl cursor-pointer">
               <Link to="/notes">Notes</Link>
             </li>
@@ -33,8 +34,8 @@ export default function Navbar() {
             <li className="px-4 py-2 rounded-xl cursor-pointer">Books</li>
             <li className="px-4 py-2 rounded-xl cursor-pointer">PYQS</li>
             <li className="px-4 py-2 rounded-xl cursor-pointer">Upload</li>
-            <li className="px-4 py-2 rounded-xl cursor-pointer">GTU</li>
-            <li className="px-4 py-2 rounded-xl cursor-pointer">About US</li>
+            {/* <li className="px-4 py-2 rounded-xl cursor-pointer">GTU</li> */}
+            {/* <li className="px-4 py-2 rounded-xl cursor-pointer">About US</li> */}
             <li></li>
           </ul>
         </nav>

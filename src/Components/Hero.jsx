@@ -2,7 +2,7 @@ import React from "react";
 import FlipFadeText from "./ui/FlipFadeText";
 import { Link } from "react-router";
 
-export default function Main() {
+export default function Hero() {
   return (
     <>
       <section className="md:max-w-350  font-Inter mx-auto text-white select-none">
@@ -10,7 +10,7 @@ export default function Main() {
           <div className=" bg-[linear-gradient(0deg,transparent_0%,#000000_97%)]  w-full absolute top-0  z-20 h-16  md:h-28 "></div>
 
           <div className=" mt-32 mb-10  text-[12px] md:text-sm font-Inter   text-amber-50  bg-[#1F1F23] rounded-xl px-3 py-1.5 flex items-center justify-center gap-2">
-            Now it is time to comeback
+            Now it&apos;s time for comeback
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
@@ -43,28 +43,44 @@ export default function Main() {
               />
             </span>
           </div>
-          <p className=" font-Inter md:text-lg  text-center leading-8 mt-14 md:mt-4 text-gray-300">
+          <p className=" font-Inter   md:text-s  text-center leading-8 mt-14 md:mt-4 text-gray-300">
             Preparing for exams is already challenging enough. <br /> Avoid
             further complications by ditching outdated study methods
           </p>
-          <div className="p-10 flex gap-4">
-            <Link
-              className="bg-[#1F1F23] hover:bg-[#2a2d2f] text-green-100 font-bold py-2 px-4 rounded-2xl cursor-pointer"
-              to="/notes"
-            >
-              Visit Notes
-            </Link>
 
-            <Link
-              className="bg-[#1F1F23] hover:bg-[#2a2d2f] text-green-100 font-bold py-2 px-4 rounded-2xl cursor-pointer"
-              to="/notes"
-            >
-              Get Started
+
+
+          <div className="p-10 flex items-center gap-4">
+            <Link to="/notes">
+              <div className="bg-[#e5e5e5]  hover:bg-[#cfcfcf]  font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-2  py-2 px-4 rounded-md cursor-pointer">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-search h-4 w-4"
+                  aria-hidden="true"
+                >
+                  <path d="m21 21-4.34-4.34"></path>
+                  <circle cx="11" cy="11" r="8"></circle>
+                </svg>
+                Search Notes Here
+              </div>
             </Link>
-        </div>
+            <Link to="/notes">
+              <div className=" bg-[#151515] text-white leading-tight font-Figtree flex items-center gap-2  font-medium text-sm py-2 px-6 rounded-md border border-[#373737]  cursor-pointer">
+                <img src="/Images/dashboard.svg" alt="dashboard" />
+                DashBoard
+              </div>
+            </Link>
           </div>
+        </div>
       </section>
-
     </>
   );
 }

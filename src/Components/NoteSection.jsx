@@ -70,7 +70,7 @@ export default function NoteSection() {
           <div className=" bg-[linear-gradient(0deg,transparent_0%,#000000_97%)]  w-full absolute top-0  z-20 h-16  md:h-28 "></div>
           <div className=" mx-auto  mt-18 flex flex-col items-center gap-15 bg-black/50 p-6 rounded-lg z-30">
             <div className="mt-4">
-              <h1 className="text-5xl font-bold  text-center tracking-wider text-amber-400">
+              <h1 className="text-5xl font-bold  text-center tracking-wider text-amber-300">
                 Welcome to Mate Notes!
               </h1>
               <p className=" md:text-lg text-center text-gray-300 mt-4">
@@ -89,7 +89,7 @@ export default function NoteSection() {
 
         {/* Cards Section */}
         <div className="mx-auto max-w-6xl px-6 py-12">
-          <div className="mb-8 text-center">
+          <div className="mb-18 text-center">
             <h2 className="text-3xl  font-bold  mb-2 text-green-100">
               The Legendary Notes
             </h2>

@@ -100,7 +100,7 @@ export default function PDFViewer({
   const { engine, isLoading } = usePdfiumEngine();
 
   if (isLoading || !engine) {
-    return <div className="text-white/80">Loading PDF...</div>;
+    return <div className="text-white/80 h-full w-full flex items-center justify-center">Loading PDF...</div>;
   }
 
   // 3. Wrap your UI with the <EmbedPDF> provider
