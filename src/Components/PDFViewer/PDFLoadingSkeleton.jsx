@@ -21,8 +21,10 @@ export default function PDFLoadingSkeleton({ documentUrl, setIsOpen }) {
           <div className="text-xl font-Inter font-medium tracking-[3.5px] text-[#f4efe6]">
             MATE
           </div>
-          <div className="text-sm font-Inter text-amber-400 truncate max-w-[200px] md:max-w-xs">
-            {documentName}
+          <div className="flex flex-col">
+            <div className="text-sm font-Inter text-white truncate max-w-[200px] md:max-w-xs">
+              {documentName}
+            </div>
           </div>
           <div className="hidden md:flex gap-2 text-white items-center">
             <div className="bg-[#2a2d2f] h-8 w-32 rounded"></div>
@@ -42,10 +44,10 @@ export default function PDFLoadingSkeleton({ documentUrl, setIsOpen }) {
         <div className="flex-1 overflow-hidden flex items-center justify-center p-4">
           <div className="w-full h-full flex flex-col items-center justify-center relative">
             {/* Sleek Minimalist Spinner */}
-            <div className="relative flex items-center justify-center">
-              <div className="w-16 h-16 border-[3px] border-[#2a2d2f] border-t-amber-400 rounded-full animate-spin"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-amber-400/80 text-[10px] font-bold tracking-widest mt-[2px]">PDF</span>
+            <div className="relative">
+              <div className="w-16 h-16 border-[3px] border-zinc-800 border-t-white rounded-full animate-spin"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <span className="text-zinc-400 text-[10px] font-bold tracking-widest mt-[2px]">PDF</span>
               </div>
             </div>
             {/* Pulsing visual element resembling a document loading */}

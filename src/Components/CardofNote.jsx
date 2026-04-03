@@ -15,7 +15,7 @@ export default function CardofNote({
   return (
     <>
       <div
-        className="relative z-0 flex flex-col bg-[#151516]  border  border-[#3c3c3c] rounded-lg p-7 hover:border-[#ffff] transition-all duration-300  hover:shadow-lg hover:shadow-amber-500/20
+        className="relative z-0 flex flex-col bg-[#151516]  border  border-[#3c3c3c] rounded-lg p-7 hover:border-zinc-300 transition-all duration-300  hover:shadow-lg hover:shadow-white/5
          
   
                h-full max-w-[400px]  bg-[radial-gradient(#323236_1px,transparent_1px)] bg-size-[16px_16px] "
@@ -34,30 +34,29 @@ export default function CardofNote({
           </div>
         </div>
         <div className="flex flex-wrap gap-2 mb-4">
-          <span className="text-xs bg-[#1F1F23] text-amber-300 px-3 py-1 rounded-full">
+          <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
             {subject}
           </span>
-          <span className="text-xs bg-[#1F1F23] text-amber-300 px-3 py-1 rounded-full">
+          <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
             {year}
           </span>
-          <span className="text-xs bg-[#1F1F23] text-amber-300 px-3 py-1 rounded-full">
+          <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
             {semester}
           </span>
-          <span className="text-xs bg-[#1F1F23] text-amber-300 px-3 py-1 rounded-full">
+          <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
             {branch}
           </span>
-          <span className="text-xs bg-[#1F1F23] text-amber-300 px-3 py-1 rounded-full">
+          <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
             {university}
           </span>
-          <span className="text-xs bg-[#1F1F23] text-amber-300 px-3 py-1 rounded-full">
+          <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
             {pages} pages
           </span>
         </div>
 
         <button
           onClick={() => onViewPDF({ url, title })}
-          className="mx-auto text-center mt-5 md:mt-10 transition-colors duration-300 bg-[#e5e5e5]  hover:bg-[#cfcfcf]  font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-4  py-2 px-4 rounded-md cursor-pointer justify-center w-full
-          "
+          className="mx-auto text-center mt-5 md:mt-10 transition-colors duration-300 bg-white hover:bg-zinc-200 font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full"
         >
           View Notes
           <svg

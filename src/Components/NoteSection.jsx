@@ -71,10 +71,10 @@ export default function NoteSection() {
         "
       >
         <div className="relative bg-black w-full  flex flex-col items-center   bg-[url('/Images/Hero.svg')]  bg-cover bg-center bg-no-repeat">
-          <div className=" bg-[linear-gradient(0deg,transparent_0%,#000000_97%)]  w-full absolute top-0  z-20 h-16  md:h-28 "></div>
+          <div className=" bg-[linear-gradient(0deg,transparent_0%,#09090b_97%)]  w-full absolute top-0  z-20 h-16  md:h-28 "></div>
           <div className=" mx-auto  mt-18 flex flex-col items-center gap-15 bg-black/50 p-4 rounded-lg z-30">
             <div className="mt-4">
-              <h1 className="text-5xl font-bold  text-center tracking-wider text-amber-300">
+              <h1 className="text-5xl font-bold  text-center tracking-wider text-white">
                 Welcome to Mate Notes!
               </h1>
               <p className=" md:text-lg text-center text-gray-300 mt-4">
@@ -91,23 +91,22 @@ export default function NoteSection() {
           </div>
         </div>
 
-        {/* Cards Section */}
         <div className="mx-auto max-w-6xl px-6 py-12">
           <div className="mb-18 text-center">
-            <h2 className="text-3xl  font-bold  mb-2 text-green-100">
+            <h2 className="text-3xl  font-bold  mb-2 text-zinc-100">
               The Legendary Notes
             </h2>
             <p className="text-gray-400">
               Browse through our collection of study materials
             </p>
             {dataSource === "local" && (
-              <p className="mt-2 text-xs text-amber-300">
+              <p className="mt-2 text-xs text-zinc-500">
                 Using local notes data until Supabase env keys are configured.
               </p>
             )}
  
             {dataSource === "supabase" && isEmptyRemote && (
-              <p className="mt-2 text-xs text-amber-300">
+              <p className="mt-2 text-xs text-zinc-500">
                 Supabase responded with 0 notes. Check your RLS select policy or confirm rows exist in the public schema.
               </p>
             )}

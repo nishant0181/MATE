@@ -6,6 +6,7 @@ import NoteSection from "./Components/NoteSection";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
 
+
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" index element={<MainPage />} />
           <Route path="/notes" element={<NoteSection />} />
         </Routes>
+        
       </BrowserRouter>
     </>
   );

@@ -129,21 +129,23 @@ export default function PDFViewer({
                       >
                         MATE
                       </div>
-                      <div className="text-sm font-Inter text-amber-400">
+                      <div className="flex items-center justify-center gap-4">
+                      <div className="text-sm font-Inter text-white">
                         {documentName}
                       </div>
                       <div className="hidden md:block">
                         <PageControls documentId={activeDocumentId} />
+                      </div>
                       </div>
 
                       <div className="hidden items-center gap-2 md:flex">
                         <ExportToolbar documentId={activeDocumentId} />
                         <button
                           onClick={() => setIsOpen && setIsOpen(false)}
-                          className="cursor-pointer rounded-md bg-[#2a2d2f] hover:bg-[#242424] px-4 py-2 text-xs font-semibold text-white  flex items-center gap-2"
+                          className="cursor-pointer rounded-md bg-[#2a2d2f] hover:bg-[#242424]  p-2 text-xs font-semibold "
                         >
                           <img className='w-6' src="/Images/back-square.svg" alt="back-square" />
-                          Back
+                          
                         </button>
                       </div>
                     </div>
