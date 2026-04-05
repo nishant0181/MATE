@@ -60,13 +60,13 @@ export default function Features() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 m-6 border-r border-b border-border/20">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 m-6 ">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={index}
-                className="group relative p-4 sm:p-6 border-l border-t border-border/20 hover:border-l hover:border-t hover:border-r hover:border-b hover:border-border 
+                className="group relative p-4 sm:p-6 border-l border-border
                 
                 bg-[oklch(0.145_0_0)] hover:bg-muted/10 hover:transition-colors"
               >

@@ -18,7 +18,7 @@ export default function CardofNote({
         className="relative z-0 flex flex-col bg-[#151516]  border  border-[#3c3c3c] rounded-lg p-7 hover:border-zinc-300 transition-all duration-300  hover:shadow-lg hover:shadow-white/5
          
   
-               h-full max-w-[400px]  bg-[radial-gradient(#323236_1px,transparent_1px)] bg-size-[16px_16px] "
+                max-w-[350px]  bg-[radial-gradient(#323236_1px,transparent_1px)] bg-size-[16px_16px] "
       >
         <div className="z-60 flex items-start justify-between mb-4">
           <div className="">

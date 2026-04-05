@@ -81,7 +81,7 @@ export default function Hero() {
                 Search Notes
               </div>
             </Link>
-            <Link to="/notes">
+            <Link to="/dashboard">
               <div className="bg-white/5 hover:bg-white/10 text-white leading-tight font-Inter flex items-center gap-2 font-medium text-sm py-3 px-6 rounded-full border border-white/10 transition-colors cursor-pointer backdrop-blur-sm">
                 <img
                   src="/Images/dashboard.svg"

@@ -72,6 +72,10 @@ export default function NoteSection() {
       >
         <div className="relative bg-black w-full  flex flex-col items-center   bg-[url('/Images/Hero.svg')]  bg-cover bg-center bg-no-repeat">
           <div className=" bg-[linear-gradient(0deg,transparent_0%,#09090b_97%)]  w-full absolute top-0  z-20 h-16  md:h-28 "></div>
+
+
+
+          
           <div className=" mx-auto  mt-18 flex flex-col items-center gap-15 bg-black/50 p-4 rounded-lg z-30">
             <div className="mt-4">
               <h1 className="text-5xl font-bold  text-center tracking-wider text-white">
