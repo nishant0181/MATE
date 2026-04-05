@@ -26,7 +26,9 @@ export default function Navbar() {
 
         <nav className="hidden md:block ">
           <ul className="flex  text-sm ">
-            <li className="px-4 py-2 rounded-xl cursor-pointer">DashBoard</li>
+            <li className="px-4 py-2 rounded-xl cursor-pointer">
+              <Link to="/dashboard">DashBoard</Link>  
+            </li>
             <li className="px-4 py-2 rounded-xl cursor-pointer">
               <Link to="/notes">Notes</Link>
             </li>

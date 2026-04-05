@@ -28,7 +28,7 @@ export default function Hero() {
             </svg>
           </div>
 
-          <div className="px-4 md:px-0 tracking-tighter max-w-4xl mx-auto font-extrabold text-center leading-[1.05] md:leading-[1] font-Inter text-[56px] sm:text-[64px] md:text-7xl lg:text-[78px] text-gray-200 z-10">
+          <div className="px-4 md:px-0 tracking-tighter max-w-4xl mx-auto font-extrabold text-center leading-[1.05] md:leading-none font-Inter text-[56px] sm:text-[64px] md:text-7xl lg:text-[78px] text-gray-200 z-10">
             <span className="relative inline-block pb-2">
               Your{" "}
               {/* Ultra-pure crisp white high contrast text */}

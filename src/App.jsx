@@ -1,4 +1,5 @@
 import "./App.css";
+import DashBoard from "./Components/DashBoard";
 
 import MainPage from "./Components/MainPage";
 import Navbar from "./Components/Navbar";
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" index element={<MainPage />} />
           <Route path="/notes" element={<NoteSection />} />
+          <Route path="/dashboard" element={<DashBoard />} />
         </Routes>
         
       </BrowserRouter>
