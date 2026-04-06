@@ -10,7 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
-import { Label } from "@/components/ui/label";
+import { Label } from "@/Components/ui/Label";
 import {
   Select,
   SelectContent,
@@ -27,7 +27,10 @@ export function ChangePreference() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="gap-2 w-full sm:w-auto cursor-pointer text-muted-foreground border-border bg-transparent hover:bg-accent/50 hover:text-accent-foreground">
+        <Button
+          variant="outline"
+          className="gap-2 w-full sm:w-auto cursor-pointer text-muted-foreground border-border bg-transparent hover:bg-accent/50 hover:text-accent-foreground"
+        >
           <Settings className="h-4 w-4 " />
           Change Preferences
         </Button>
@@ -35,16 +38,21 @@ export function ChangePreference() {
       {/* Remove max-w-md since NotesNeo modal looks naturally sized, slightly dark bg */}
       <DialogContent className="sm:max-w-md border-border bg-[#121212]">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold tracking-tight">Welcome to Your Dashboard!</DialogTitle>
+          <DialogTitle className="text-2xl font-bold tracking-tight">
+            Welcome to Your Dashboard!
+          </DialogTitle>
           <DialogDescription className="text-muted-foreground text-sm pt-1">
-            Let's personalize your experience. Select your branch and semester to see relevant notes.
+            Let's personalize your experience. Select your branch and semester
+            to see relevant notes.
           </DialogDescription>
         </DialogHeader>
 
         <form action="">
           <div className="grid gap-6 py-4">
             <div className="grid gap-2">
-              <Label className="text-sm font-semibold opacity-90">Select Your Branch</Label>
+              <Label className="text-sm font-semibold opacity-90">
+                Select Your Branch
+              </Label>
               <Select value={branch} onValueChange={setBranch}>
                 <SelectTrigger className="w-full bg-[#18181b] border-border text-foreground hover:bg-[#27272a]/50">
                   <SelectValue placeholder="Choose your branch" />
@@ -58,7 +66,9 @@ export function ChangePreference() {
             </div>
 
             <div className="grid gap-2">
-              <Label className="text-sm font-semibold opacity-90">Select Your Semester</Label>
+              <Label className="text-sm font-semibold opacity-90">
+                Select Your Semester
+              </Label>
               <Select value={semester} onValueChange={setSemester}>
                 <SelectTrigger className="w-full bg-[#18181b] border-border text-foreground hover:bg-[#27272a]/50">
                   <SelectValue placeholder="Choose your semester" />
