@@ -25,6 +25,8 @@ export function ChangePreference() {
   const [semester, setSemester] = useState("");
 
   return (
+    <div className="w-fit">
+
     <Dialog>
       <DialogTrigger asChild>
         <Button
@@ -93,12 +95,13 @@ export function ChangePreference() {
             <Button
               type="button"
               className="w-full bg-[#8A8A8A] hover:bg-[#6e6e6e] text-black font-semibold tracking-wide border-none h-11 transition-all"
-            >
+              >
               Continue to Dashboard
             </Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>
+    </div>
   );
 }

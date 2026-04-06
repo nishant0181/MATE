@@ -1,10 +1,15 @@
 import React from "react";
 import { Link } from "react-router";
-
+import { motion } from "framer-motion";
 export default function Navbar() {
   return (
     <>
-      <header className=" z-60 bg-black font-Inter sticky top-0 text-white flex justify-between p-4  max-w-360 mx-auto ">
+      <motion.header
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.8, ease: "easeInOut" }}
+        className=" z-60 bg-black font-Inter sticky top-0 text-white flex justify-between p-4  max-w-360 mx-auto "
+      >
         {/* <a href="/" className="flex items-center">
           <div className="logo-wrapper">
             <span className="MATE">MATE</span>
@@ -27,13 +32,13 @@ export default function Navbar() {
         <nav className="hidden md:block ">
           <ul className="flex  text-sm ">
             <li className="px-4 py-2 rounded-xl cursor-pointer">
-              <Link to="/dashboard">DashBoard</Link>  
+              <Link to="/dashboard">DashBoard</Link>
             </li>
             <li className="px-4 py-2 rounded-xl cursor-pointer">
               <Link to="/notes">Notes</Link>
             </li>
-            <li className="px-4 py-2 rounded-xl cursor-pointer">Tutorials</li>
-            <li className="px-4 py-2 rounded-xl cursor-pointer">Books</li>
+            {/* <li className="px-4 py-2 rounded-xl cursor-pointer">Tutorials</li> */}
+            {/* <li className="px-4 py-2 rounded-xl cursor-pointer">Books</li> */}
             <li className="px-4 py-2 rounded-xl cursor-pointer">PYQS</li>
             <li className="px-4 py-2 rounded-xl cursor-pointer">Upload</li>
             {/* <li className="px-4 py-2 rounded-xl cursor-pointer">GTU</li> */}
@@ -41,7 +46,7 @@ export default function Navbar() {
             <li></li>
           </ul>
         </nav>
-      </header>
+      </motion.header>
     </>
   );
 }
