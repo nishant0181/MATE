@@ -6,6 +6,7 @@ import FInalPDFView from "./PDFViewer/FInalPDFView.jsx";
 import PDFViewerWarmup from "./PDFViewer/PDFViewerWarmup.jsx";
 import { preloadPDFViewerChunk } from "./PDFViewer/pdfViewerPreload";
 import { fetchNotes } from "../lib/notesDataSource.js";
+import { motion } from "framer-motion";
 
 export default function NoteSection() {
   const [data, setData] = useState([]);
@@ -73,9 +74,6 @@ export default function NoteSection() {
         <div className="relative bg-black w-full  flex flex-col items-center   bg-[url('/Images/Hero.svg')]  bg-cover bg-center bg-no-repeat">
           <div className=" bg-[linear-gradient(0deg,transparent_0%,#09090b_97%)]  w-full absolute top-0  z-20 h-16  md:h-28 "></div>
 
-
-
-          
           <div className=" mx-auto  mt-18 flex flex-col items-center gap-15 bg-black/50 p-4 rounded-lg z-30">
             <div className="mt-4">
               <h1 className="text-5xl font-bold  text-center tracking-wider text-white">
@@ -108,15 +106,21 @@ export default function NoteSection() {
                 Using local notes data until Supabase env keys are configured.
               </p>
             )}
- 
+
             {dataSource === "supabase" && isEmptyRemote && (
               <p className="mt-2 text-xs text-zinc-500">
-                Supabase responded with 0 notes. Check your RLS select policy or confirm rows exist in the public schema.
+                Supabase responded with 0 notes. Check your RLS select policy or
+                confirm rows exist in the public schema.
               </p>
             )}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center ">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center "
+          >
             {isLoading ? (
               <p className="text-gray-400 text-center col-span-full py-10">
                 Loading notes...
@@ -143,13 +147,12 @@ export default function NoteSection() {
                 />
               ))
             )}
-          </div>
+          </motion.div>
         </div>
         <FInalPDFView
           isOpen={isOpen}
           setIsOpen={setIsOpen}
           documentUrl={selectedPdfUrl}
-        
         />
         <PDFViewerWarmup enabled={warmPdfViewer} />
       </section>

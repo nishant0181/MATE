@@ -4,7 +4,6 @@ export default function CardofNote({
   title,
   description,
   subject,
-  year,
   university,
   pages,
   url,
@@ -38,13 +37,10 @@ export default function CardofNote({
             {subject}
           </span>
           <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
-            {year}
+            Sem : {semester}
           </span>
           <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
-            {semester}
-          </span>
-          <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
-            {branch}
+            {branch == "all" ? "All Branches" : branch}
           </span>
           <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
             {university}

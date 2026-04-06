@@ -20,7 +20,9 @@ import {
 } from "./ui/select";
 import { useState } from "react";
 
-export function ChangePreference() {
+export function ChangePreference(
+  { setProfile }: { setProfile: React.Dispatch<React.SetStateAction<{ degree: string | null; semester: string | null; setUp: boolean }>> }
+) {
   const [branch, setBranch] = useState("");
   const [semester, setSemester] = useState("");
 
@@ -60,7 +62,7 @@ export function ChangePreference() {
                   <SelectValue placeholder="Choose your branch" />
                 </SelectTrigger>
                 <SelectContent className="bg-[#18181b] border-border">
-                  <SelectItem value="btech">B.Tech</SelectItem>
+                  <SelectItem value="CE">B.Tech</SelectItem>
                   <SelectItem value="mca">MCA</SelectItem>
                   <SelectItem value="bca">BCA</SelectItem>
                 </SelectContent>

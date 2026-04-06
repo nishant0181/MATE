@@ -1,10 +1,18 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { ChangePreference } from "./ChangePreference";
 import { BookOpen, GraduationCap } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { motion } from "framer-motion";
 export default function DashBoard() {
+
+  const [profile, setProfile] = useState({
+    degree: null,
+    semester: null,
+    setUp: false,
+  });
+  console.log(profile);
+
   return (
     <>
       <motion.section
@@ -60,7 +68,7 @@ export default function DashBoard() {
             </div>
 
             <div className="self-end md:self-auto">
-              <ChangePreference />
+              <ChangePreference setProfile={setProfile} />
             </div>
           </div>
         </motion.div>
@@ -72,7 +80,7 @@ export default function DashBoard() {
               No Notes Available
             </p>
             <p className="text-sm text-neutral-500 max-w-md text-center">
-              We don't have any notes for BTech - Semester 1 yet. Check back
+              We don&apos;t have any notes for BTech - Semester 1 yet. Check back
               soon or try different preferences.
             </p>
           </div>
