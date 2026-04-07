@@ -1,17 +1,43 @@
 "use client";
-import React, { useState } from "react";
-import { ChangePreference } from "./ChangePreference";
-import { BookOpen, GraduationCap } from "lucide-react";
-import { Badge } from "./ui/badge";
-import { motion } from "framer-motion";
-export default function DashBoard() {
+import React, { useState, useEffect } from "react";
 
-  const [profile, setProfile] = useState({
-    degree: null,
-    semester: null,
-    setUp: false,
+import { BookOpen, GraduationCap, Settings, University } from "lucide-react";
+import { Badge } from "../ui/badge";
+import { motion } from "framer-motion";
+import { Button } from "../ui/button";
+import ProfileDialogBox from "./ProfileDialogBox";
+
+export default function DashBoard() {
+  const [profile, setProfile] = useState(() => {
+    const defaultProfile = {
+      university: null,
+      degree: null,
+      semester: null,
+      setUp: false,
+    };
+
+    if (typeof window === "undefined") return defaultProfile;
+
+    try {
+      const storedProfile = localStorage.getItem("profile");
+      return storedProfile
+        ? { ...defaultProfile, ...JSON.parse(storedProfile) }
+        : defaultProfile;
+    } catch {
+      return defaultProfile;
+    }
   });
-  console.log(profile);
+
+  const [isOpen, setIsOpen] = useState(() => !profile.setUp);
+  
+  useEffect(() => {
+    console.log(profile);
+    localStorage.setItem("profile", JSON.stringify(profile));
+  }, [profile]);
+
+  const changeDialog = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -23,6 +49,13 @@ export default function DashBoard() {
         className="md:max-w-350 
          mx-auto text-white font-Figtree select-none "
       >
+        <ProfileDialogBox
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          setProfile={setProfile}
+          changeDialog={changeDialog}
+        />
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -35,40 +68,37 @@ export default function DashBoard() {
                 My Dashboard
               </h1>
 
-              <div className="flex items-center gap-2 flex-wrap max-w-[350px] ">
+              <div className="flex items-center gap-2 flex-wrap max-w-87.5 ">
                 <Badge
                   variant="outline"
                   className="text-sm bg-primary/5 border-primary/20"
                 >
                   <GraduationCap className="h-3.5 w-3.5 mr-1" />
-                  Degree
+                  Degree {profile.degree ? `: ${profile.degree}` : ""}
                 </Badge>
                 <Badge
                   variant="outline"
                   className="text-sm bg-primary/5 border-primary/20"
                 >
                   <BookOpen className="h-3.5 w-3.5 mr-1" />
-                  Semester
+                  Semester {profile.semester ? `: ${profile.semester}` : ""}
                 </Badge>
                 <Badge
                   variant="outline"
                   className="text-sm bg-primary/5 border-primary/20"
                 >
                   <GraduationCap className="h-3.5 w-3.5 mr-1" />
-                  Degree
+                  University {profile.university ? `: ${profile.university}` : ""}
                 </Badge>
-                <Badge
-                  variant="outline"
-                  className="text-sm bg-primary/5 border-primary/20"
-                >
-                  <BookOpen className="h-3.5 w-3.5 mr-1" />
-                  Semester
-                </Badge>
+              
               </div>
             </div>
 
             <div className="self-end md:self-auto">
-              <ChangePreference setProfile={setProfile} />
+              <Button variant="outline" onClick={changeDialog}>
+                <Settings className="h-4 w-4 mr-2" />
+                Change Preferences
+              </Button>
             </div>
           </div>
         </motion.div>
@@ -80,8 +110,8 @@ export default function DashBoard() {
               No Notes Available
             </p>
             <p className="text-sm text-neutral-500 max-w-md text-center">
-              We don&apos;t have any notes for BTech - Semester 1 yet. Check back
-              soon or try different preferences.
+              We don&apos;t have any notes for BTech - Semester 1 yet. Check
+              back soon or try different preferences.
             </p>
           </div>
         </main>

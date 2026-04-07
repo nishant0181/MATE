@@ -80,7 +80,7 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
               
                 return (
                   <SelectItem key={value} value={value}>
-                    {branch}
+                    {branch} ({value})
                   </SelectItem>
                 );
               })}

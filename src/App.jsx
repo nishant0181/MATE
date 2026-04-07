@@ -1,5 +1,5 @@
 import "./App.css";
-import DashBoard from "./Components/DashBoard";
+import DashBoard from "./Components/Dashboard/DashBoard";
 
 import MainPage from "./Components/MainPage";
 import Navbar from "./Components/Navbar";
