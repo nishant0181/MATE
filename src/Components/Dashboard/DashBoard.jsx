@@ -1,11 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import { BookOpen, GraduationCap, Settings, University } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import ProfileDialogBox from "./ProfileDialogBox";
+import NotesContext from "../../Contexts/NotesContext";
+import CardofNote from "../CardofNote";
 
 export default function DashBoard() {
   const [profile, setProfile] = useState(() => {
@@ -29,15 +31,28 @@ export default function DashBoard() {
   });
 
   const [isOpen, setIsOpen] = useState(() => !profile.setUp);
-  
+
   useEffect(() => {
-    console.log(profile);
     localStorage.setItem("profile", JSON.stringify(profile));
   }, [profile]);
 
   const changeDialog = () => {
     setIsOpen(!isOpen);
   };
+
+  const { data, dataSource, isEmptyRemote, isLoading } =
+    useContext(NotesContext);
+
+  const [filteredData, setFilteredData] = useState(data);
+  filteredData.filter((note) => {
+    console.log(note.branch)
+    console.log(profile.degree)
+    return (
+      note.university === profile.university &&
+      note.branch === profile.degree &&
+      note.semester === profile.semester
+    );
+  });
 
   return (
     <>
@@ -47,7 +62,7 @@ export default function DashBoard() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         id="dashboardSection"
         className="md:max-w-350 
-         mx-auto text-white font-Figtree select-none "
+        mx-auto text-white font-Figtree select-none "
       >
         <ProfileDialogBox
           isOpen={isOpen}
@@ -88,9 +103,9 @@ export default function DashBoard() {
                   className="text-sm bg-primary/5 border-primary/20"
                 >
                   <GraduationCap className="h-3.5 w-3.5 mr-1" />
-                  University {profile.university ? `: ${profile.university}` : ""}
+                  University{" "}
+                  {profile.university ? `: ${profile.university}` : ""}
                 </Badge>
-              
               </div>
             </div>
 
@@ -103,18 +118,56 @@ export default function DashBoard() {
           </div>
         </motion.div>
 
-        <main className="p-8">
-          <div className="flex flex-col items-center justify-center max-w-5xl mx-auto gap-2 h-60  border2 border-primary/20 rounded-lg bg-primary/5">
-            <BookOpen className="h-12 w-12 text-primary" />
-            <p className="text-lg font-medium text-neutral-100">
-              No Notes Available
-            </p>
-            <p className="text-sm text-neutral-500 max-w-md text-center">
-              We don&apos;t have any notes for BTech - Semester 1 yet. Check
-              back soon or try different preferences.
-            </p>
-          </div>
-        </main>
+        {!profile.setUp ? (
+          <main className="p-8">
+            <div className="flex flex-col items-center justify-center max-w-5xl mx-auto gap-2 h-60  border2 border-primary/20 rounded-lg bg-primary/5">
+              <BookOpen className="h-12 w-12 text-primary" />
+              <p className="text-lg font-medium text-neutral-100">
+                No Notes Available
+              </p>
+              <p className="text-sm text-neutral-500 max-w-md text-center">
+                We don&apos;t have any notes for BTech - Semester 1 yet. Check
+                back soon or try different preferences.
+              </p>
+            </div>
+          </main>
+        ) : (
+          <main className="p-8 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center "
+            >
+              {isLoading ? (
+                <p className="text-gray-400 text-center col-span-full py-10">
+                  Loading notes...
+                </p>
+              ) : filteredData.length === 0 ? (
+                <p className="text-gray-400 text-center col-span-full py-10">
+                  No notes found matching your criteria kindly try different
+                  filters or search terms.
+                </p>
+              ) : (
+                filteredData.map((note) => (
+                  <CardofNote
+                    key={note.id}
+                    title={note.title}
+                    description={note.description}
+                    subject={note.subject}
+                    year={note.year}
+                    university={note.university}
+                    pages={note.pages}
+                    url={note.url}
+                    semester={note.semester}
+                    branch={note.branch}
+                    // onViewPDF={handleViewPDF}
+                  />
+                ))
+              )}
+            </motion.div>
+          </main>
+        )}
       </motion.section>
     </>
   );
