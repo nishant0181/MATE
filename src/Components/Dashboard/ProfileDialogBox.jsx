@@ -5,16 +5,16 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../../Components/ui/select";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
+} from "../../Components/ui/dialog";
+import { Label } from "../../Components/ui/label";
+import { Button } from "../../Components/ui/button";
 import { universityNames ,BranchNames } from "../../lib/GeneralData";
 
 
