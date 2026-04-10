@@ -9,11 +9,6 @@ import ProfileDialogBox from "./ProfileDialogBox";
 import { NotesProvider } from "../../lib/NotesProvider.js";
 import CardofNote from "../CardofNote";
 
-import FInalPDFView from "../PDFViewer/FInalPDFView.jsx";
-import PDFViewerWarmup from "../PDFViewer/PDFViewerWarmup.jsx";
-import { preloadPDFViewerChunk } from "../PDFViewer/pdfViewerPreload";
-import  PDFviewProvider  from "../../lib/PDFviewProvider.js";
-
 export default function DashBoard() {
   const [profile, setProfile] = useState(() => {
     const defaultProfile = {
@@ -48,7 +43,6 @@ export default function DashBoard() {
 
   const { data, dataSource, isEmptyRemote, isLoading } = NotesProvider();
 
-  const { isOpen : pdfViewerOpen, setIsOpen : setPdfViewerOpen, selectedPdfUrl, warmPdfViewer, setWarmPdfViewer,handleViewPDF } = PDFviewProvider();
 
   const [filteredData, setFilteredData] = useState(data);
   useEffect(() => {
@@ -56,10 +50,6 @@ export default function DashBoard() {
   }, [data]);
 
   const notes = data.filter((note) => {
-    console.log(
-      note.university === profile.university &&
-        (note.branch.includes(profile.shortDergree) || note.branch === "all"),
-    );
     return (
       note.university === profile.university &&
       (note.branch.includes(profile.shortDergree) || note.branch === "all") &&
@@ -68,19 +58,11 @@ export default function DashBoard() {
     );
   });
 
-  // const notes = data
-  //               .filter((note) => note.university === profile.university)
-  //               .filter((note) => note.branch === profile.degree || note.branch === "all")
-  //               .filter((note) => note.semester === profile.semester || note.semester.includes(profile.semester))
-
   filteredData.length !== notes.length && setFilteredData(notes);
 
   return (
     <>
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+      <section
         id="dashboardSection"
         className="md:max-w-350 
         mx-auto text-white font-Figtree select-none "
@@ -158,7 +140,7 @@ export default function DashBoard() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center "
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center "
             >
               {isLoading ? (
                 <p className="text-gray-400 text-center col-span-full py-10">
@@ -173,6 +155,7 @@ export default function DashBoard() {
                 filteredData.map((note) => (
                   <CardofNote
                     key={note.id}
+                    id={note.id}
                     title={note.title}
                     description={note.description}
                     subject={note.subject}
@@ -182,22 +165,13 @@ export default function DashBoard() {
                     url={note.url}
                     semester={note.semester}
                     branch={note.branch}
-                    onViewPDF={handleViewPDF}
                   />
                 ))
               )}
             </motion.div>
           </main>
         )}
-        
-                <FInalPDFView
-                  isOpen={pdfViewerOpen}
-                  setIsOpen={setPdfViewerOpen}
-                  documentUrl={selectedPdfUrl}
-                />
-                <PDFViewerWarmup enabled={warmPdfViewer} />
-
-      </motion.section>
+      </section>
     </>
   );
 }

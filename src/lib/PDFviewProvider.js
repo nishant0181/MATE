@@ -7,6 +7,7 @@ export default function PDFviewProvider() {
     const [selectedPdfUrl, setSelectedPdfUrl] = useState("");
 
 
+
     const handleViewPDF = ({ url }) => {
         void preloadPDFViewerChunk();
         setSelectedPdfUrl(url);
@@ -17,6 +18,6 @@ export default function PDFviewProvider() {
         setIsOpen,
         selectedPdfUrl,
         setSelectedPdfUrl,
-        handleViewPDF
+        handleViewPDF,
     }
 }

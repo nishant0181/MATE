@@ -1,47 +1,22 @@
 import React, {  useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { NotesProvider } from "../lib/NotesProvider.js";
 import InputFilter from "./InputFilter";
 import SelectionFilterMenu from "./SelectionFilterMenu";
 import CardofNote from "./CardofNote";
 
-import FInalPDFView from "./PDFViewer/FInalPDFView.jsx";
-import PDFViewerWarmup from "./PDFViewer/PDFViewerWarmup.jsx";
-import { preloadPDFViewerChunk } from "./PDFViewer/pdfViewerPreload";
-
-import { motion } from "framer-motion";
-import { NotesProvider } from "../lib/NotesProvider.js";
-import  PDFviewProvider  from "../lib/PDFviewProvider.js";
 
 export default function NoteSection() {
   
   const {data, dataSource, isEmptyRemote, isLoading } =  NotesProvider();
   const [filteredData, setFilteredData] = useState(data);
 
-  const { isOpen, setIsOpen, selectedPdfUrl, warmPdfViewer, setWarmPdfViewer,handleViewPDF } = PDFviewProvider();
 
-
-  useEffect(()=>{
-    setFilteredData(data)
-  },[data])
-  
 
   useEffect(() => {
-    const preloadTimer = window.setTimeout(() => {
-      void preloadPDFViewerChunk();
-      setWarmPdfViewer(true);
-    }, 1500);
+    setFilteredData(data);
+  }, [data]);
 
-    return () => {
-      window.clearTimeout(preloadTimer);
-    };
-  }, []);
-
-
-
-  // const handleViewPDF = ({ url }) => {
-  //   void preloadPDFViewerChunk();
-  //   setSelectedPdfUrl(url);
-  //   setIsOpen(true);
-  // };
 
   return (
     <>
@@ -101,7 +76,7 @@ export default function NoteSection() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center "
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center "
           >
             {isLoading ? (
               <p className="text-gray-400 text-center col-span-full py-10">
@@ -116,6 +91,7 @@ export default function NoteSection() {
               filteredData.map((note) => (
                 <CardofNote
                   key={note.id}
+                  id={note.id}
                   title={note.title}
                   description={note.description}
                   subject={note.subject}
@@ -125,7 +101,7 @@ export default function NoteSection() {
                   url={note.url}
                   semester={note.semester}
                   branch={note.branch}
-                  onViewPDF={handleViewPDF}
+                  FileMode={false}
                 />
               ))
             )}
@@ -133,13 +109,9 @@ export default function NoteSection() {
         </div>
 
 
-        <FInalPDFView
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          documentUrl={selectedPdfUrl}
-        />
-        <PDFViewerWarmup enabled={warmPdfViewer} />
       </section>
+
+    
     </>
   );
 }
