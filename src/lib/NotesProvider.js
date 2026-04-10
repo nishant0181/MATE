@@ -1,9 +1,7 @@
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchNotes } from "../lib/notesDataSource";
 
-const NotesContext = createContext();
-
-export function NotesProvider({children}){
+export function NotesProvider() {
     const [data, setData] = useState([]);
     const [dataSource, setDataSource] = useState("local");
     const [isEmptyRemote, setIsEmptyRemote] = useState(false);
@@ -15,6 +13,7 @@ export function NotesProvider({children}){
         async function loadNotes() {
             setIsLoading(true);
 
+            
             const { notes, source, isEmptyRemote } = await fetchNotes();
 
             if (!isMounted) {
@@ -28,20 +27,11 @@ export function NotesProvider({children}){
         }
 
         void loadNotes();
-
+      
         return () => {
             isMounted = false;
         };
-    }, []);
+    }, [ data]);
 
-    return (
-        <NotesContext.Provider value={{data, dataSource, isEmptyRemote, isLoading}}>
-            {children}
-        </NotesContext.Provider>
-    )
+    return ({ data, dataSource, isEmptyRemote, isLoading })
 }   
-
-
-
-
-export default NotesContext;

@@ -17,16 +17,22 @@ import { Label } from "../../Components/ui/label";
 import { Button } from "../../Components/ui/button";
 import { universityNames, BranchNames } from "../../lib/GeneralData";
 
-// eslint-disable-next-line no-unused-vars
 export default function ProfileDialogBox({ isOpen, changeDialog, setProfile }) {
   const [university, setUniversity] = useState(universityNames[0]);
   const [branch, setBranch] = useState(BranchNames[0][0]);
   const [semester, setSemester] = useState("1");
+  const [shortDergree, setShortDergree] = useState(BranchNames[0][1]);
 
   const handleContinue = () => {
     // Here you can add logic to save the user's selections if needed
 
-    setProfile({ university, degree: branch, semester, setUp: true });
+    setProfile({
+      university,
+      degree: branch,
+      shortDergree,
+      semester,
+      setUp: true,
+    });
     changeDialog();
   };
 
@@ -67,14 +73,20 @@ export default function ProfileDialogBox({ isOpen, changeDialog, setProfile }) {
               <Label htmlFor="branch" className="text-base font-medium">
                 Select Your Branch
               </Label>
-              <Select value={branch} onValueChange={setBranch}>
+              <Select
+                value={branch}
+                onValueChange={(value) => {
+                  setBranch(value);
+                  const short = BranchNames.find(([name]) => name === value)?.[1];
+                  setShortDergree(short);
+                }}
+              >
                 <SelectTrigger id="branch" className="h-11">
                   <SelectValue placeholder={branch[0][0]} />
                 </SelectTrigger>
                 <SelectContent>
                   {BranchNames.map(([name, short]) => (
                     <SelectItem key={short} value={name}>
-
                       {name} ({short})
                     </SelectItem>
                   ))}

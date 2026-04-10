@@ -54,7 +54,7 @@ const localNotes = [
     subject: "Physics",
 
     semester: "3",
-    branch: "Robatics&Automatics",
+    branch: "RA",
     university: "GTU",
     pages: 50,
     url: "https://example.com/physics3-notes",

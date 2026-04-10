@@ -1,19 +1,25 @@
 "use client";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 
 import { BookOpen, GraduationCap, Settings, University } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import ProfileDialogBox from "./ProfileDialogBox";
-import NotesContext from "../../Contexts/NotesContext";
+import { NotesProvider } from "../../lib/NotesProvider.js";
 import CardofNote from "../CardofNote";
+
+import FInalPDFView from "../PDFViewer/FInalPDFView.jsx";
+import PDFViewerWarmup from "../PDFViewer/PDFViewerWarmup.jsx";
+import { preloadPDFViewerChunk } from "../PDFViewer/pdfViewerPreload";
+import  PDFviewProvider  from "../../lib/PDFviewProvider.js";
 
 export default function DashBoard() {
   const [profile, setProfile] = useState(() => {
     const defaultProfile = {
       university: null,
       degree: null,
+      shortDergree: null,
       semester: null,
       setUp: false,
     };
@@ -40,19 +46,34 @@ export default function DashBoard() {
     setIsOpen(!isOpen);
   };
 
-  const { data, dataSource, isEmptyRemote, isLoading } =
-    useContext(NotesContext);
+  const { data, dataSource, isEmptyRemote, isLoading } = NotesProvider();
+
+  const { isOpen : pdfViewerOpen, setIsOpen : setPdfViewerOpen, selectedPdfUrl, warmPdfViewer, setWarmPdfViewer,handleViewPDF } = PDFviewProvider();
 
   const [filteredData, setFilteredData] = useState(data);
-  filteredData.filter((note) => {
-    console.log(note.branch)
-    console.log(profile.degree)
+  useEffect(() => {
+    setFilteredData(data);
+  }, [data]);
+
+  const notes = data.filter((note) => {
+    console.log(
+      note.university === profile.university &&
+        (note.branch.includes(profile.shortDergree) || note.branch === "all"),
+    );
     return (
       note.university === profile.university &&
-      note.branch === profile.degree &&
-      note.semester === profile.semester
+      (note.branch.includes(profile.shortDergree) || note.branch === "all") &&
+      (note.semester === profile.semester ||
+        note.semester.includes(profile.semester))
     );
   });
+
+  // const notes = data
+  //               .filter((note) => note.university === profile.university)
+  //               .filter((note) => note.branch === profile.degree || note.branch === "all")
+  //               .filter((note) => note.semester === profile.semester || note.semester.includes(profile.semester))
+
+  filteredData.length !== notes.length && setFilteredData(notes);
 
   return (
     <>
@@ -161,13 +182,21 @@ export default function DashBoard() {
                     url={note.url}
                     semester={note.semester}
                     branch={note.branch}
-                    // onViewPDF={handleViewPDF}
+                    onViewPDF={handleViewPDF}
                   />
                 ))
               )}
             </motion.div>
           </main>
         )}
+        
+                <FInalPDFView
+                  isOpen={pdfViewerOpen}
+                  setIsOpen={setPdfViewerOpen}
+                  documentUrl={selectedPdfUrl}
+                />
+                <PDFViewerWarmup enabled={warmPdfViewer} />
+
       </motion.section>
     </>
   );

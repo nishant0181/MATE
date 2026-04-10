@@ -1,22 +1,28 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import InputFilter from "./InputFilter";
 import SelectionFilterMenu from "./SelectionFilterMenu";
 import CardofNote from "./CardofNote";
+
 import FInalPDFView from "./PDFViewer/FInalPDFView.jsx";
 import PDFViewerWarmup from "./PDFViewer/PDFViewerWarmup.jsx";
 import { preloadPDFViewerChunk } from "./PDFViewer/pdfViewerPreload";
-import { fetchNotes } from "../lib/notesDataSource.js";
+
 import { motion } from "framer-motion";
-import NotesContext from "../Contexts/NotesContext.jsx";
+import { NotesProvider } from "../lib/NotesProvider.js";
+import  PDFviewProvider  from "../lib/PDFviewProvider.js";
 
 export default function NoteSection() {
-  const {data, dataSource, isEmptyRemote, isLoading } = useContext(NotesContext);
-
-
+  
+  const {data, dataSource, isEmptyRemote, isLoading } =  NotesProvider();
   const [filteredData, setFilteredData] = useState(data);
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedPdfUrl, setSelectedPdfUrl] = useState("");
-  const [warmPdfViewer, setWarmPdfViewer] = useState(false);
+
+  const { isOpen, setIsOpen, selectedPdfUrl, warmPdfViewer, setWarmPdfViewer,handleViewPDF } = PDFviewProvider();
+
+
+  useEffect(()=>{
+    setFilteredData(data)
+  },[data])
+  
 
   useEffect(() => {
     const preloadTimer = window.setTimeout(() => {
@@ -29,37 +35,13 @@ export default function NoteSection() {
     };
   }, []);
 
-  // useEffect(() => {
-  //   let isMounted = true;
 
-  //   async function loadNotes() {
-  //     setIsLoading(true);
 
-  //     const { notes, source, isEmptyRemote } = await fetchNotes();
-
-  //     if (!isMounted) {
-  //       return;
-  //     }
-
-  //     setData(notes);
-  //     setFilteredData(notes);
-  //     setDataSource(source);
-  //     setIsEmptyRemote(isEmptyRemote);
-  //     setIsLoading(false);
-  //   }
-
-  //   void loadNotes();
-
-  //   return () => {
-  //     isMounted = false;
-  //   };
-  // }, []);
-
-  const handleViewPDF = ({ url }) => {
-    void preloadPDFViewerChunk();
-    setSelectedPdfUrl(url);
-    setIsOpen(true);
-  };
+  // const handleViewPDF = ({ url }) => {
+  //   void preloadPDFViewerChunk();
+  //   setSelectedPdfUrl(url);
+  //   setIsOpen(true);
+  // };
 
   return (
     <>
@@ -149,6 +131,8 @@ export default function NoteSection() {
             )}
           </motion.div>
         </div>
+
+
         <FInalPDFView
           isOpen={isOpen}
           setIsOpen={setIsOpen}
