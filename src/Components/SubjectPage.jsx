@@ -68,21 +68,15 @@ export default function SubjectPage() {
     }
   }, [isLoading, subject]);
 
-  if (isLoading) {
-    return (
-      <div>
-        <p>Loading...</p>
-      </div>
-    );
-  }
+
 
   if (!subject) {
     return (
-      <div>
+      <div className="flex flex-col items-center justify-center h-screen">
+        <p className="text-gray-400 text-center col-span-full py-10">Subject not found</p>
         <button onClick={() => navigate("/")}>Go to Home</button>
-        <p>Subject not found</p>
       </div>
-    );
+    )   
   }
 
   const handleCopyLink = () => {
