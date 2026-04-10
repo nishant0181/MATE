@@ -19,7 +19,12 @@ export default function CardofNote({
   onViewPDF,
 }) {
   const handleShare = () => {
-    navigator.clipboard.writeText(window.location.href);
+    let shareUrl = window.location.origin + window.location.pathname;
+
+    if (FileMode && id) {
+      shareUrl = shareUrl + `?highlight=${id}`;
+    }
+    navigator.clipboard.writeText(shareUrl);
     toast.success("Link copied to clipboard!", {
       position: "bottom-right",
     });
@@ -28,6 +33,7 @@ export default function CardofNote({
   return (
     <>
       <motion.div
+        id={id}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -126,7 +132,7 @@ export default function CardofNote({
             <Share2 className="size-4" />{" "}
           </button>
         </div>
-      <Toaster />
+        <Toaster />
       </motion.div>
     </>
   );
