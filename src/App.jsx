@@ -5,13 +5,13 @@ import Navbar from "./Components/Navbar";
 import NoteSection from "./Components/NoteSection";
 import { BrowserRouter, Routes, Route } from "react-router";
 import SubjectPage from "./Components/SubjectPage";
-
-
+import FavoritesProvider from "./contexts/FavoritesProvider";
+import FavoritesPage from "./Components/FavoritesPage";
 
 function App() {
   return (
     <>
-      
+      <FavoritesProvider>
         <BrowserRouter>
           <Navbar />
           <Routes>
@@ -19,9 +19,10 @@ function App() {
             <Route path="/notes" element={<NoteSection />} />
             <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/subject/:id" element={<SubjectPage />} />
+            <Route path="/favorites" element={<FavoritesPage />} />
           </Routes>
         </BrowserRouter>
-      
+      </FavoritesProvider>
     </>
   );
 }

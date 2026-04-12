@@ -68,15 +68,15 @@ export default function SubjectPage() {
     }
   }, [isLoading, subject]);
 
-
-
   if (!subject) {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
-        <p className="text-gray-400 text-center col-span-full py-10">Subject not found</p>
+        <p className="text-gray-400 text-center col-span-full py-10">
+          Subject not found
+        </p>
         <button onClick={() => navigate("/")}>Go to Home</button>
       </div>
-    )   
+    );
   }
 
   const handleCopyLink = () => {
@@ -104,7 +104,7 @@ export default function SubjectPage() {
             onClick={() => navigate(-1)}
           >
             <ArrowLeft className="h-4 w-4" />
-            Back 
+            Back
           </button>
           <div className="flex flex-col md:flex-row px-4 md:px-8 py-4 md:items-center  gap-8 md:justify-between ">
             <div className="flex flex-col gap-2">

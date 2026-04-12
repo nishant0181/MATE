@@ -154,6 +154,7 @@ export default function DashBoard() {
               ) : (
                 filteredData.map((note) => (
                   <CardofNote
+                  note={note}
                     key={note.id}
                     id={note.id}
                     title={note.title}

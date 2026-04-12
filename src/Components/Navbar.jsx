@@ -39,6 +39,9 @@ export default function Navbar() {
             </li>
             {/* <li className="px-4 py-2 rounded-xl cursor-pointer">Tutorials</li> */}
             {/* <li className="px-4 py-2 rounded-xl cursor-pointer">Books</li> */}
+            <li className="px-4 py-2 rounded-xl cursor-pointer">
+              <Link to="/favorites">Favorites</Link>
+            </li>
             <li className="px-4 py-2 rounded-xl cursor-pointer">PYQS</li>
             <li className="px-4 py-2 rounded-xl cursor-pointer">Upload</li>
             {/* <li className="px-4 py-2 rounded-xl cursor-pointer">GTU</li> */}

@@ -1,11 +1,16 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 import { Share2 } from "lucide-react";
 import { Toaster } from "./ui/sonner";
 import { toast } from "sonner";
+import { Button } from "./ui/button";
+import { Heart } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useState, useContext } from "react";
+import { FavoritesContext } from "@/contexts/FavoritesProvider";
 
 export default function CardofNote({
+  note,
   id,
   title,
   description,
@@ -18,6 +23,7 @@ export default function CardofNote({
   branch,
   onViewPDF,
 }) {
+  
   const handleShare = () => {
     let shareUrl = window.location.origin + window.location.pathname;
 
@@ -29,6 +35,9 @@ export default function CardofNote({
       position: "bottom-right",
     });
   };
+
+  const { favorites, toggleFavorite, isFavorite } =
+    useContext(FavoritesContext);
 
   return (
     <>
@@ -84,43 +93,71 @@ export default function CardofNote({
 
         <div className="flex items-center justify-center gap-4 mt-5 md:mt-10">
           {FileMode && (
-            <button
-              onClick={() => onViewPDF({ url })}
-              className="mx-auto text-center transition-colors duration-300 bg-white hover:bg-zinc-200 font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full "
-            >
-              View Notes
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="currentColor"
-                viewBox="0 0 256 256"
-                className="size-4"
+            <>
+              <button
+                onClick={() => onViewPDF({ url })}
+                className="mx-auto text-center transition-colors duration-300 bg-white hover:bg-zinc-200 font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full "
               >
-                <path d="M216,128l-72,72V56Z" opacity="0.2"></path>
-                <path d="M221.66,122.34l-72-72A8,8,0,0,0,136,56v64H40a8,8,0,0,0,0,16h96v64a8,8,0,0,0,13.66,5.66l72-72A8,8,0,0,0,221.66,122.34ZM152,180.69V75.31L204.69,128Z"></path>
-              </svg>
-            </button>
+                View Notes
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                  className="size-4"
+                >
+                  <path d="M216,128l-72,72V56Z" opacity="0.2"></path>
+                  <path d="M221.66,122.34l-72-72A8,8,0,0,0,136,56v64H40a8,8,0,0,0,0,16h96v64a8,8,0,0,0,13.66,5.66l72-72A8,8,0,0,0,221.66,122.34ZM152,180.69V75.31L204.69,128Z"></path>
+                </svg>
+              </button>
+            </>
           )}
 
           {!FileMode && (
-            <Link
-              to={`/subject/${id}`}
-              className="mx-auto text-center  transition-colors duration-300 bg-white hover:bg-zinc-200 font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full"
-            >
-              View Notes
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="currentColor"
-                viewBox="0 0 256 256"
-                className="size-4"
+            <>
+              <Link
+                to={`/subject/${id}`}
+                className="mx-auto text-center  transition-colors duration-300 bg-white hover:bg-zinc-200 font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full"
               >
-                <path d="M216,128l-72,72V56Z" opacity="0.2"></path>
-                <path d="M221.66,122.34l-72-72A8,8,0,0,0,136,56v64H40a8,8,0,0,0,0,16h96v64a8,8,0,0,0,13.66,5.66l72-72A8,8,0,0,0,221.66,122.34ZM152,180.69V75.31L204.69,128Z"></path>
-              </svg>
-            </Link>
+                View Notes
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                  className="size-4"
+                >
+                  <path d="M216,128l-72,72V56Z" opacity="0.2"></path>
+                  <path d="M221.66,122.34l-72-72A8,8,0,0,0,136,56v64H40a8,8,0,0,0,0,16h96v64a8,8,0,0,0,13.66,5.66l72-72A8,8,0,0,0,221.66,122.34ZM152,180.69V75.31L204.69,128Z"></path>
+                </svg>
+              </Link>
+
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => toggleFavorite(note)}
+                className={cn(
+                  "h-8 w-8 p-0 hover:scale-105 active:scale-95 transition-all",
+                  isFavorite(note)
+                    ? "bg-red-50 border-red-200 hover:bg-red-100 dark:bg-red-950 dark:border-red-800 dark:hover:bg-red-900"
+                    : "hover:border-red-200 hover:bg-red-50 dark:hover:border-red-800 dark:hover:bg-red-950",
+                )}
+                aria-label={
+                  isFavorite(note) ? "Remove from favorites" : "Add to favorites"
+                }
+              >
+                <Heart
+                  className={cn(
+                    "h-4 w-4 transition-all duration-200",
+                    isFavorite(note)
+                      ? "fill-red-500 text-red-500"
+                      : "text-muted-foreground",
+                  )}
+                />
+              </Button>
+            </>
           )}
 
           <button
