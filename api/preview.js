@@ -1,30 +1,37 @@
 import fs from 'fs';
 import path from 'path';
-import { getLocalNotes } from '../src/lib/localNotes.js'; // 1. Standard Import!
+import { getLocalNotes } from '../src/lib/localNotes.js'; 
 
-export default function handler(req, res) { // 2. standard req, res format
+export default function handler(req, res) { 
     try {
-        const htmlPath = path.join(process.cwd(), 'index.html');
+        // 1. Grab the real production HTML file from the 'dist' folder!
+        let htmlPath = path.join(process.cwd(), 'dist', 'index.html');
+        
+        // (Fallback if 'dist' doesn't exist for some reason)
+        if (!fs.existsSync(htmlPath)) {
+            htmlPath = path.join(process.cwd(), 'index.html');
+        }
+        
         let htmlString = fs.readFileSync(htmlPath, 'utf-8');
 
-        const data = getLocalNotes(); // 3. Call the imported function
-        const subjectId = req.query.id; // 4. This comes from the $id in vercel.json
+        // 2. Extract the ID natively from the URL (bulletproof method)
+        // If req.url is "/subject/mathematics-1", this pulls out "mathematics-1"
+        const subjectId = req.url.split('?')[0].split('/').pop();
 
-        // Find the subject, or fallback to an empty object if not found
+        const data = getLocalNotes(); 
         const subject = data.find((item) => item.id === subjectId) || {};
 
+        // 3. Fallbacks
         const title = subject.title || "MATE | Your College Notes";
         const description = subject.description || "Get all your college syllabus, notes, and pyq in one click!";
-  
-
-        // 5. You MUST save the replaced string back into a variable!
+        
+        // 4. Swap Strings
         htmlString = htmlString
             .replace('content="MATE | Your College Notes"', `content="${title}"`)
-            .replace('content="Get all your college syllabus, notes, and pyq in one click!"', `content="${description}"`)
+            .replace('content="Get all your college syllabus, notes, and pyq in one click!"', `content="${description}"`);
 
-        // 6. Send response using Node.js express style
         res.status(200).send(htmlString);
-
+        
     } catch (error) {
         console.error(error);
         res.status(500).send("Error generating preview snippet");
