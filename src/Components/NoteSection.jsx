@@ -1,22 +1,17 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { NotesProvider } from "../lib/NotesProvider.js";
 import InputFilter from "./InputFilter";
 import SelectionFilterMenu from "./SelectionFilterMenu";
 import CardofNote from "./CardofNote";
 
-
 export default function NoteSection() {
-  
-  const {data, dataSource, isEmptyRemote, isLoading } =  NotesProvider();
+  const { data, dataSource, isEmptyRemote, isLoading } = NotesProvider();
   const [filteredData, setFilteredData] = useState(data);
-
-
 
   useEffect(() => {
     setFilteredData(data);
   }, [data]);
-
 
   return (
     <>
@@ -31,7 +26,12 @@ export default function NoteSection() {
         <div className="relative bg-black w-full  flex flex-col items-center   bg-[url('/Images/Hero.svg')]  bg-cover bg-center bg-no-repeat">
           <div className=" bg-[linear-gradient(0deg,transparent_0%,#09090b_97%)]  w-full absolute top-0  z-20 h-16  md:h-28 "></div>
 
-          <div className=" mx-auto  mt-18 flex flex-col items-center gap-15 bg-black/50 p-4 rounded-lg z-30">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className=" mx-auto  mt-18 flex flex-col items-center gap-15 bg-black/50 p-4 rounded-lg z-30"
+          >
             <div className="mt-4">
               <h1 className="text-5xl font-bold  text-center tracking-wider text-white">
                 Welcome to Mate Notes!
@@ -47,7 +47,7 @@ export default function NoteSection() {
               filteredData={filteredData}
               setFilteredData={setFilteredData}
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="mx-auto max-w-6xl px-6 py-12">
@@ -107,11 +107,7 @@ export default function NoteSection() {
             )}
           </motion.div>
         </div>
-
-
       </section>
-
-    
     </>
   );
 }

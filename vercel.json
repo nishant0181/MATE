@@ -1,6 +1,10 @@
 {
     "rewrites": [
         {
+            "source": "/subject/:id",
+            "destination": "/api/preview?id=$id"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html"
         }
