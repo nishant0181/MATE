@@ -1,6 +1,4 @@
-import { Heart, Home, LayoutDashboard, Notebook, Search, User } from "lucide-react";
-import { Button } from "./ui/button";
-import { Dock, DockIcon } from "@/components/ui/dock";
+import { Heart, Home, LayoutDashboard, Notebook, User } from "lucide-react";
 import { Link } from "react-router";
 
 export default function GlassDock() {
