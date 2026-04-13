@@ -5,6 +5,7 @@ import Features from "./Features";
 import BottomFade from "./BottomFade";
 import { motion } from "framer-motion";
 
+
 export default function MainPage() {
   return (
     <motion.div

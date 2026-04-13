@@ -10,10 +10,10 @@ export default function Hero() {
           {/* Sophisticated Ambient White/Blue Light */}
           <div className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,rgba(100,150,255,0.03)_50%,transparent_100%)] blur-[100px] rounded-full pointer-events-none mix-blend-screen"></div>
 
-          <div className="bg-[linear-gradient(0deg,transparent_0%,#09090b_97%)] w-full absolute top-0 z-20 h-16 md:h-28"></div>
+       
 
           {/* Premium Glassmorphism Badge */}
-          <div className="mt-20 lg:mt-32 mb-8 text-[12px] md:text-sm font-Inter text-white/80 bg-white/5 border border-white/10 backdrop-blur-md rounded-full px-4 py-1.5 flex items-center justify-center gap-2 hover:bg-white/10 hover:text-white transition-all cursor-pointer z-10 shadow-[0_0_15px_rgba(255,255,255,0.03)]">
+          <div className="mt-20 lg:mt-28 mb-8 text-[12px] md:text-sm font-Inter text-white/80 bg-white/5 border border-white/10 backdrop-blur-md rounded-full px-4 py-1.5 flex items-center justify-center gap-2 hover:bg-white/10 hover:text-white transition-all cursor-pointer z-10 shadow-[0_0_15px_rgba(255,255,255,0.03)]">
             Now it&apos;s time for comeback
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ export default function Hero() {
             ditching outdated study methods.
           </p>
 
-          <div className="p-10 flex flex-wrap justify-center items-center gap-4 z-10 mt-2">
+          <div className="pt-10 z-20 flex flex-wrap justify-center items-center gap-4  mt-2">
             <Link to="/notes">
               <div className="bg-white hover:bg-gray-200 transition-colors font-Inter font-semibold leading-tight text-sm text-black flex items-center gap-2 py-3 px-6 rounded-full cursor-pointer shadow-[0_0_20px_rgba(255,255,255,0.15)]">
                 <svg

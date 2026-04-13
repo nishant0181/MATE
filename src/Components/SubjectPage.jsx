@@ -91,7 +91,7 @@ export default function SubjectPage() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         id="dashboardSection"
         className="max-w-5xl
-             mx-auto text-white font-Figtree select-none "
+             mx-auto text-white font-Figtree select-none mb-20"
       >
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -100,7 +100,7 @@ export default function SubjectPage() {
           className="relative bg-[#0a0a0a] mx-auto max-w-5xl w-full flex flex-col pt-8 pb-4 border-t border-b  border-primary/20"
         >
           <button
-            className="flex items-center gap-2 text-neutral-400 hover:text-white px-4 md:px-8 transition-colors w-fit"
+            className="z-70 flex items-center gap-2 text-neutral-400 hover:text-white px-4 md:px-8 transition-colors w-fit"
             onClick={() => navigate(-1)}
           >
             <ArrowLeft className="h-4 w-4" />

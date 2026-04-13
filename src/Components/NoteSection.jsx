@@ -19,7 +19,7 @@ export default function NoteSection() {
         id="noteSection"
         className="md:max-w-350 scroll-smooth 
         font-Inter mx-auto text-white select-none 
-        
+        mb-20
         
         "
       >

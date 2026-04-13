@@ -22,6 +22,7 @@ export default function CardofNote({
   FileMode,
   branch,
   onViewPDF,
+  onOpenChange
 }) {
   
   const handleShare = () => {
@@ -49,6 +50,7 @@ export default function CardofNote({
         className="relative z-0 flex flex-col bg-[#151516]  border  border-[#3c3c3c] rounded-lg p-7 
         transition-all duration-300  1
 
+      
         shadow-[14px_14px_0px_-1px_rgba(255,255,255,0.10)]
         hover:shadow-[8px_8px_0px_-1px_rgba(255,255,255,0.15)]
         max-w-[350px]  
@@ -119,6 +121,7 @@ export default function CardofNote({
               <Link
                 to={`/subject/${id}`}
                 className="mx-auto text-center  transition-colors duration-300 bg-white hover:bg-zinc-200 font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full"
+                onClick={() => onOpenChange(false)}
               >
                 View Notes
                 <svg
