@@ -9,7 +9,7 @@ export default function Hero() {
       <section className="md:max-w-350 font-Inter mx-auto text-black dark:text-white select-none relative">
         <div className="relative overflow-hidden bg-zinc-50 dark:bg-background w-full flex flex-col items-center pb-24 md:pb-32">
           {/* The Background Grid Image (Inverts on Light Mode) */}
-          <div className="absolute inset-0 bg-[url('/Images/Gridwithstars.svg')] bg-cover bg-center bg-no-repeat invert dark:invert-0 z-0 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
+          <div className="absolute inset-0 bg-[url('/Images/Gridwithstars.svg')] bg-cover bg-center bg-no-repeat invert dark:invert-0 z-0 pointer-events-none mask-[radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
 
           {/* Edge Gradients for Smooth Fading */}
           <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-zinc-50 dark:from-background to-transparent z-0 pointer-events-none"></div>
@@ -82,7 +82,7 @@ export default function Hero() {
           </div>
 
           <div className="absolute bottom-0 w-full h-[50px] md:h-[100px] z-30 pointer-events-none">
-            <div className="netflix-curve"></div>
+            
           </div>
         </div>
       </section>

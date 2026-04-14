@@ -14,8 +14,7 @@ export default function useRecentNotes() {
             return [
                 "mathematics-1",
                 "mathematics-2",
-                "physics-5",
-                "fai-1",
+                "physics-5"
             ];
         }
         
@@ -39,7 +38,7 @@ export default function useRecentNotes() {
             const filtered = prev.filter((existingId) => existingId !== id);
 
             // Step B: Push it to the front, and slice it so we only keep 4 items max!
-            return [id, ...filtered].slice(0, 4);
+            return [id, ...filtered].slice(0, 3);
         });
     };
 

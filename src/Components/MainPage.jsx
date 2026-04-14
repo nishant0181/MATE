@@ -10,11 +10,14 @@ export default function MainPage() {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="relative"
+      className="relative mx-auto max-w-7xl "
     >
       <Hero />
+      <div className="h-8 bg-dashed max-w-7xl mx-auto"></div>
       <NotesFeedOnHome />
+      <div className="h-8 bg-dashed max-w-7xl mx-auto"></div>
       <Features />
+      <div className="h-8 bg-dashed max-w-7xl mx-auto mb-20"></div>
     </motion.div>
   );
 }
