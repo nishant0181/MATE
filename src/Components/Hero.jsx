@@ -7,9 +7,15 @@ export default function Hero() {
   return (
     <>
       <section className="md:max-w-350 font-Inter mx-auto text-black dark:text-white select-none relative">
-        <div className="relative overflow-hidden bg-zinc-50 dark:bg-[#09090b] w-full flex flex-col items-center">
+        <div className="relative overflow-hidden bg-zinc-50 dark:bg-background w-full flex flex-col items-center pb-24 md:pb-32">
           {/* The Background Grid Image (Inverts on Light Mode) */}
-          <div className="absolute inset-0 bg-[url('/Images/Hero.svg')] bg-cover bg-center bg-no-repeat invert dark:invert-0 z-0 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-[url('/Images/Gridwithstars.svg')] bg-cover bg-center bg-no-repeat invert dark:invert-0 z-0 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
+
+          {/* Edge Gradients for Smooth Fading */}
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-zinc-50 dark:from-background to-transparent z-0 pointer-events-none"></div>
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-zinc-50 dark:from-background to-transparent z-0 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-zinc-50 dark:from-background to-transparent z-0 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-zinc-50 dark:from-background to-transparent z-0 pointer-events-none"></div>
 
           {/* Sophisticated Ambient White/Blue Light */}
           <div className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] bg-[radial-gradient(circle,rgba(0,0,0,0.03)_0%,rgba(100,150,255,0.02)_50%,transparent_100%)] dark:bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,rgba(100,150,255,0.03)_50%,transparent_100%)] blur-[100px] rounded-full pointer-events-none mix-blend-multiply dark:mix-blend-screen z-0"></div>
@@ -73,6 +79,10 @@ export default function Hero() {
                 DashBoard
               </div>
             </Link>
+          </div>
+
+          <div className="absolute bottom-0 w-full h-[50px] md:h-[100px] z-30 pointer-events-none">
+            <div className="netflix-curve"></div>
           </div>
         </div>
       </section>

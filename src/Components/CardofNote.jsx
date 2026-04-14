@@ -6,8 +6,9 @@ import { toast } from "sonner";
 import { Button } from "./ui/button";
 import { Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { FavoritesContext } from "@/contexts/FavoritesProvider";
+import useRecentNotes from "../hooks/useRecentNotes";
 
 export default function CardofNote({
   note,
@@ -22,9 +23,9 @@ export default function CardofNote({
   FileMode,
   branch,
   onViewPDF,
-  onOpenChange
+  setIsOpen,
 }) {
-  
+  const [recentNotes, setNoteId] = useRecentNotes();
   const handleShare = () => {
     let shareUrl = window.location.origin + window.location.pathname;
 
@@ -70,7 +71,9 @@ export default function CardofNote({
                 className="w-10"
               />
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{description}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+              {description}
+            </p>
           </div>
         </div>
         <div className="flex flex-wrap gap-2 mb-4">
@@ -123,7 +126,11 @@ export default function CardofNote({
               <Link
                 to={`/subject/${id}`}
                 className="mx-auto text-center transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 font-Figtree font-medium leading-tight text-sm dark:text-black text-zinc-900 flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full "
-                onClick={() => onOpenChange(false)}
+                onClick={() => {
+                  setNoteId(id);
+                  
+                  setIsOpen(false);
+                }}
               >
                 View Notes
                 <svg
@@ -150,7 +157,9 @@ export default function CardofNote({
                     : "hover:border-red-200 hover:bg-red-50 dark:hover:border-red-800 dark:hover:bg-red-950",
                 )}
                 aria-label={
-                  isFavorite(note) ? "Remove from favorites" : "Add to favorites"
+                  isFavorite(note)
+                    ? "Remove from favorites"
+                    : "Add to favorites"
                 }
               >
                 <Heart

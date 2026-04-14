@@ -13,8 +13,8 @@ export default function MainPage() {
       className="relative"
     >
       <Hero />
-      <Features />
       <NotesFeedOnHome />
+      <Features />
     </motion.div>
   );
 }

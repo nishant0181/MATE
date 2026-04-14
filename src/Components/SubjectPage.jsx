@@ -91,13 +91,13 @@ export default function SubjectPage() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         id="dashboardSection"
         className="max-w-5xl
-             mx-auto text-white font-Figtree select-none mb-20"
+             mx-auto text-black dark:text-white font-Figtree select-none mb-20"
       >
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative bg-[#0a0a0a] mx-auto max-w-5xl w-full flex flex-col pt-8 pb-4 border-t border-b  border-primary/20"
+          className="relative bg-zinc-50 dark:bg-[#0a0a0a] mx-auto max-w-5xl w-full flex flex-col pt-8 pb-4 border-t border-b  border-primary/20"
         >
           <button
             className="z-70 flex items-center gap-2 text-neutral-400 hover:text-white px-4 md:px-8 transition-colors w-fit"
@@ -108,10 +108,10 @@ export default function SubjectPage() {
           </button>
           <div className="flex flex-col md:flex-row px-4 md:px-8 py-4 md:items-center  gap-8 md:justify-between ">
             <div className="flex flex-col gap-2">
-              <h1 className="text-3xl font-bold font-Figtree leading-2xl text-neutral-100 ">
+              <h1 className="text-3xl font-bold font-Figtree leading-2xl dark:text-neutral-100 text-black ">
                 {subject.title}
               </h1>
-              <p className="text-neutral-400">{subject.description}</p>
+              <p className="text-neutral-500 dark:text-neutral-400">{subject.description}</p>
 
               <div className="flex items-center gap-2 flex-wrap max-w-87.5 ">
                 <Badge

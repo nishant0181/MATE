@@ -37,6 +37,8 @@ import { Rotation } from "@embedpdf/models";
 import { Rotate, RotatePluginPackage } from "@embedpdf/plugin-rotate/react";
 import { ExportPluginPackage } from "@embedpdf/plugin-export/react";
 import PDFLoadingSkeleton from "./PDFLoadingSkeleton";
+import { Button } from "../ui/button";
+import { Fullscreen, FullscreenIcon, LucideFullscreen } from "lucide-react";
 
 type PDFViewerProps = {
   documentUrl?: string;
@@ -62,7 +64,10 @@ export default function PDFViewer({
   documentUrl = "",
   setIsOpen,
 }: PDFViewerProps) {
-  const documentName = useMemo(() => getDocumentName(documentUrl), [documentUrl]);
+  const documentName = useMemo(
+    () => getDocumentName(documentUrl),
+    [documentUrl],
+  );
 
   const plugins = useMemo(
     () => [
@@ -101,7 +106,9 @@ export default function PDFViewer({
   const { engine, isLoading } = usePdfiumEngine();
 
   if (isLoading || !engine) {
-    return <PDFLoadingSkeleton documentUrl={documentUrl} setIsOpen={setIsOpen} />;
+    return (
+      <PDFLoadingSkeleton documentUrl={documentUrl} setIsOpen={setIsOpen} />
+    );
   }
 
   // 3. Wrap your UI with the <EmbedPDF> provider
@@ -122,20 +129,17 @@ export default function PDFViewer({
                     }}
                   >
                     <ZoomToolbar documentId={activeDocumentId} />{" "}
-                    <div className="flex justify-between items-center gap-4  bg-[#0c0c0c] px-4 py-2 rounded-lg shadow-lg z-10">
-                      <div
-                       
-                        className="text-xl font-Inter font-medium tracking-[3.5px] text-[#f4efe6]"
-                      >
+                    <div className="flex justify-between items-center gap-4  bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-black dark:text-white leading-tight font-Inter flex items-center gap-2 font-medium text-sm py-1 px-4 rounded-md border border-black/10 dark:border-white/10 transition-colors cursor-pointer backdrop-blur-sm">
+                      <div className="text-xl font-Inter font-medium tracking-[3.5px] text-[#f4efe6]">
                         MATE
                       </div>
                       <div className="flex items-center justify-center gap-4">
-                      <div className="text-sm font-Inter text-white">
-                        {documentName}
-                      </div>
-                      <div className="hidden md:block">
-                        <PageControls documentId={activeDocumentId} />
-                      </div>
+                        <div className="text-sm font-Inter text-white">
+                          {documentName}
+                        </div>
+                        <div className="hidden md:block">
+                          <PageControls documentId={activeDocumentId} />
+                        </div>
                       </div>
 
                       <div className="hidden items-center gap-2 md:flex">
@@ -144,8 +148,11 @@ export default function PDFViewer({
                           onClick={() => setIsOpen && setIsOpen(false)}
                           className="cursor-pointer rounded-md bg-[#2a2d2f] hover:bg-[#242424]  p-2 text-xs font-semibold "
                         >
-                          <img className='w-6' src="/Images/back-square.svg" alt="back-square" />
-                          
+                          <img
+                            className="w-6"
+                            src="/Images/back-square.svg"
+                            alt="back-square"
+                          />
                         </button>
                       </div>
                     </div>
@@ -180,28 +187,46 @@ export default function PDFViewer({
                         </ZoomGestureWrapper>
                       </Viewport>
                     </div>
-                    <div className='hidden md:block absolute right-2 bottom-2'>
+                    <div className="hidden md:block absolute right-2 bottom-2">
                       <RotateToolbar documentId={activeDocumentId} />
                     </div>
-                    <div className="flex  md:hidden justify-between items-center gap-4  bg-[#0c0c0c] px-6 py-2 rounded-lg shadow-lg z-10">
-                     
-                      <RotateToolbar documentId={activeDocumentId} />
+                    <div className="flex  md:hidden justify-between items-center gap-4  dark:bg-[#0c0c0c] bg-white px-6 py-2  shadow-lg z-10">
+                      <div className="flex items-center gap-2">
+                        <button
+                          className="cursor-pointer rounded-md bg-[#2a2d2f] hover:bg-[#242424]  p-2 text-xs font-semibold "
+                          onClick={() => {
+                            if (document.fullscreenElement) {
+                              document.exitFullscreen();
+                            } else {
+                              document.documentElement.requestFullscreen();
+                            }
+                          }}
+                        >
+                          <LucideFullscreen className="text-white" size={26} />
+                        </button>
+                        <RotateToolbar documentId={activeDocumentId} />
+                      </div>
                       <PageControls documentId={activeDocumentId} />
                       <div className="flex justify-between items-center gap-2">
-
-                      <ExportToolbar documentId={activeDocumentId} />
-                       <button
-                        onClick={() => setIsOpen && setIsOpen(false)}
-                        className="flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#2a2d2f] p-2 px-4 py-2 text-xs font-semibold text-white hover:bg-[#2a2a2a]"
-                      >
-                        <img className='w-6' src="/Images/back-square.svg" alt="back-square" />
-                        
-                      </button>
+                        <ExportToolbar documentId={activeDocumentId} />
+                        <button
+                          onClick={() => setIsOpen && setIsOpen(false)}
+                          className="flex cursor-pointer items-center justify-center gap-2 rounded-md bg-[#2a2d2f] p-2 px-2 py-2 text-xs font-semibold text-white hover:bg-[#2a2a2a]"
+                        >
+                          <img
+                            className="w-6"
+                            src="/Images/back-square.svg"
+                            alt="back-square"
+                          />
+                        </button>
                       </div>
                     </div>
                   </div>
                 ) : (
-                  <PDFLoadingSkeleton documentUrl={documentUrl} setIsOpen={setIsOpen} />
+                  <PDFLoadingSkeleton
+                    documentUrl={documentUrl}
+                    setIsOpen={setIsOpen}
+                  />
                 )
               }
             </DocumentContent>

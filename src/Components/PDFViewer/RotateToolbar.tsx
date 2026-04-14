@@ -15,7 +15,7 @@ export default function RotateToolbar({ documentId }: { documentId: string }) {
           
           title="Rotate Clockwise"
         >
-          <img src="/Images/restart-square-svgrepo-com.svg" width={30} alt="restart-square-svgrepo-com" className="z-50 rotate-90 cursor-pointer" />
+          <img src="/Images/restart-square-svgrepo-com.svg" width={26} alt="restart-square-svgrepo-com" className="z-50 rotate-90 cursor-pointer" />
         </button>
       
 

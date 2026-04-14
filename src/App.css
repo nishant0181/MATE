@@ -238,3 +238,33 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
 }
+
+.netflix-curve {
+  box-sizing: border-box;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  border: solid .25rem transparent;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  border-bottom: none;
+  background: radial-gradient(50% 500% at 50% -420%, rgba(216, 216, 216, 0.4) 80%, rgba(0, 0, 0, 0.1) 100%), var(--color-background);
+  background-clip: padding-box;
+}
+
+.netflix-curve:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin-top: -.25rem;
+  border-radius: inherit;
+  background: linear-gradient(to right, rgb(46, 46, 46) 16%, rgb(244, 244, 244), rgb(248, 248, 248), rgb(244, 244, 244), rgb(46, 46, 46) 84%);
+}

@@ -73,7 +73,7 @@ export default function SearchDialog({isOpen, setIsOpen}) {
               url={note.url}
               semester={note.semester}
               branch={note.branch}
-              onOpenChange={setIsOpen}
+              setIsOpen={setIsOpen}
               />
              ))}
               </div>
