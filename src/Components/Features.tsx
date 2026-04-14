@@ -37,7 +37,8 @@ export default function Features() {
     {
       icon: Upload,
       title: "Upload Notes",
-      description: "Upload your notes to share with other students and increase your value",
+      description:
+        "Upload your notes to share with other students and increase your value",
     },
     {
       icon: RefreshCw,
@@ -52,12 +53,8 @@ export default function Features() {
       <div className="max-w-full  mx-auto ">
         <div className="text-center mb-16 px-4 sm:px-6 lg:px-8">
           <h2 className="font-librebaskerville text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-            Everything You Need To Excel 
+            Everything You Need To Excel
           </h2>
-          <p className="text-base sm:text-lg text-[#a1a1aa] max-w-2xl mx-auto">
-            Access comprehensive study materials organized by branch, semester,
-            and subject for BTech students.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 m-6 ">
@@ -67,8 +64,9 @@ export default function Features() {
               <div
                 key={index}
                 className="group relative p-4 sm:p-6 border-l border-border
-                
-                bg-[oklch(0.145_0_0)] hover:bg-muted/10 hover:transition-colors"
+                bg-[#f5f5f5] dark:bg-[oklch(0.145_0_0)] 
+                hover:bg-[#f5f5f5]/50 hover:transition-colors
+                dark:text-white text-black"
               >
                 {/* Icon */}
                 <div className="inline-flex p-2 sm:p-3 border border-border bg-muted mb-3 sm:mb-4">
@@ -76,10 +74,10 @@ export default function Features() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg sm:text-xl text-white   font-semibold mb-2 px-1 sm:px-0">
+                <h3 className="text-lg sm:text-xl   font-semibold mb-2 px-1 sm:px-0">
                   {feature.title}
                 </h3>
-                <p className="text-sm sm:text-base text-[#a1a1aa] leading-relaxed px-1 sm:px-0">
+                <p className="text-sm sm:text-base text-[#18181b] dark:text-[#a1a1aa] leading-relaxed px-1 sm:px-0">
                   {feature.description}
                 </p>
               </div>

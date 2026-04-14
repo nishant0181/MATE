@@ -19,24 +19,25 @@ export default function NoteSection() {
         id="noteSection"
         className="md:max-w-350 scroll-smooth 
         font-Inter mx-auto text-white select-none 
-        mb-20
-        
+        mb-20 
+        relative
         "
       >
-        <div className="relative bg-black w-full  flex flex-col items-center   bg-[url('/Images/Hero.svg')]  bg-cover bg-center bg-no-repeat">
-          <div className=" bg-[linear-gradient(0deg,transparent_0%,#09090b_97%)]  w-full absolute top-0  z-20 h-16  md:h-28 "></div>
+
+        <div className="relative ">
+          <div className="absolute w-full h-full  top-0 left-0 bg-[url('/Images/Hero.svg')] bg-cover bg-center bg-no-repeat invert dark:invert-0 bg-white/50 dark:bg-black/50  -z-10 pointer-events-none"></div>
 
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className=" mx-auto  mt-18 flex flex-col items-center gap-15 bg-black/50 p-4 rounded-lg z-30"
+            className=" mx-auto pt-18  flex flex-col items-center gap-15 dark:bg-blacfk/50 bg-whitde/50 p-4 rounded-lg z-30"
           >
-            <div className="mt-4">
-              <h1 className="text-5xl font-bold  text-center tracking-wider text-white">
-                Welcome to Mate Notes!
+            <div className="">
+              <h1 className="text-5xl font-bold  text-center tracking-wider text-black dark:text-white">
+                Mate Notes
               </h1>
-              <p className=" md:text-lg text-center text-gray-300 mt-4">
+              <p className=" md:text-lg text-center dark:text-gray-300 text-gray-600 mt-4">
                 Find your notes by filtering or searching.{" "}
               </p>
             </div>
@@ -50,12 +51,12 @@ export default function NoteSection() {
           </motion.div>
         </div>
 
-        <div className="mx-auto max-w-6xl px-6 py-12">
+        <div className="mx-auto max-w-6xl px-6 py-6">
           <div className="mb-18 text-center">
-            <h2 className="text-3xl  font-bold  mb-2 text-zinc-100">
+            <h2 className="text-3xl pt-10 font-bold  mb-2 text-black dark:text-white">
               The Legendary Notes
             </h2>
-            <p className="text-gray-400">
+            <p className=" dark:text-gray-300 text-gray-600 ">
               Browse through our collection of study materials
             </p>
             {dataSource === "local" && (

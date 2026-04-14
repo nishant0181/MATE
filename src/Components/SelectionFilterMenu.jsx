@@ -17,9 +17,9 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
 
   return (
     <>
-      <div className="max-w-4xl md:max-w-6xl  bg-[#0c0c0c] rounded-lg p-7 md:p-16   border border-[#222323] flex flex-wrap  justify-center gap-4">
+      <div className="max-w-4xl md:max-w-6xl  dark:bg-[#0c0c0c] bg-white rounded-lg p-7 md:p-16   border border-neutral-300 dark:border-[#3c3c3c] flex flex-wrap  justify-center gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-100 mb-2">
+          <label className="block text-sm font-medium dark:text-gray-100 text-black mb-2">
             UNIVERSITY
           </label>
           <Select
@@ -32,13 +32,13 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
               setSubject("");
             }}
           >
-            <SelectTrigger className="w-60 bg-[#161616] border-[#383838] text-white">
+            <SelectTrigger className="w-60  border-neutral-300 dark:border-[#3c3c3c]  dark:text-white text-black dark:bg-[#161616] bg-[#f5f5f5]">
               <SelectValue
-                className="text-white"
+                className="dark:text-white text-black"
                 placeholder="Select University"
               />
             </SelectTrigger>
-            <SelectContent className="bg-[#161616] border-[#383838]">
+            <SelectContent className="dark:bg-[#161616] bg-[#f5f5f5] text-black border-[#383838]">
             {universityNames.map((university) => {
                 return (
                   <SelectItem key={university} value={university}>
@@ -51,7 +51,7 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-100  mb-2">
+          <label className="block text-sm font-medium dark:text-gray-100 text-black mb-2">
             DEGREE
           </label>
           <Select
@@ -72,10 +72,10 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
               setSubject("");
             }}
           >
-            <SelectTrigger className="w-48 bg-[#161616] border-[#383838] text-white">
+            <SelectTrigger className="w-48  border-neutral-300 dark:border-[#3c3c3c]  dark:text-white text-black dark:bg-[#161616] bg-[#f5f5f5]">
               <SelectValue placeholder="Select Degree" />
             </SelectTrigger>
-            <SelectContent className="bg-[#161616] border-[#383838] ">
+            <SelectContent className="dark:bg-[#161616] bg-[#f5f5f5] text-black border-[#383838] ">
             {BranchNames.map(([branch, value]) => {
               
                 return (
@@ -102,7 +102,7 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-100 mb-2">
+          <label className="block text-sm font-medium dark:text-gray-100 text-black mb-2">
             SEMESTER
           </label>
           <Select
@@ -125,10 +125,10 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
               setSubject("");
             }}
           >
-            <SelectTrigger className="max-[430px]:w-28 w-38 bg-[#161616] border-[#383838] text-white">
+            <SelectTrigger className="max-[430px]:w-28 w-38  border-neutral-300 dark:border-[#3c3c3c]  dark:text-white text-black dark:bg-[#161616] bg-[#f5f5f5]">
               <SelectValue placeholder="Select Semester" />
             </SelectTrigger>
-            <SelectContent className="bg-[#161616] border-[#383838]">
+            <SelectContent className="dark:bg-[#161616] bg-[#f5f5f5] text-black border-[#383838]">
               <SelectItem value="1">1st Semester</SelectItem>
               <SelectItem value="2">2nd Semester</SelectItem>
               <SelectItem value="3">3rd Semester</SelectItem>
@@ -142,7 +142,7 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-100  mb-2">
+          <label className="block text-sm font-medium dark:text-gray-100 text-black mb-2">
             SUBJECT
           </label>
           <Select
@@ -164,10 +164,10 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
               );
             }}
           >
-            <SelectTrigger className="w-38 bg-[#161616] border-[#383838] text-white">
+            <SelectTrigger className="w-38  border-neutral-300 dark:border-[#3c3c3c]  dark:text-white text-black dark:bg-[#161616] bg-[#f5f5f5]">
               <SelectValue placeholder="Select Subject" />
             </SelectTrigger>
-            <SelectContent className="bg-[#161616] border-[#383838] max-w-48">
+            <SelectContent className="dark:bg-[#161616] bg-[#f5f5f5] text-black border-[#383838] max-w-48">
               {data
                 .filter((note) => note.university === university)
                 .filter((note) => note.branch === degree || note.branch === "all")

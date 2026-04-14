@@ -23,7 +23,7 @@ export default function InputFilter({ setFilteredData, data }) {
       <input
         name="InputSearch"
         type="search"
-        className="w-full text-sm  p-2 rounded-lg bg-[#161616] text-white border border-[#222323] focus:outline-none focus:ring-1 focus:ring-[#ffff]"
+        className="w-full md:w-4xl text-sm  p-2 rounded-lg dark:bg-[#161616] bg-white text-black dark:text-white border border-neutral-300 dark:border-[#3c3c3c] focus:outline-none focus:ring-1 focus:ring-[#ffff]"
         placeholder="Search notes By title or Subject..."
         onChange={handleInputChange}
       />

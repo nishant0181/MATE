@@ -1,19 +1,21 @@
 import React from "react";
 import FlipFadeText from "./ui/FlipFadeText";
 import { Link } from "react-router";
+import { LayoutDashboard, Search } from "lucide-react";
 
 export default function Hero() {
   return (
     <>
-      <section className="md:max-w-350 font-Inter mx-auto text-white select-none relative">
-        <div className="relative overflow-hidden bg-[#09090b] w-full flex flex-col items-center bg-[url('/Images/Hero.svg')] bg-cover bg-center bg-no-repeat">
-          {/* Sophisticated Ambient White/Blue Light */}
-          <div className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,rgba(100,150,255,0.03)_50%,transparent_100%)] blur-[100px] rounded-full pointer-events-none mix-blend-screen"></div>
+      <section className="md:max-w-350 font-Inter mx-auto text-black dark:text-white select-none relative">
+        <div className="relative overflow-hidden bg-zinc-50 dark:bg-[#09090b] w-full flex flex-col items-center">
+          {/* The Background Grid Image (Inverts on Light Mode) */}
+          <div className="absolute inset-0 bg-[url('/Images/Hero.svg')] bg-cover bg-center bg-no-repeat invert dark:invert-0 z-0 pointer-events-none"></div>
 
-       
+          {/* Sophisticated Ambient White/Blue Light */}
+          <div className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] bg-[radial-gradient(circle,rgba(0,0,0,0.03)_0%,rgba(100,150,255,0.02)_50%,transparent_100%)] dark:bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,rgba(100,150,255,0.03)_50%,transparent_100%)] blur-[100px] rounded-full pointer-events-none mix-blend-multiply dark:mix-blend-screen z-0"></div>
 
           {/* Premium Glassmorphism Badge */}
-          <div className="mt-20 lg:mt-28 mb-8 text-[12px] md:text-sm font-Inter text-white/80 bg-white/5 border border-white/10 backdrop-blur-md rounded-full px-4 py-1.5 flex items-center justify-center gap-2 hover:bg-white/10 hover:text-white transition-all cursor-pointer z-10 shadow-[0_0_15px_rgba(255,255,255,0.03)]">
+          <div className="mt-20 lg:mt-28 mb-8 text-[12px] md:text-sm font-Inter text-black/80 dark:text-white/80 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md rounded-full px-4 py-1.5 flex items-center justify-center gap-2 hover:bg-black/10 dark:hover:bg-white/10 hover:text-black dark:hover:text-white transition-all cursor-pointer z-10 shadow-[0_0_15px_rgba(0,0,0,0.05)] dark:shadow-[0_0_15px_rgba(255,255,255,0.03)]">
             Now it&apos;s time for comeback
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -28,23 +30,22 @@ export default function Hero() {
             </svg>
           </div>
 
-          <div className="px-4 md:px-0 tracking-tighter max-w-4xl mx-auto font-extrabold text-center leading-[1.05] md:leading-none font-Inter text-[56px] sm:text-[64px] md:text-7xl lg:text-[78px] text-gray-200 z-10">
+          <div className="px-4 md:px-0 tracking-tighter max-w-4xl mx-auto font-extrabold text-center leading-[1.05] md:leading-none font-Inter text-[56px] sm:text-[64px] md:text-7xl lg:text-[78px] text-zinc-900 dark:text-gray-200 z-10">
             <span className="relative inline-block pb-2">
-              Your{" "}
-              {/* Ultra-pure crisp white high contrast text */}
-              <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.25)]">
+              Your {/* Ultra-pure crisp white high contrast text */}
+              <span className="text-black dark:text-white drop-shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:drop-shadow-[0_0_20px_rgba(255,255,255,0.25)]">
                 unfair <span className="tracking-tight">advantage</span>
               </span>
               <img
                 src="/Images/RoundedArrow.svg"
                 alt="Rounded Arrow"
-                className="absolute min-[420px]:right-1 -right-4 -bottom-20 md:right-25 md:-bottom-30 w-12 h-12 md:w-15 md:h-15 invert-100 md:-rotate-6 -rotate-40 opacity-70"
+                className="absolute min-[420px]:right-1 -right-4 -bottom-20 md:right-25 md:-bottom-30 w-12 h-12 md:w-15 md:h-15 invert-0 dark:invert-100 md:-rotate-6 -rotate-40 opacity-70"
               />
             </span>
             <br />
             <span>in learning</span>
             <br />
-            <span className="block mt-4 font-serif font-extralight italic text-center text-gray-400/80 tracking-wide text-5xl md:text-[72px]">
+            <span className="block mt-4 font-serif font-extralight italic text-center text-zinc-500 tracking-wide text-5xl md:text-[72px]">
               <FlipFadeText
                 words={["reimagined.", "minimal.", "refined.", "optimized."]}
                 interval={2500}
@@ -53,7 +54,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <p className="px-6 md:px-0 font-Inter text-sm sm:text-base md:text-xm text-center leading-relaxed mt-10 md:mt-10 text-gray-400 max-w-2xl mx-auto z-10 font-medium">
+          <p className="px-6 md:px-0 font-Inter text-sm sm:text-base md:text-xm text-center leading-relaxed mt-10 md:mt-10 text-zinc-600 dark:text-gray-400 max-w-2xl mx-auto z-10 font-medium">
             Preparing for exams is already challenging enough.{" "}
             <br className="hidden md:block" /> Avoid further complications by
             ditching outdated study methods.
@@ -61,33 +62,14 @@ export default function Hero() {
 
           <div className="pt-10 z-20 flex flex-wrap justify-center items-center gap-4  mt-2">
             <Link to="/notes">
-              <div className="bg-white hover:bg-gray-200 transition-colors font-Inter font-semibold leading-tight text-sm text-black flex items-center gap-2 py-3 px-6 rounded-full cursor-pointer shadow-[0_0_20px_rgba(255,255,255,0.15)]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-search h-4 w-4"
-                  aria-hidden="true"
-                >
-                  <path d="m21 21-4.34-4.34"></path>
-                  <circle cx="11" cy="11" r="8"></circle>
-                </svg>
+              <div className="bg-black text-white dark:bg-white hover:bg-zinc-800 dark:hover:bg-gray-200 transition-colors font-Inter font-semibold leading-tight text-sm dark:text-black flex items-center gap-2 py-3 px-6 rounded-full cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+                <Search size={16} />
                 Search Notes
               </div>
             </Link>
             <Link to="/dashboard">
-              <div className="bg-white/5 hover:bg-white/10 text-white leading-tight font-Inter flex items-center gap-2 font-medium text-sm py-3 px-6 rounded-full border border-white/10 transition-colors cursor-pointer backdrop-blur-sm">
-                <img
-                  src="/Images/dashboard.svg"
-                  alt="dashboard"
-                  className="w-4 h-4 opacity-80"
-                />
+              <div className="bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-black dark:text-white leading-tight font-Inter flex items-center gap-2 font-medium text-sm py-3 px-6 rounded-full border border-black/10 dark:border-white/10 transition-colors cursor-pointer backdrop-blur-sm">
+               <LayoutDashboard size={16} />
                 DashBoard
               </div>
             </Link>

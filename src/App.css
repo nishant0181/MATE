@@ -12,11 +12,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
 @theme {
   --font-Inter: "Inter", system-ui, sans-serif;
   --font-serif: "Instrument Serif", serif;
   --font-charm: "Charm", cursive;
-  --font-Figtree:  "Figtree", sans-serif;
+  --font-Figtree: "Figtree", sans-serif;
 }
 
 ul {
@@ -202,9 +203,11 @@ input[type=number]::-webkit-outer-spin-button {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -214,14 +217,24 @@ input[type=number]::-webkit-outer-spin-button {
   background-size: 200% auto;
   animation: text-gradient-x 4s ease infinite;
 }
-@layer utilities{
-    .no-scrollbar::-webkit-scrollbar {
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
 
   /* IE, Edge and Firefox */
   .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
 }

@@ -47,19 +47,21 @@ export default function CardofNote({
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-0 flex flex-col bg-[#151516]  border  border-[#3c3c3c] rounded-lg p-7 
+        className="relative z-0 flex flex-col bg-white dark:bg-[#151516]  border border-neutral-300 dark:border-[#3c3c3c] rounded-lg p-7 
         transition-all duration-300  1
 
       
         shadow-[14px_14px_0px_-1px_rgba(255,255,255,0.10)]
         hover:shadow-[8px_8px_0px_-1px_rgba(255,255,255,0.15)]
         max-w-[350px]  
-        bg-[radial-gradient(#323236_1px,transparent_1px)] bg-size-[16px_16px] "
+        
+        dark:bg-[radial-gradient(#323236_1px,transparent_1px)] bg-size-[16px_16px] 
+        bg-[radial-gradient(#f5f5f5_1px,transparent_1px)]"
       >
         <div className="z-60 flex items-start justify-between mb-4">
           <div className="">
             <div className="pb-8 flex items-center justify-between gap-3">
-              <h3 className="text-2xl font-bold text-white mb-2 line-clamp-1">
+              <h3 className="text-2xl font-bold text-black dark:text-white mb-2 line-clamp-1">
                 {title}
               </h3>
               <img
@@ -68,27 +70,27 @@ export default function CardofNote({
                 className="w-10"
               />
             </div>
-            <p className="text-sm text-gray-400 mb-3">{description}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{description}</p>
           </div>
         </div>
         <div className="flex flex-wrap gap-2 mb-4">
-          <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
+          <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-zinc-300 px-3 py-1 rounded-full border border-zinc-400">
             {subject}
           </span>
-          <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
+          <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-zinc-300 px-3 py-1 rounded-full border border-zinc-400">
             Sem : {semester}
           </span>
           {branch && (
-            <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
+            <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-zinc-300 px-3 py-1 rounded-full border border-zinc-400">
               {branch == "all" ? "All Branches" : branch}
             </span>
           )}
           {university && (
-            <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
+            <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-zinc-300 px-3 py-1 rounded-full border border-zinc-400">
               {university}
             </span>
           )}
-          <span className="text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
+          <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-zinc-300 px-3 py-1 rounded-full border border-zinc-400">
             {pages} pages
           </span>
         </div>
@@ -98,7 +100,7 @@ export default function CardofNote({
             <>
               <button
                 onClick={() => onViewPDF({ url })}
-                className="mx-auto text-center transition-colors duration-300 bg-white hover:bg-zinc-200 font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full "
+                className="mx-auto text-center transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 font-Figtree font-medium leading-tight text-sm dark:text-black text-zinc-900 flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full "
               >
                 View Notes
                 <svg
@@ -120,7 +122,7 @@ export default function CardofNote({
             <>
               <Link
                 to={`/subject/${id}`}
-                className="mx-auto text-center  transition-colors duration-300 bg-white hover:bg-zinc-200 font-Figtree font-medium leading-tight text-sm text-black flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full"
+                className="mx-auto text-center transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 font-Figtree font-medium leading-tight text-sm dark:text-black text-zinc-900 flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full "
                 onClick={() => onOpenChange(false)}
               >
                 View Notes
@@ -164,7 +166,7 @@ export default function CardofNote({
           )}
 
           <button
-            className="  transition-colors duration-300 bg-white hover:bg-zinc-200 text-black  flex items-center gap-4 py-2 px-2 rounded-md cursor-pointer justify-center "
+            className="  transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 text-black  flex items-center gap-4 py-2 px-2 rounded-md cursor-pointer justify-center "
             title="Share"
             onClick={handleShare}
           >

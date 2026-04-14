@@ -2,9 +2,7 @@ import React from "react";
 import Hero from "./Hero";
 import NotesFeedOnHome from "./NotesFeedOnHome";
 import Features from "./Features";
-import BottomFade from "./BottomFade";
 import { motion } from "framer-motion";
-
 
 export default function MainPage() {
   return (
@@ -17,7 +15,6 @@ export default function MainPage() {
       <Hero />
       <Features />
       <NotesFeedOnHome />
-      <BottomFade />
     </motion.div>
   );
 }

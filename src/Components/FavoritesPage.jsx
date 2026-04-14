@@ -12,11 +12,11 @@ export default function FavoritesPage() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative bg-[#0a0a0a] mx-auto max-w-5xl w-full flex flex-col pt-8 pb-4 border-t border-b  border-primary/20"
+          className="relative bg-white dark:bg-[#0a0a0a] mx-auto max-w-5xl w-full flex flex-col pt-8  pb-4 border-t border-b z-10 border-primary/20"
         >
           <div className="flex flex-col md:flex-row px-4 md:px-8 py-4 md:items-center  gap-8 md:justify-between ">
             <div className="flex flex-col gap-2">
-              <h1 className="text-3xl font-bold font-Figtree leading-2xl text-neutral-100 ">
+              <h1 className="text-3xl font-bold font-Figtree leading-2xl text-black dark:text-neutral-100 ">
                 My Favorites List
               </h1>
             </div>

@@ -4,38 +4,35 @@ import { Link } from "react-router";
 export default function GlassDock() {
   return (
     <>
-      <div className="fixed bottom-0  left-1/2 -translate-x-1/2 z-50 md:bottom-2 md:hidden bg-black w-full  ">
-    <div className="bg-[linear-gradient(180deg,transparent_0%,#09090b_97%)] w-full absolute bottom-16 z-20 h-16 md:h-28 pointer-events-none  "></div>
-        
-        <div className="flex items-center justify-between w-full px-12 py-6">
+      <div className="fixed bottom-0  left-1/2 -translate-x-1/2 z-50 md:bottom-2 md:hidden dark:bg-black bg-white w-full  ">
+        <div
+          className="
+             bg-[linear-gradient(180deg,transparent_0%,#ffffff_50%)]
+        dark:bg-[linear-gradient(180deg,transparent_0%,#09090b_50%)]
+        w-full absolute bottom-16 z-20 h-16 md:h-28 pointer-events-none  "
+        ></div>
 
-        
-            <Link to="/">
+        <div className="flex items-center justify-between px-8 py-8">
+          <Link to="/">
             <Home size={28} />
-            </Link>
-        
-            <Link to="/notes">
+          </Link>
+
+          <Link to="/notes">
             <Notebook size={28} />
-            </Link>
-          
-            <Link to="/dashboard">
+          </Link>
+
+          <Link to="/dashboard">
             <LayoutDashboard size={28} />
-            </Link>
-          
-          
-          
-          
-            <Link to="/favorites">
-            <Heart size={28}  />
-            </Link>
-          
-          
-            <Link to="/profile">
-            <User size={28}  />
-            </Link>
-          
+          </Link>
+
+          <Link to="/favorites">
+            <Heart size={28} />
+          </Link>
+
+          <Link to="/profile">
+            <User size={28} />
+          </Link>
         </div>
-        
       </div>
     </>
   );
