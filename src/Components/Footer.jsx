@@ -29,8 +29,10 @@ export default function Footer() {
                 </li>
             </ul>
         </div>
-            <div className="self-center pt-10">A &nbsp;
-                <span className="font-medium blur-[5px]">Coming soon</span>&nbsp; Production</div>
+            <div className="self-center pt-10">
+                Developed By
+                <span className="font-medium blur-[5px]">&nbsp;Coming soon</span>
+                </div>
         </div>
       <div className="font-bold text-[150px] max-[420px]:text-[100px] md:text-[200px] leading-20 text-center selection:bg-neutral-300 dark:selection:bg-neutral-900  text-neutral-200 dark:text-neutral-800 mt-10 mb-6 md:mb-0">
         MATE

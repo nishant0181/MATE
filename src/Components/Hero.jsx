@@ -2,11 +2,17 @@ import React from "react";
 import FlipFadeText from "./ui/FlipFadeText";
 import { Link } from "react-router";
 import { LayoutDashboard, Search } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
     <>
-      <section className="md:max-w-350 font-Inter mx-auto text-black dark:text-white select-none relative">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="md:max-w-350 font-Inter mx-auto text-black dark:text-white select-none relative"
+      >
         <div className="relative overflow-hidden bg-zinc-50 dark:bg-background w-full flex flex-col items-center pb-24 md:pb-32">
           {/* The Background Grid Image (Inverts on Light Mode) */}
           <div className="absolute inset-0 bg-[url('/Images/Gridwithstars.svg')] bg-cover bg-center bg-no-repeat invert dark:invert-0 z-0 pointer-events-none mask-[radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
@@ -75,17 +81,15 @@ export default function Hero() {
             </Link>
             <Link to="/dashboard">
               <div className="bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-black dark:text-white leading-tight font-Inter flex items-center gap-2 font-medium text-sm py-3 px-6 rounded-full border border-black/10 dark:border-white/10 transition-colors cursor-pointer backdrop-blur-sm">
-               <LayoutDashboard size={16} />
+                <LayoutDashboard size={16} />
                 DashBoard
               </div>
             </Link>
           </div>
 
-          <div className="absolute bottom-0 w-full h-[50px] md:h-[100px] z-30 pointer-events-none">
-            
-          </div>
+          <div className="absolute bottom-0 w-full h-[50px] md:h-[100px] z-30 pointer-events-none"></div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }

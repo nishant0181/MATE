@@ -1,14 +1,23 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router";
-import { Share2 } from "lucide-react";
+import { QrCode, Share2 } from "lucide-react";
 import { Toaster } from "./ui/sonner";
 import { toast } from "sonner";
 import { Button } from "./ui/button";
 import { Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FavoritesContext } from "@/contexts/FavoritesProvider";
 import useRecentNotes from "../hooks/useRecentNotes";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
+import QRCode from "react-qr-code";
 
 export default function CardofNote({
   note,
@@ -26,12 +35,18 @@ export default function CardofNote({
   setIsOpen,
 }) {
   const [recentNotes, setNoteId] = useRecentNotes();
-  const handleShare = () => {
-    let shareUrl = window.location.origin + window.location.pathname;
+  const [shareUrl, setShareUrl] = useState("");
+  useEffect(() => {
+    setShareUrl(
+      window.location.origin + window.location.pathname + `?highlight=${id}`,
+    );
+  }, []);
 
-    if (FileMode && id) {
-      shareUrl = shareUrl + `?highlight=${id}`;
-    }
+  const handleShare = () => {
+    // if (FileMode && id) {
+    //   Url = Url + `?highlight=${id}`;
+    // }
+
     navigator.clipboard.writeText(shareUrl);
     toast.success("Link copied to clipboard!", {
       position: "bottom-right",
@@ -98,7 +113,7 @@ export default function CardofNote({
           </span>
         </div>
 
-        <div className="flex items-center justify-center gap-4 mt-5 md:mt-10">
+        <div className="flex items-center justify-center gap-4 ">
           {FileMode && (
             <>
               <button
@@ -123,65 +138,118 @@ export default function CardofNote({
 
           {!FileMode && (
             <>
-              <Link
-                to={`/subject/${id}`}
-                className="mx-auto text-center transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 font-Figtree font-medium leading-tight text-sm dark:text-black text-zinc-900 flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full "
-                onClick={() => {
-                  setNoteId(id);
-                  
-                  setIsOpen(false);
-                }}
-              >
-                View Notes
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="currentColor"
-                  viewBox="0 0 256 256"
-                  className="size-4"
-                >
-                  <path d="M216,128l-72,72V56Z" opacity="0.2"></path>
-                  <path d="M221.66,122.34l-72-72A8,8,0,0,0,136,56v64H40a8,8,0,0,0,0,16h96v64a8,8,0,0,0,13.66,5.66l72-72A8,8,0,0,0,221.66,122.34ZM152,180.69V75.31L204.69,128Z"></path>
-                </svg>
-              </Link>
+              <div className="flex flex-col w-full gap-4">
+                <div className="flex justify-end  w-full">
+                  <Dialog>
+                    <DialogTrigger>
+                      <div
+                        className="     cursor-pointer transition-colors duration-300  text-black
+                     bg-zinc-200 dark:bg-white p-2 dark:hover:bg-zinc-200 hover:bg-zinc-300  flex items-center justify-center
+                     rounded-md"
+                      >
+                        <QrCode
+                          className="size-4 
+                        
+                        "
+                        />
+                      </div>
+                    </DialogTrigger>
 
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => toggleFavorite(note)}
-                className={cn(
-                  "h-8 w-8 p-0 hover:scale-105 active:scale-95 transition-all",
-                  isFavorite(note)
-                    ? "bg-red-50 border-red-200 hover:bg-red-100 dark:bg-red-950 dark:border-red-800 dark:hover:bg-red-900"
-                    : "hover:border-red-200 hover:bg-red-50 dark:hover:border-red-800 dark:hover:bg-red-950",
-                )}
-                aria-label={
-                  isFavorite(note)
-                    ? "Remove from favorites"
-                    : "Add to favorites"
-                }
-              >
-                <Heart
-                  className={cn(
-                    "h-4 w-4 transition-all duration-200",
-                    isFavorite(note)
-                      ? "fill-red-500 text-red-500"
-                      : "text-muted-foreground",
-                  )}
-                />
-              </Button>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle className="font-bold text-lg ">
+                          Scan the QR Code to Share
+                        </DialogTitle>
+
+                        {shareUrl && (
+                          <div className="bg-white p-4 rounded-xl mx-auto mt-4 w-fit shadow-md">
+                            <div
+                              style={{
+                                height: "auto",
+                                margin: "0 auto",
+                                maxWidth: 256,
+                                width: "100%",
+                              }}
+                            >
+                              <QRCode
+                                size={256}
+                                style={{
+                                  height: "auto",
+                                  maxWidth: "100%",
+                                  width: "100%",
+                                }}
+                                value={shareUrl}
+                                viewBox="0 0 256 256"
+                              />
+                            </div>
+                          </div>
+                        )}
+                      </DialogHeader>
+                      <DialogDescription></DialogDescription>
+                    </DialogContent>
+                  </Dialog>
+                </div>
+                <div className="flex gap-2">
+                  <Link
+                    to={`/subject/${id}`}
+                    className="mx-auto text-center transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 font-Figtree font-medium leading-tight text-sm dark:text-black text-zinc-900 flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full "
+                    onClick={() => {
+                      setNoteId(id);
+
+                      setIsOpen(false);
+                    }}
+                  >
+                    View Notes
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      className="size-4"
+                    >
+                      <path d="M216,128l-72,72V56Z" opacity="0.2"></path>
+                      <path d="M221.66,122.34l-72-72A8,8,0,0,0,136,56v64H40a8,8,0,0,0,0,16h96v64a8,8,0,0,0,13.66,5.66l72-72A8,8,0,0,0,221.66,122.34ZM152,180.69V75.31L204.69,128Z"></path>
+                    </svg>
+                  </Link>
+
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => toggleFavorite(note)}
+                    className={cn(
+                      "h-8 w-8 p-0 hover:scale-105 active:scale-95 transition-all",
+                      isFavorite(note)
+                        ? "bg-red-50 border-red-200 hover:bg-red-100 dark:bg-red-950 dark:border-red-800 dark:hover:bg-red-900"
+                        : "hover:border-red-200 hover:bg-red-50 dark:hover:border-red-800 dark:hover:bg-red-950",
+                    )}
+                    aria-label={
+                      isFavorite(note)
+                        ? "Remove from favorites"
+                        : "Add to favorites"
+                    }
+                  >
+                    <Heart
+                      className={cn(
+                        "h-4 w-4 transition-all duration-200",
+                        isFavorite(note)
+                          ? "fill-red-500 text-red-500"
+                          : "text-muted-foreground",
+                      )}
+                    />
+                  </Button>
+                  <button
+                    className="  transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 text-black  flex items-center gap-4 py-2 px-2 rounded-md cursor-pointer justify-center "
+                    title="Share"
+                    onClick={handleShare}
+                  >
+                    {" "}
+                    <Share2 className="size-4" />{" "}
+                  </button>
+                </div>
+              </div>
             </>
           )}
-
-          <button
-            className="  transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 text-black  flex items-center gap-4 py-2 px-2 rounded-md cursor-pointer justify-center "
-            title="Share"
-            onClick={handleShare}
-          >
-            {" "}
-            <Share2 className="size-4" />{" "}
-          </button>
         </div>
         <Toaster />
       </motion.div>

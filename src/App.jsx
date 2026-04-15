@@ -10,12 +10,14 @@ import FavoritesPage from "./Components/FavoritesPage";
 import GlassDock from "./Components/GlassDock";
 import ThemeGiver from "./contexts/ThemeGiver";
 import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
     <>
       <FavoritesProvider>
         <BrowserRouter>
+         <ScrollToTop />
           <ThemeGiver >
             <Navbar />
             <GlassDock />

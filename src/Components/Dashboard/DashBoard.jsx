@@ -135,7 +135,7 @@ export default function DashBoard() {
             </div>
           </main>
         ) : (
-          <main className="p-8 max-w-5xl mx-auto">
+          <main className="pt-8 max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
