@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 import { QrCode, Share2 } from "lucide-react";
@@ -6,7 +7,7 @@ import { toast } from "sonner";
 import { Button } from "./ui/button";
 import { Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { FavoritesContext } from "@/contexts/FavoritesProvider";
 import useRecentNotes from "../hooks/useRecentNotes";
 import {
@@ -34,27 +35,20 @@ export default function CardofNote({
   onViewPDF,
   setIsOpen,
 }) {
-  const [recentNotes, setNoteId] = useRecentNotes();
-  const [shareUrl, setShareUrl] = useState("");
-  useEffect(() => {
-    setShareUrl(
-      window.location.origin + window.location.pathname + `?highlight=${id}`,
-    );
-  }, []);
+  const [setNoteId] = useRecentNotes();
+  const shareUrl =
+    typeof window !== "undefined"
+      ? window.location.origin + "/subject/" + id
+      : "";
 
   const handleShare = () => {
-    // if (FileMode && id) {
-    //   Url = Url + `?highlight=${id}`;
-    // }
-
     navigator.clipboard.writeText(shareUrl);
     toast.success("Link copied to clipboard!", {
       position: "bottom-right",
     });
   };
 
-  const { favorites, toggleFavorite, isFavorite } =
-    useContext(FavoritesContext);
+  const { toggleFavorite, isFavorite } = useContext(FavoritesContext);
 
   return (
     <>
@@ -69,7 +63,7 @@ export default function CardofNote({
       
         shadow-[14px_14px_0px_-1px_rgba(255,255,255,0.10)]
         hover:shadow-[8px_8px_0px_-1px_rgba(255,255,255,0.15)]
-        max-w-[350px]  
+        max-w-87.5  
         
         dark:bg-[radial-gradient(#323236_1px,transparent_1px)] bg-size-[16px_16px] 
         bg-[radial-gradient(#f5f5f5_1px,transparent_1px)]"

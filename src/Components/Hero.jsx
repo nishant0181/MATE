@@ -3,6 +3,8 @@ import FlipFadeText from "./ui/FlipFadeText";
 import { Link } from "react-router";
 import { LayoutDashboard, Search } from "lucide-react";
 import { motion } from "framer-motion";
+import ElipseDarkGradient from "./ui/ElipseDarkGradient";
+
 
 export default function Hero() {
   return (
@@ -18,10 +20,7 @@ export default function Hero() {
           <div className="absolute inset-0 bg-[url('/Images/Gridwithstars.svg')] bg-cover bg-center bg-no-repeat invert dark:invert-0 z-0 pointer-events-none mask-[radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
 
           {/* Edge Gradients for Smooth Fading */}
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-zinc-50 dark:from-background to-transparent z-0 pointer-events-none"></div>
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-zinc-50 dark:from-background to-transparent z-0 pointer-events-none"></div>
-          <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-zinc-50 dark:from-background to-transparent z-0 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-zinc-50 dark:from-background to-transparent z-0 pointer-events-none"></div>
+          <ElipseDarkGradient  />
 
           {/* Sophisticated Ambient White/Blue Light */}
           <div className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] bg-[radial-gradient(circle,rgba(0,0,0,0.03)_0%,rgba(100,150,255,0.02)_50%,transparent_100%)] dark:bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,rgba(100,150,255,0.03)_50%,transparent_100%)] blur-[100px] rounded-full pointer-events-none mix-blend-multiply dark:mix-blend-screen z-0"></div>
@@ -66,7 +65,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <p className="px-6 md:px-0 font-Inter text-sm sm:text-base md:text-xm text-center leading-relaxed mt-10 md:mt-10 text-zinc-600 dark:text-gray-400 max-w-2xl mx-auto z-10 font-medium">
+          <p className="px-6 md:px-0 font-sans text-sm sm:text-base md:text-xm text-center leading-relaxed mt-10 md:mt-10 text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto z-10 font-medium">
             Preparing for exams is already challenging enough.{" "}
             <br className="hidden md:block" /> Avoid further complications by
             ditching outdated study methods.

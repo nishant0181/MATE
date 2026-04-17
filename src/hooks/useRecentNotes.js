@@ -12,9 +12,11 @@ export default function useRecentNotes() {
         // If there was no data, OR if the data is an empty array [], load the presets!
         if (!parsed || parsed.length === 0) {
             return [
-                "mathematics-1",
-                "mathematics-2",
-                "physics-5"
+                "maths-1",
+                "pps",
+                "maths-2",
+                "fai"
+                
             ];
         }
         

@@ -2,36 +2,33 @@ import { useEffect, useState } from "react";
 import { fetchNotes } from "../lib/notesDataSource";
 
 export function NotesProvider() {
-    const [data, setData] = useState([]);
-    const [dataSource, setDataSource] = useState("local");
-    const [isEmptyRemote, setIsEmptyRemote] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const [dataSource, setDataSource] = useState("cdn");
+  const [isEmptyRemote, setIsEmptyRemote] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        let isMounted = true;
+  useEffect(() => {
+    let isMounted = true;
 
-        async function loadNotes() {
-            setIsLoading(true);
+    async function loadNotes() {
+      setIsLoading(true);
 
-            
-            const { notes, source, isEmptyRemote } = await fetchNotes();
+      const { notes, source, isEmptyRemote } = await fetchNotes();
 
-            if (!isMounted) {
-                return;
-            }
+      if (!isMounted) return;
 
-            setData(notes);
-            setDataSource(source);
-            setIsEmptyRemote(isEmptyRemote);
-            setIsLoading(false);
-        }
+      setData(notes);
+      setDataSource(source);
+      setIsEmptyRemote(isEmptyRemote);
+      setIsLoading(false);
+    }
 
-        void loadNotes();
-      
-        return () => {
-            isMounted = false;
-        };
-    }, [ data]);
+    void loadNotes();
 
-    return ({ data, dataSource, isEmptyRemote, isLoading })
-}   
+    return () => {
+      isMounted = false;
+    };
+  }, []); // ← empty array: fetch once on mount only
+
+  return { data, dataSource, isEmptyRemote, isLoading };
+}

@@ -4,6 +4,7 @@ import { NotesProvider } from "../lib/NotesProvider.js";
 import InputFilter from "./InputFilter";
 import SelectionFilterMenu from "./SelectionFilterMenu";
 import CardofNote from "./CardofNote";
+import ElipseDarkGradient from "./ui/ElipseDarkGradient";
 
 export default function NoteSection() {
   const { data, dataSource, isEmptyRemote, isLoading } = NotesProvider();
@@ -25,7 +26,10 @@ export default function NoteSection() {
       >
 
         <div className="relative ">
-          <div className="absolute w-full h-full  top-0 left-0 bg-[url('/Images/Hero.svg')] bg-cover bg-center bg-no-repeat invert dark:invert-0 bg-white/50 dark:bg-black/50  -z-10 pointer-events-none"></div>
+          <div className="absolute w-full h-full  top-0 left-0 bg-[url('/Images/Gridwithstars.svg')] bg-cover bg-center bg-no-repeat  invert dark:invert-0  -z-10 pointer-events-none">
+          </div>
+          <ElipseDarkGradient />
+          
 
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -61,14 +65,12 @@ export default function NoteSection() {
             </p>
             {dataSource === "local" && (
               <p className="mt-2 text-xs text-zinc-500">
-                Using local notes data until Supabase env keys are configured.
+                Using bundled local notes — CDN manifest unavailable.
               </p>
             )}
-
-            {dataSource === "supabase" && isEmptyRemote && (
-              <p className="mt-2 text-xs text-zinc-500">
-                Supabase responded with 0 notes. Check your RLS select policy or
-                confirm rows exist in the public schema.
+            {isEmptyRemote && (
+              <p className="mt-2 text-xs text-red-500">
+                Remote notes source is empty — no notes available.
               </p>
             )}
           </div>

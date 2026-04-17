@@ -1,3 +1,4 @@
+import React from "react";
 import useRecentNotes from "../hooks/useRecentNotes";
 import CardofNote from "./CardofNote";
 import { NotesProvider } from "../lib/NotesProvider";
@@ -8,6 +9,8 @@ import { Link } from "react-router";
 export default function NotesFeedOnHome() {
   const [recentNotes] = useRecentNotes();
   const { data } = NotesProvider();
+  console.log(data);
+  console.log(recentNotes);
   const words = ["Recommended", "Better", "Best", "Top"];
   return (
     <section className="bg-white dark:bg-[#0a0a0a] text-white mx-auto max-w-5xl flex flex-col items-center m-10 mb-20 ">
