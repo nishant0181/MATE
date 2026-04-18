@@ -121,7 +121,7 @@ export default function PDFViewer({
               {({ isLoaded }) =>
                 isLoaded ? (
                   <div
-                    className=""
+                    className="select-none backdrop-blur-xs"
                     style={{
                       display: "flex",
                       height: "100%",
@@ -129,13 +129,17 @@ export default function PDFViewer({
                     }}
                   >
                     <ZoomToolbar documentId={activeDocumentId} />{" "}
-                    <div className="flex justify-between items-center gap-4  bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-black dark:text-white leading-tight font-Inter flex items-center gap-2 font-medium text-sm py-1 px-4 rounded-md border border-black/10 dark:border-white/10 transition-colors cursor-pointer backdrop-blur-sm">
+                    <div className="flex justify-between items-center gap-4  bg-black/5 dark:bg-black   text-black dark:text-white leading-tight font-Inter font-medium text-sm py-1 px-4  border border-black/10 dark:border-white/10 transition-colors cursor-pointer">
                       <div className="text-xl font-Inter font-medium tracking-[3.5px] text-[#f4efe6]">
                         MATE
                       </div>
                       <div className="flex items-center justify-center gap-4">
                         <div className="text-sm font-Inter text-white">
-                          {documentName}
+                          {documentName.length > 30
+                            ? (documentName.slice(0, 30) + "...")
+                                .toUpperCase()
+                                .replace(/-/g, " ")
+                            : documentName.toUpperCase().replace(/-/g, " ")}
                         </div>
                         <div className="hidden md:block">
                           <PageControls documentId={activeDocumentId} />
@@ -157,7 +161,7 @@ export default function PDFViewer({
                       </div>
                     </div>
                     {/* 2. Add the component here with documentId */}
-                    <div style={{ flex: 1, overflow: "hidden" }}>
+                    <div  style={{ flex: 1, overflow: "hidden" }}>
                       <Viewport
                         documentId={activeDocumentId}
                         className=" scrollbar-thumb-[#313131] scrollbar-track-[#161616]  scrollbar-thin"

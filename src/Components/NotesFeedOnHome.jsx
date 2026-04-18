@@ -9,8 +9,6 @@ import { Link } from "react-router";
 export default function NotesFeedOnHome() {
   const [recentNotes] = useRecentNotes();
   const { data } = NotesProvider();
-  console.log(data);
-  console.log(recentNotes);
   const words = ["Recommended", "Better", "Best", "Top"];
   return (
     <section className="bg-white dark:bg-[#0a0a0a] text-white mx-auto max-w-5xl flex flex-col items-center m-10 mb-20 ">
@@ -25,8 +23,8 @@ export default function NotesFeedOnHome() {
          Something <span className="text-black dark:text-[#808080]">For you</span> :
         </h1> */}
 
-      <div className="pt-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="pt-10   px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
           {recentNotes.map((id) => {
             const n = data.find((n) => n.id === id);
             if (!n) return null;

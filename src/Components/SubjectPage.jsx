@@ -9,26 +9,14 @@ import { Button } from "./ui/button";
 import { Toaster } from "./ui/sonner";
 import { toast } from "sonner";
 import PDFviewProvider from "../lib/PDFviewProvider.js";
-import { preloadPDFViewerChunk } from "./PDFViewer/pdfViewerPreload";
 import FInalPDFView from "./PDFViewer/FInalPDFView.jsx";
-import PDFViewerWarmup from "./PDFViewer/PDFViewerWarmup.jsx";
 import { useNavigate } from "react-router";
 
 export default function SubjectPage() {
-  const [warmPdfViewer, setWarmPdfViewer] = useState(false);
+  
   const { isOpen, setIsOpen, selectedPdfUrl, handleViewPDF } =
     PDFviewProvider();
 
-  useEffect(() => {
-    const preloadTimer = window.setTimeout(() => {
-      void preloadPDFViewerChunk();
-      setWarmPdfViewer(true);
-    }, 1500);
-
-    return () => {
-      window.clearTimeout(preloadTimer);
-    };
-  }, []);
 
   // ------------------------------
   useEffect(() => {
@@ -100,7 +88,7 @@ export default function SubjectPage() {
           className="relative bg-zinc-50 dark:bg-[#0a0a0a] mx-auto max-w-5xl w-full flex flex-col pt-8 pb-4 border-t border-b  border-primary/20"
         >
           <button
-            className="z-70 flex items-center gap-2 text-neutral-400 hover:text-white px-4 md:px-8 transition-colors w-fit"
+            className="z-70 flex items-center gap-2 dark:text-neutral-400 dark:hover:text-white hover:text-black hover:bg-zinc-200 dark:hover:bg-zinc-900 px-4 md:px-4 md:mx-4 rounded-md  transition-colors w-fit"
             onClick={() => navigate(-1)}
           >
             <ArrowLeft className="h-4 w-4" />
@@ -193,7 +181,6 @@ export default function SubjectPage() {
           setIsOpen={setIsOpen}
           documentUrl={selectedPdfUrl}
         />
-        <PDFViewerWarmup enabled={warmPdfViewer} />
       </section>
     </>
   );

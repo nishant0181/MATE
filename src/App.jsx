@@ -11,6 +11,7 @@ import GlassDock from "./Components/GlassDock";
 import ThemeGiver from "./contexts/ThemeGiver";
 import Footer from "./Components/Footer";
 import ScrollToTop from "./Components/ScrollToTop";
+import PDFViewerWarmup from "./Components/PDFViewer/PDFViewerWarmup";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           </ThemeGiver>
         </BrowserRouter>
       </FavoritesProvider>
+      <PDFViewerWarmup enabled={true} />
     </>
   );
 }

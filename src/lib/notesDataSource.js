@@ -21,7 +21,6 @@ export async function fetchNotes() {
     if (!Array.isArray(manifest) || manifest.length === 0) {
       throw new Error("Manifest is empty or malformed");
     }
-    console.log(manifest);
 
     return {
       notes: manifest,

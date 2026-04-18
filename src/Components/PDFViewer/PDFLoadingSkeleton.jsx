@@ -15,15 +15,19 @@ export default function PDFLoadingSkeleton({ documentUrl, setIsOpen }) {
       <div style={{ display: "flex", height: "100%", flexDirection: "column" }}>
         {/* Placeholder for ZoomToolbar to prevent layout shift */}
         <div className="h-[2px]"></div>
-        
+
         {/* Top Toolbar (Desktop) Mock */}
-        <div className="flex justify-between items-center gap-4 bg-[#0c0c0c] px-4 py-2 rounded-lg shadow-lg z-10 w-full animate-pulse">
+        <div className="flex justify-between items-center gap-4 bg-[#0c0c0c] px-4 py-2 rounded-lg shadow-lg z-10 w-full">
           <div className="text-xl font-Inter font-medium tracking-[3.5px] text-[#f4efe6]">
             MATE
           </div>
           <div className="flex flex-col">
             <div className="text-sm font-Inter text-white truncate max-w-[200px] md:max-w-xs">
-              {documentName}
+              {documentName.length > 30
+                ? (documentName.slice(0, 30) + "...")
+                    .toUpperCase()
+                    .replace(/-/g, " ")
+                : documentName.toUpperCase().replace(/-/g, " ")}
             </div>
           </div>
           <div className="hidden md:flex gap-2 text-white items-center">
@@ -47,7 +51,9 @@ export default function PDFLoadingSkeleton({ documentUrl, setIsOpen }) {
             <div className="relative">
               <div className="w-16 h-16 border-[3px] border-zinc-800 border-t-white rounded-full animate-spin"></div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <span className="text-zinc-400 text-[10px] font-bold tracking-widest mt-[2px]">PDF</span>
+                <span className="text-zinc-400 text-[10px] font-bold tracking-widest mt-[2px]">
+                  PDF
+                </span>
               </div>
             </div>
             {/* Pulsing visual element resembling a document loading */}
