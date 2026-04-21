@@ -12,14 +12,20 @@ export default function NoteSection() {
 
   useEffect(() => {
     setFilteredData(data);
+   
   }, [data]);
+  useEffect(() => {
+    setVisibleCount(9);
+  }, [filteredData]);
+
+  const [visibleCount, setVisibleCount] = useState(9)
 
   return (
     <>
       <section
         id="noteSection"
         className="md:max-w-350 scroll-smooth 
-        font-Inter mx-auto text-white select-none 
+        font-Inter mx-auto text-white  
         mb-20 
         relative
         "
@@ -91,7 +97,7 @@ export default function NoteSection() {
                 filters or search terms.
               </p>
             ) : (
-              filteredData.map((note) => (
+              filteredData.slice(0, visibleCount).map((note) => (
                 <CardofNote
                 note={note}
                   key={note.id}
@@ -110,6 +116,16 @@ export default function NoteSection() {
               ))
             )}
           </motion.div>
+          {filteredData.length > visibleCount && (
+            <div className="flex justify-center mt-10">
+              <button
+                onClick={() => setVisibleCount(visibleCount + 9)}
+                className="px-6 py-3 dark:bg-white dark:text-black bg-neutral-800  text-neutral-200 rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors"
+              >
+                Load More
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </>

@@ -11,15 +11,8 @@ import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import { FavoritesContext } from "@/contexts/FavoritesProvider";
 import useRecentNotes from "../hooks/useRecentNotes";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "./ui/dialog";
-import QRCode from "react-qr-code";
+
+import MyQRCode from "./QRCode";
 
 export default function CardofNote({
   note,
@@ -133,54 +126,7 @@ export default function CardofNote({
             <>
               <div className="flex flex-col w-full gap-4">
                 <div className="flex justify-end  w-full">
-                  <Dialog>
-                    <DialogTrigger>
-                      <div
-                        className="     cursor-pointer transition-colors duration-300  text-black
-                     bg-zinc-200 dark:bg-white p-2 dark:hover:bg-zinc-200 hover:bg-zinc-300  flex items-center justify-center
-                     rounded-md"
-                      >
-                        <QrCode
-                          className="size-4 
-                        
-                        "
-                        />
-                      </div>
-                    </DialogTrigger>
-
-                    <DialogContent>
-                      <DialogHeader>
-                        <DialogTitle className="font-bold text-lg ">
-                          Scan the QR Code to Share
-                        </DialogTitle>
-
-                        {shareUrl && (
-                          <div className="bg-white p-4 rounded-xl mx-auto mt-4 w-fit shadow-md">
-                            <div
-                              style={{
-                                height: "auto",
-                                margin: "0 auto",
-                                maxWidth: 256,
-                                width: "100%",
-                              }}
-                            >
-                              <QRCode
-                                size={256}
-                                style={{
-                                  height: "auto",
-                                  maxWidth: "100%",
-                                  width: "100%",
-                                }}
-                                value={shareUrl}
-                                viewBox="0 0 256 256"
-                              />
-                            </div>
-                          </div>
-                        )}
-                      </DialogHeader>
-                      <DialogDescription></DialogDescription>
-                    </DialogContent>
-                  </Dialog>
+                  <MyQRCode shareUrl={shareUrl}/>
                 </div>
                 <div className="flex gap-2">
                   <Link

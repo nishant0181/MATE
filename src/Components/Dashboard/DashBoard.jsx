@@ -65,7 +65,7 @@ export default function DashBoard() {
       <section
         id="dashboardSection"
         className="md:max-w-350 
-        mx-auto text-black dark:text-white font-Figtree select-none mb-20  "
+        mx-auto text-black dark:text-white font-Figtree  mb-20  "
       >
         <ProfileDialogBox
           isOpen={isOpen}

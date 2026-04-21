@@ -12,8 +12,10 @@ import PDFviewProvider from "../lib/PDFviewProvider.js";
 import FInalPDFView from "./PDFViewer/FInalPDFView.jsx";
 import { useNavigate } from "react-router";
 import { cn } from "@/lib/utils";
+import MyQRCode from "./QRCode.jsx";
 
 export default function SubjectPage() {
+  const [visibleCount, setVisibleCount] = useState(9)
   const [activeTab, setActiveTab] = useState("All");
   const { isOpen, setIsOpen, selectedPdfUrl, handleViewPDF } =
     PDFviewProvider();
@@ -79,6 +81,7 @@ export default function SubjectPage() {
     navigator.clipboard.writeText(window.location.href);
   };
 
+
   return (
     <>
       <section
@@ -87,7 +90,7 @@ export default function SubjectPage() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         id="dashboardSection"
         className="max-w-5xl
-             mx-auto text-black dark:text-white font-Figtree select-none mb-20"
+             mx-auto text-black dark:text-white font-Figtree mb-20"
       >
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -133,7 +136,8 @@ export default function SubjectPage() {
                 </Badge>
               </div>
             </div>
-            <div className="self-end md:self-auto">
+            <div className="self-end md:self-auto flex gap-2">
+              <MyQRCode shareUrl={window.location.href} />
               <Button
                 variant="outline"
                 onClick={() => {
@@ -162,7 +166,9 @@ export default function SubjectPage() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setActiveTab(cat)}
+                onClick={() => {setActiveTab(cat)
+                  setVisibleCount(9)
+                }}
                 className={cn(
                   "px-4 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer",
                   activeTab === cat
@@ -192,7 +198,7 @@ export default function SubjectPage() {
               or search terms.
             </p>
           ) : (
-            filteredFiles.map((note, index) => (
+            filteredFiles.slice(0, visibleCount).map((note, index) => (
               <CardofNote
                 key={`${note.fileId}-${index}`}
                 id={note.fileId}
@@ -208,6 +214,16 @@ export default function SubjectPage() {
             ))
           )}
         </motion.div>
+        {filteredFiles.length > visibleCount && (
+            <div className="flex justify-center mt-10">
+              <button
+                onClick={() => setVisibleCount(visibleCount + 9)}
+                className="px-6 py-3 dark:bg-white dark:text-black bg-neutral-800  text-neutral-200 rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors"
+              >
+                Load More
+              </button>
+            </div>
+          )}
 
         <FInalPDFView
           isOpen={isOpen}
