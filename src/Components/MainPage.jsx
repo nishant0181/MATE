@@ -11,7 +11,7 @@ export default function MainPage() {
       className="relative mx-auto max-w-7xl "
     >
       <Hero />
-      <div className="h-8 bg-dashed max-w-7xl mx-auto"></div>
+      {/* <div className="h-8 bg-dashed max-w-7xl mx-auto"></div> */}
       <NotesFeedOnHome />
       <div className="h-8 bg-dashed max-w-7xl mx-auto"></div>
       <Features />

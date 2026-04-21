@@ -11,9 +11,10 @@ import { toast } from "sonner";
 import PDFviewProvider from "../lib/PDFviewProvider.js";
 import FInalPDFView from "./PDFViewer/FInalPDFView.jsx";
 import { useNavigate } from "react-router";
+import { cn } from "@/lib/utils";
 
 export default function SubjectPage() {
-  
+  const [activeTab, setActiveTab] = useState("All");
   const { isOpen, setIsOpen, selectedPdfUrl, handleViewPDF } =
     PDFviewProvider();
 
@@ -66,6 +67,13 @@ export default function SubjectPage() {
       </div>
     );
   }
+
+  const categories = ["All", ...new Set(subject.files.map(file => file.tag).filter(Boolean))];
+  
+  const filteredFiles = subject.files.filter((file) => {
+    if (activeTab === "All") return true;
+    return file.tag === activeTab;
+  });
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -143,6 +151,31 @@ export default function SubjectPage() {
           <Toaster />
         </motion.div>
 
+        {/* Dynamic Category Tabs */}
+        {categories.length > 1 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="flex gap-3 overflow-x-auto overflow-y-hidden px-8 pb-0 pt-6 scrollbar-hide  mx-auto w-full"
+          >
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveTab(cat)}
+                className={cn(
+                  "px-4 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer",
+                  activeTab === cat
+                    ? "bg-black text-white dark:bg-white dark:text-black shadow-md scale-105"
+                    : "bg-black/5 dark:bg-white/5 text-neutral-600 dark:text-neutral-400 hover:bg-black/10 dark:hover:bg-white/10"
+                )}
+              >
+                {cat}
+              </button>
+            ))}
+          </motion.div>
+        )}
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -153,15 +186,15 @@ export default function SubjectPage() {
             <p className="text-gray-400 text-center col-span-full py-10">
               Loading notes...
             </p>
-          ) : subject.files.length === 0 ? (
+          ) : filteredFiles.length === 0 ? (
             <p className="text-gray-400 text-center col-span-full py-10">
               No notes found matching your criteria kindly try different filters
               or search terms.
             </p>
           ) : (
-            subject.files.map((note) => (
+            filteredFiles.map((note, index) => (
               <CardofNote
-                key={note.fileId}
+                key={`${note.fileId}-${index}`}
                 id={note.fileId}
                 title={note.title}
                 description={note.description}

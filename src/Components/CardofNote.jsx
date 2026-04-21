@@ -61,17 +61,19 @@ export default function CardofNote({
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative z-0 flex flex-col bg-white dark:bg-[#151516]  border border-neutral-300 dark:border-[#3c3c3c] rounded-lg p-7 
         transition-all duration-300
-        shadow-[14px_14px_0px_-1px_rgba(255,255,255,0.10)]
-        hover:shadow-[8px_8px_0px_-1px_rgba(255,255,255,0.15)]
+        shadow-[14px_14px_0px_-1px_rgba(0,0,0,0.10)]
+        hover:shadow-[8px_8px_0px_-1px_rgba(0,0,0,0.15)]
+        dark:shadow-[14px_14px_0px_-1px_rgba(255,255,255,0.10)]
+        dark:hover:shadow-[8px_8px_0px_-1px_rgba(255,255,255,0.15)]
         h-full max-w-[350px] w-full
         dark:bg-[radial-gradient(#323236_1px,transparent_1px)] bg-size-[16px_16px] 
-        bg-[radial-gradient(#f5f5f5_1px,transparent_1px)]"
+        bg-[radial-gradient(rgba(0,0,0,0.05)_1px,transparent_1px)]"
         >
         <div className="flex flex-1 flex-col">
         <div className="z-60 flex items-start justify-between mb-4">
           <div className="">
-            <div className="pb-8 flex items-center justify-between gap-3">
-              <h3 className="text-2xl font-bold text-black dark:text-white mb-2 line-clamp-1 w-full">
+            <div className="pb-8 flex items-center justify-between gap-3 w-full">
+              <h3 className="text-2xl font-bold text-black dark:text-white mb-2 line-clamp-1 w-full ">
                 {title}
               </h3>
             </div>

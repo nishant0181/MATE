@@ -11,7 +11,7 @@ export default function NotesFeedOnHome() {
   const { data } = NotesProvider();
   const words = ["Recommended", "Better", "Best", "Top"];
   return (
-    <section className="bg-white dark:bg-[#0a0a0a] text-white mx-auto max-w-5xl flex flex-col items-center m-10 mb-20 ">
+    <section className="bg-white dark:bg-[#0a0a0a] text-white mx-auto max-w-5xl flex flex-col items-center  mb-20 ">
       <div className="w-full flex  items-center px-4 md:px-0 border-t border-primary/20 border-b pb-4 pt-4">
         <div className="text-3xl md:text-4xl w-full mx-auto font-bold text-neutral-600 dark:text-neutral-400">
           This is

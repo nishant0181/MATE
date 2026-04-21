@@ -1,4 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const loadingPhrases = [
+  "Organizing the pages...",
+  "Brewing coffee...",
+  "Fetching your material...",
+  "Solving for X...",
+  "Getting things ready...",
+  "Almost there, you are the best...",
+  "Preparing your workspace..."
+];
 
 const getDocumentName = (url) => {
   if (!url) return "Loading...";
@@ -9,6 +20,31 @@ const getDocumentName = (url) => {
 
 export default function PDFLoadingSkeleton({ documentUrl, setIsOpen }) {
   const documentName = getDocumentName(documentUrl);
+  const [progress, setProgress] = useState(0);
+  const [phraseIndex, setPhraseIndex] = useState(0);
+
+  useEffect(() => {
+    // Rotating phrases every 2.5 seconds
+    const phraseInterval = setInterval(() => {
+      setPhraseIndex((prev) => (prev + 1) % loadingPhrases.length);
+    }, 2500);
+
+    // Asymptotic progress bar logic
+    const progressInterval = setInterval(() => {
+      setProgress((oldProgress) => {
+        if (oldProgress >= 96) return 96;
+        // Increase quickly at first, then slow down
+        const diff = 100 - oldProgress;
+        const step = Math.max(diff * 0.1, 0.5); // take 10% of remaining distance
+        return oldProgress + step;
+      });
+    }, 200);
+
+    return () => {
+      clearInterval(phraseInterval);
+      clearInterval(progressInterval);
+    };
+  }, []);
 
   return (
     <div className="h-dvh flex flex-col">
@@ -56,16 +92,36 @@ export default function PDFLoadingSkeleton({ documentUrl, setIsOpen }) {
                 </span>
               </div>
             </div>
-            {/* Pulsing visual element resembling a document loading */}
-            <div className="mt-8 relative w-48 h-64 border border-[#2a2d2f] bg-[#161616] rounded-md overflow-hidden animate-pulse shadow-xl flex flex-col gap-3 p-4 select-none">
-              <div className="h-4 bg-[#2a2d2f] rounded w-3/4"></div>
-              <div className="h-3 bg-[#2a2d2f] rounded w-full"></div>
-              <div className="h-3 bg-[#2a2d2f] rounded w-full"></div>
-              <div className="h-3 bg-[#2a2d2f] rounded w-5/6"></div>
-              <div className="mt-4 h-24 bg-[#2a2d2f]/50 rounded w-full"></div>
-              <div className="mt-auto flex justify-between">
-                <div className="h-2 bg-[#2a2d2f] rounded w-1/4"></div>
-                <div className="h-2 bg-[#2a2d2f] rounded w-1/4"></div>
+            {/* New Progress & Typography UI */}
+            <div className="mt-12 flex flex-col items-center max-w-xs w-full">
+              {/* Animated Text */}
+              <div className="h-8 mb-6 flex items-center justify-center overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={phraseIndex}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-zinc-400 text-sm font-medium tracking-wide text-center"
+                  >
+                    {loadingPhrases[phraseIndex]}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
+
+              {/* Progress Bar Container */}
+              <div className="w-full h-1.5 bg-zinc-800/80 rounded-full overflow-hidden backdrop-blur-sm ">
+                <motion.div 
+                  className="h-full bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+                  initial={{ width: "0%" }}
+                  animate={{ width: `${progress}%` }}
+                  transition={{ ease: "easeOut", duration: 0.3 }}
+                />
+              </div>
+              <div className="mt-4 flex justify-between w-full text-[10px] text-zinc-500 font-bold tracking-widest">
+                <span>LOADING</span>
+                <span>{Math.floor(progress)}%</span>
               </div>
             </div>
           </div>

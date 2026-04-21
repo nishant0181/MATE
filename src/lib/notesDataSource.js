@@ -4,10 +4,7 @@ import { getLocalNotes } from "./localNotes";
 const MANIFEST_URL =
   "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/notes-manifest.json";
 
-/**
- * Fetch notes from the CDN manifest (notes-manifest.json).
- * Falls back to local notes if the fetch fails or returns nothing.
- */
+
 export async function fetchNotes() {
   try {
     const res = await fetch(MANIFEST_URL, { cache: "no-cache" });
