@@ -186,7 +186,7 @@ export default function SubjectPage() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center p-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center pt-8 px-4 md:px-0"
         >
           {isLoading ? (
             <p className="text-gray-400 text-center col-span-full py-10">
@@ -210,6 +210,7 @@ export default function SubjectPage() {
                 semester={subject.semester}
                 FileMode={true}
                 onViewPDF={handleViewPDF}
+                imageUrl={note.imageUrl}
               />
             ))
           )}

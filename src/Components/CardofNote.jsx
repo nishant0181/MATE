@@ -28,6 +28,7 @@ export default function CardofNote({
   branch,
   onViewPDF,
   setIsOpen,
+  imageUrl,
 }) {
   const [setNoteId] = useRecentNotes();
   const shareUrl =
@@ -64,9 +65,32 @@ export default function CardofNote({
         >
         <div className="flex flex-1 flex-col">
         <div className="z-60 flex items-start justify-between mb-4">
-          <div className="">
-            <div className="pb-8 flex items-center justify-between gap-3 w-full">
-              <h3 className="text-2xl font-bold text-black dark:text-white mb-2 line-clamp-1 w-full ">
+          <div className="w-full">
+            {/* Dynamic Thumbnail Preview */}
+            {
+              FileMode && (
+                
+                <div className="relative w-full aspect-video rounded-md overflow-hidden bg-zinc-100 dark:bg-zinc-900 mb-6 border border-neutral-200 dark:border-neutral-800">
+              {imageUrl ? (
+                <img
+                  src={imageUrl}
+                  alt={title}
+                  loading="lazy"
+                  className="w-full h-full object-top object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-zinc-800 dark:to-zinc-900">
+                   <div className="text-xl font-Inter font-medium tracking-[3.5px] text-zinc-500/50 select-none">
+                        MATE
+                    </div>
+                </div>
+              )}
+            </div>
+                )
+              }
+
+            <div className="flex items-center justify-between gap-3 w-full">
+              <h3 className="text-2xl font-bold text-black dark:text-white mb-2 line-clamp-1 w-full">
                 {title}
               </h3>
             </div>
@@ -92,9 +116,13 @@ export default function CardofNote({
               {university}
             </span>
           )}
-          <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-zinc-300 px-3 py-1 rounded-full border border-zinc-400">
-            {pages} pages
-          </span>
+          {
+            pages && (
+              <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-zinc-300 px-3 py-1 rounded-full border border-zinc-400">
+                {pages} Pages
+              </span>
+            )
+          }
         </div>
 
         </div>

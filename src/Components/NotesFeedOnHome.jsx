@@ -42,6 +42,7 @@ export default function NotesFeedOnHome() {
                 url={n.url}
                 semester={n.semester}
                 branch={n.branch}
+                imageUrl={n.imageUrl}
               />
             );
           })}

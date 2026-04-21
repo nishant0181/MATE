@@ -166,6 +166,7 @@ export default function DashBoard() {
                     url={note.url}
                     semester={note.semester}
                     branch={note.branch}
+                    FileMode={false}
                   />
                 ))
               )}

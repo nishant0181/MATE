@@ -19,7 +19,7 @@ export default function Navbar() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.8, ease: "easeInOut" }}
-        className="overflow-hidden z-40 bg-white text-black dark:bg-black font-Inter sticky top-0 dark:text-white flex justify-between p-4  max-w-360 mx-auto "
+        className="overflow-hidden z-40 bg-white text-black dark:bg-[#0a0a0a] font-Inter sticky top-0 dark:text-white flex justify-between p-4  max-w-360 mx-auto "
       >
         <Link
           to="/"
@@ -42,7 +42,9 @@ export default function Navbar() {
               <li className="px-4 py-2 rounded-xl cursor-pointer">
                 <Link to="/favorites">Favorites</Link>
               </li>
-              <li className="px-4 py-2 rounded-xl cursor-pointer">Upload</li>
+              <li className="px-4 py-2 rounded-xl cursor-pointer">
+                <Link to="/upload">Upload</Link>
+              </li>
               {/* <li className="px-4 py-2 rounded-xl cursor-pointer">GTU</li> */}
               {/* <li className="px-4 py-2 rounded-xl cursor-pointer">About US</li> */}
               <li></li>

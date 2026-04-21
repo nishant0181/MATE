@@ -50,6 +50,7 @@ export default function FavoritesPage() {
                   semester={note.semester}
                   branch={note.branch}
                   FileMode={false}
+                  imageUrl={note.imageUrl}
                 />
               ))
             )}

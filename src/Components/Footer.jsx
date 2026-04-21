@@ -5,9 +5,7 @@ import { Link } from "react-router";
 export default function Footer() {
   return (
     <footer className="bg-white dark:bg-[#0a0a0a] text-white mx-auto max-w-7xl flex flex-col items-center mb-20  ">
-<div className="text-neutral-600 dark:text-neutral-300 text-center">
-    Ready to make better decisions with your data?
-</div>
+
         <div className="pb-10 w-full flex flex-col justify-between border-dashed border-t-2 border-b-2 border-neutral-200 dark:border-neutral-800 pt-10 mb-10     ">
         <div className="flex justify-between items-start">
             <div className="text-neutral-600 dark:text-neutral-300">© MATE </div>

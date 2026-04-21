@@ -112,6 +112,7 @@ export default function NoteSection() {
                   semester={note.semester}
                   branch={note.branch}
                   FileMode={false}
+                  imageUrl={note.imageUrl}
                 />
               ))
             )}
