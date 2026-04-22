@@ -79,7 +79,7 @@ export default function CardofNote({
                   className="w-full h-full object-top object-cover transition-transform duration-500 hover:scale-105"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-zinc-800 dark:to-zinc-900">
+                  <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-neutral-200 to-neutral-300 dark:from-zinc-800 dark:to-zinc-900">
                    <div className="text-xl font-Inter font-medium tracking-[3.5px] text-zinc-500/50 select-none">
                         MATE
                     </div>

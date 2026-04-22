@@ -96,21 +96,21 @@ export default function SubjectPage() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative bg-zinc-50 dark:bg-[#0a0a0a] mx-auto max-w-5xl w-full flex flex-col pt-8 pb-4 border-t border-b  border-primary/20"
+          className="relative bg-zinc-50 dark:bg-[#0a0a0a] mx-auto w-full flex flex-col pt-8 pb-4 border-t border-b  border-primary/20"
         >
           <button
-            className="z-70 flex items-center gap-2 dark:text-neutral-400 dark:hover:text-white hover:text-black hover:bg-zinc-200 dark:hover:bg-zinc-900 px-4 md:px-4 md:mx-4 rounded-md  transition-colors w-fit"
+            className="z-70 flex items-center gap-2 dark:text-neutral-400 dark:hover:text-white hover:text-black hover:bg-zinc-200 dark:hover:bg-zinc-900 px-4 md:px-4 md:mx-0 rounded-md  transition-colors w-fit"
             onClick={() => navigate(-1)}
           >
             <ArrowLeft className="h-4 w-4" />
             Back
           </button>
-          <div className="flex flex-col md:flex-row px-4 md:px-8 py-4 md:items-center  gap-8 md:justify-between ">
+          <div className="flex flex-col md:flex-row px-4 md:px-4 py-4 md:items-center  gap-8 md:justify-between ">
             <div className="flex flex-col gap-2">
               <h1 className="text-3xl font-bold font-Figtree leading-2xl dark:text-neutral-100 text-black ">
                 {subject.title}
               </h1>
-              <p className="text-neutral-500 dark:text-neutral-400">{subject.description}</p>
+              <p className="text-neutral-500 dark:text-neutral-400 max-w-xs  w-fit">{subject.description}</p>
 
               <div className="flex items-center gap-2 flex-wrap max-w-87.5 ">
                 <Badge
@@ -161,7 +161,7 @@ export default function SubjectPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="flex gap-3 overflow-x-auto overflow-y-hidden px-8 pb-0 pt-6 scrollbar-hide  mx-auto w-full"
+            className="flex gap-3 overflow-x-auto px-8  mt-6 scrollbar-hide   mx-auto w-full "
           >
             {categories.map((cat) => (
               <button
@@ -170,9 +170,9 @@ export default function SubjectPage() {
                   setVisibleCount(9)
                 }}
                 className={cn(
-                  "px-4 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer",
+                  "px-4 py-2.5   rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer",
                   activeTab === cat
-                    ? "bg-black text-white dark:bg-white dark:text-black shadow-md scale-105"
+                    ? "bg-black text-white dark:bg-white dark:text-black shadow-md "
                     : "bg-black/5 dark:bg-white/5 text-neutral-600 dark:text-neutral-400 hover:bg-black/10 dark:hover:bg-white/10"
                 )}
               >
