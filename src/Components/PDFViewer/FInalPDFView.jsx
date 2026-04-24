@@ -19,6 +19,38 @@ export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
     setIsOpen(false);
   }, [setIsOpen]);
 
+  // ── Screen Wake Lock: keep screen on while reading PDF ──────────────────
+  const wakeLockRef = useRef(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const acquireWakeLock = async () => {
+      if (!('wakeLock' in navigator)) return;
+      try {
+        wakeLockRef.current = await navigator.wakeLock.request('screen');
+      } catch (err) {
+        console.warn('[MATE] Wake Lock denied:', err.message);
+      }
+    };
+
+    acquireWakeLock();
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && isOpen) {
+        acquireWakeLock();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+     
+      wakeLockRef.current?.release().catch(() => {});
+      wakeLockRef.current = null;
+    };
+  }, [isOpen]);
+
   useEffect(() => {
     if (!isOpen) {
       document.body.style.overflow = "unset";

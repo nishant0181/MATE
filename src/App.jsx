@@ -12,6 +12,7 @@ import ThemeGiver from "./contexts/ThemeGiver";
 import Footer from "./Components/Footer";
 import ScrollToTop from "./Components/ScrollToTop";
 import PDFViewerWarmup from "./Components/PDFViewer/PDFViewerWarmup";
+import ShareTargetHandler from "./Components/ShareTargetHandler";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route path="/dashboard" element={<DashBoard />} />
               <Route path="/subject/:id" element={<SubjectPage />} />
               <Route path="/favorites" element={<FavoritesPage />} />
+              <Route path="/share-target" element={<ShareTargetHandler />} />
             </Routes>
             <Footer />
           </ThemeGiver>
