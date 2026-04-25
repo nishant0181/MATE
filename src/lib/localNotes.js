@@ -1,4 +1,4 @@
-const localNotes = [
+export const localNotes = [
   {
     "id": "bce",
     "title": "BCE",

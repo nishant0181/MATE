@@ -1,5 +1,5 @@
 
-import { getLocalNotes } from "./localNotes";
+import { localNotes } from "./localNotes";
 
 const MANIFEST_URL =
   "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/notes-manifest.json";
