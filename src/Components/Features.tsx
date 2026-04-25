@@ -10,6 +10,8 @@ import {
   FileText,
 } from "lucide-react";
 
+
+
 export default function Features() {
   const features = [
     {
@@ -49,27 +51,31 @@ export default function Features() {
   ];
 
   return (
-    <section className="pt-16 max-w-7xl mx-auto">
+    <section className="md:pt-32 pt-20 max-w-7xl mx-auto mb-28  border-b border-border ">
       <div className="max-w-full  mx-auto ">
-        <div className="text-center mb-16 px-4 sm:px-6 lg:px-8">
-          <h2 className="font-librebaskerville text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-            Everything You Need To Excel
-          </h2>
+        <div className="pb-4 pt-4  tracking-tighter max-w-4xl mx-auto  leading-[1.05] md:leading-none font-Inter text-[44px] text-center sm:text-[50px] md:text-[52px] lg:text-[58px] text-zinc-900 dark:text-gray-200 z-10 font-extrabold ">
+          Features of this Legacy
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 m-6 ">
+        <div className="grid grid-cols-1 gap-8  md:grid-cols-2 lg:grid-cols-3  place-items-center m-10 ">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={index}
-                className="group relative p-4 sm:p-6 border-l border-border
-                bg-[#f5f5f5] dark:bg-[oklch(0.145_0_0)] 
-                hover:bg-[#f5f5f5]/50 hover:transition-colors
-                dark:text-white text-black"
+                className="relative z-0 flex flex-col bg-white dark:bg-[#151516]  border border-neutral-300 dark:border-[#3c3c3c] rounded-lg p-7 
+        transition-all duration-300
+        shadow-[14px_14px_0px_-1px_rgba(0,0,0,0.10)]
+        hover:shadow-[8px_8px_0px_-1px_rgba(0,0,0,0.15)]
+        dark:shadow-[14px_14px_0px_-1px_rgba(255,255,255,0.10)]
+        dark:hover:shadow-[8px_8px_0px_-1px_rgba(255,255,255,0.15)]
+        h-full max-w-[350px] w-full
+        dark:bg-[radial-gradient(#323236_1px,transparent_1px)] bg-size-[16px_16px] 
+        bg-[radial-gradient(rgba(0,0,0,0.05)_1px,transparent_1px)]
+                "
               >
                 {/* Icon */}
-                <div className="inline-flex p-2 sm:p-3 border border-border bg-muted mb-3 sm:mb-4">
+                <div className="inline-flex p-2 sm:p-3 border border-border bg-muted mb-3 sm:mb-4 w-fit">
                   <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
 
@@ -85,6 +91,7 @@ export default function Features() {
           })}
         </div>
       </div>
+        
     </section>
   );
 }

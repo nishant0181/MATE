@@ -9,19 +9,15 @@ import { Link } from "react-router";
 export default function NotesFeedOnHome() {
   const [recentNotes] = useRecentNotes();
   const { data } = NotesProvider();
-  const words = ["Recommended", "Better", "Best", "Top"];
+  const words = ["faster", "better", "easier", "smarter"];
   return (
-    <section className="bg-white dark:bg-[#0a0a0a] text-white mx-auto max-w-5xl flex flex-col items-center  mb-20 ">
-      <div className="w-full flex  items-center px-4 md:px-0 border-t border-primary/20 border-b pb-4 pt-4">
-        <div className="text-3xl md:text-4xl w-full mx-auto font-bold text-neutral-600 dark:text-neutral-400">
-          This is
-          <FlipWords words={words} /> <br />
-          for you
-        </div>
+    <section className="bg-white dark:bg-[#0a0a0a] text-white mx-auto max-w-5xl flex flex-col items-center md:mt-16 mb-20 ">
+      <div className="pb-4 pt-4  tracking-tighter max-w-4xl mx-auto font-extrabold  leading-[1.05] md:leading-none font-Inter text-[44px] text-center sm:text-[50px] md:text-[52px] lg:text-[58px] text-zinc-900 dark:text-gray-200 z-10 ">
+        Learn
+        <span className="ml-1">
+          <FlipWords words={words} />
+        </span>with MATE
       </div>
-      {/* <h1 className="w-full mt-10 px-10 md:px-0 text-3xl font-bold text-left text-black dark:text-white">
-         Something <span className="text-black dark:text-[#808080]">For you</span> :
-        </h1> */}
 
       <div className="pt-10   px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
