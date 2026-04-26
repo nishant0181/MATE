@@ -6,7 +6,7 @@ import InstallApp from "./InstallApp";
 
 export default function MainPage() {
   return (
-    <div className="relative mx-auto max-w-7xl ">
+    <div className="relative mx-auto max-w-7xl select-none">
       <Hero />
       <NotesFeedOnHome />
       <Features />

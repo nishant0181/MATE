@@ -14,19 +14,24 @@ import ScrollToTop from "./Components/ScrollToTop";
 import PDFViewerWarmup from "./Components/PDFViewer/PDFViewerWarmup";
 import ShareTargetHandler from "./Components/ShareTargetHandler";
 
+import BackButtonHandler from "./Components/BackButtonHandler";
+
 function App() {
   return (
     <>
       <FavoritesProvider>
         <BrowserRouter>
-         <ScrollToTop />
-          <ThemeGiver >
+          <BackButtonHandler />
+          <ScrollToTop />
+          <ThemeGiver>
             <Navbar />
             <GlassDock />
             <div
               className="
               bg-[linear-gradient(180deg,transparent_0%,#ffffff_100%)]
-              dark:bg-[linear-gradient(180deg,transparent_0%,#09090b_97%)] mx-auto w-full fixed bottom-0 z-20  h-10 md:h-28 hidden md:block pointer-events-none
+              
+              dark:bg-[linear-gradient(180deg,transparent_0%,oklch(0.227_0_281.65)_97%)]
+              mx-auto w-full fixed bottom-0 z-20  h-10 md:h-28 hidden md:block pointer-events-none
            "
             ></div>
             <Routes>

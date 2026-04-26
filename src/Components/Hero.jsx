@@ -16,16 +16,11 @@ export default function Hero() {
         className="md:max-w-350 font-Inter mx-auto text-black dark:text-white select-none relative"
       >
         <div className="relative overflow-hidden bg-zinc-50 dark:bg-background w-full flex flex-col items-center pb-24 md:pb-32">
-          {/* The Background Grid Image (Inverts on Light Mode) */}
           <div className="absolute inset-0 bg-[url('/Images/Gridwithstars.svg')] bg-cover bg-center bg-no-repeat invert dark:invert-0 z-0 pointer-events-none mask-[radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
-
-          {/* Edge Gradients for Smooth Fading */}
           <ElipseDarkGradient  />
 
-          {/* Sophisticated Ambient White/Blue Light */}
-          <div className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] bg-[radial-gradient(circle,rgba(0,0,0,0.03)_0%,rgba(100,150,255,0.02)_50%,transparent_100%)] dark:bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,rgba(100,150,255,0.03)_50%,transparent_100%)] blur-[100px] rounded-full pointer-events-none mix-blend-multiply dark:mix-blend-screen z-0"></div>
-
-          {/* Premium Glassmorphism Badge */}
+    
+    
           <div className="mt-20 lg:mt-28 mb-8 text-[12px] md:text-sm font-Inter text-black/80 dark:text-white/80 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md rounded-full px-4 py-1.5 flex items-center justify-center gap-2 hover:bg-black/10 dark:hover:bg-white/10 hover:text-black dark:hover:text-white transition-all cursor-pointer z-10 shadow-[0_0_15px_rgba(0,0,0,0.05)] dark:shadow-[0_0_15px_rgba(255,255,255,0.03)]">
             Now it&apos;s time for comeback
             <svg
@@ -43,8 +38,8 @@ export default function Hero() {
 
           <div className="px-4 md:px-0 tracking-tighter max-w-4xl mx-auto font-extrabold text-center leading-[1.05] md:leading-none font-Inter text-[56px] sm:text-[64px] md:text-7xl lg:text-[78px] text-zinc-900 dark:text-gray-200 z-10">
             <span className="relative inline-block pb-2">
-              Your {/* Ultra-pure crisp white high contrast text */}
-              <span className="text-black dark:text-white drop-shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:drop-shadow-[0_0_20px_rgba(255,255,255,0.25)]">
+              Your{" "}
+              <span className="text-black dark:text-white ]">
                 unfair <span className="tracking-tight">advantage</span>
               </span>
               <img
@@ -65,7 +60,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <p className="px-6 md:px-0 font-sans text-sm sm:text-base md:text-xm text-center leading-relaxed mt-10 md:mt-10 text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto z-10 font-medium">
+          <p className="px-6 md:px-0 font-sans text-sm sm:text-base md:text-xm text-center leading-relaxed mt-10 md:mt-10 text-zinc-600 dark:text-[#909092] max-w-2xl mx-auto z-10 font-medium">
             Preparing for exams is already challenging enough.{" "}
             <br className="hidden md:block" /> Avoid further complications by
             ditching outdated study methods.

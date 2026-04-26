@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link, useParams } from "react-router";
 import { NotesProvider } from "../lib/NotesProvider";
 import CardofNote from "./CardofNote";
 import { motion } from "framer-motion";
-import { ArrowLeft, BookOpen, GraduationCap, Share2 } from "lucide-react";
+import { ArrowLeft, BookOpen, ChevronRight, GraduationCap, Share2 } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Toaster } from "./ui/sonner";
@@ -17,6 +17,17 @@ import MyQRCode from "./QRCode.jsx";
 export default function SubjectPage() {
   const [visibleCount, setVisibleCount] = useState(9)
   const [activeTab, setActiveTab] = useState("All");
+  const scrollRef = useRef(null);
+  const [showArrow, setShowArrow] = useState(false);
+
+  const checkOverflow = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setShowArrow(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+
   const { isOpen, setIsOpen, selectedPdfUrl, handleViewPDF } =
     PDFviewProvider();
 
@@ -35,6 +46,12 @@ export default function SubjectPage() {
   const { id } = useParams();
   const { data, dataSource, isLoading } = NotesProvider();
   const subject = data.find((subject) => subject.id === id);
+
+  useEffect(() => {
+    checkOverflow();
+    window.addEventListener("resize", checkOverflow);
+    return () => window.removeEventListener("resize", checkOverflow);
+  }, [subject]);
 
   useEffect(() => {
     // 1. Read the URL parameters
@@ -59,20 +76,20 @@ export default function SubjectPage() {
     }
   }, [isLoading, subject]);
 
-  if (!subject) {
+  if (!subject && !isLoading) {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
         <p className="text-gray-400 text-center col-span-full py-10">
-          Subject not found
+          We are very sorry, The subject you are looking for is not found. Please try again.
         </p>
-        <button onClick={() => navigate("/")}>Go to Home</button>
+        <Button onClick={() => navigate("/")}>Go to Home</Button>
       </div>
     );
   }
 
-  const categories = ["All", ...new Set(subject.files.map(file => file.tag).filter(Boolean))];
+  const categories = ["All", ...new Set(subject?.files?.map(file => file.tag).filter(Boolean))];
   
-  const filteredFiles = subject.files.filter((file) => {
+  const filteredFiles = subject?.files?.filter((file) => {
     if (activeTab === "All") return true;
     return file.tag === activeTab;
   });
@@ -90,13 +107,10 @@ export default function SubjectPage() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         id="dashboardSection"
         className="max-w-5xl
-             mx-auto text-black dark:text-white font-Figtree mb-20"
+             mx-auto text-black dark:text-white font-Figtree mb-20 select-none"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative bg-zinc-50 dark:bg-[#0a0a0a] mx-auto w-full flex flex-col pt-8 pb-4 border-t border-b  border-primary/20"
+        <div
+          className="relative bg-zinc-50 dark:bg-background mx-auto w-full flex flex-col pt-8 pb-4 border-t border-b  border-primary/20"
         >
           <button
             className="z-70 flex items-center gap-2 dark:text-neutral-400 dark:hover:text-white hover:text-black hover:bg-zinc-200 dark:hover:bg-zinc-900 px-4 md:px-4 md:mx-0 rounded-md  transition-colors w-fit"
@@ -108,9 +122,9 @@ export default function SubjectPage() {
           <div className="flex flex-col md:flex-row px-4 md:px-4 py-4 md:items-center  gap-8 md:justify-between ">
             <div className="flex flex-col gap-2">
               <h1 className="text-3xl font-bold font-Figtree leading-2xl dark:text-neutral-100 text-black ">
-                {subject.title}
+                {subject?.title}
               </h1>
-              <p className="text-neutral-500 dark:text-neutral-400 max-w-xs  w-fit">{subject.description}</p>
+              <p className="text-neutral-500 dark:text-neutral-400 max-w-xs  w-fit">{subject?.description}</p>
 
               <div className="flex items-center gap-2 flex-wrap max-w-87.5 ">
                 <Badge
@@ -118,21 +132,21 @@ export default function SubjectPage() {
                   className="text-sm bg-primary/5 border-primary/20"
                 >
                   <GraduationCap className="h-3.5 w-3.5 mr-1" />
-                  {subject.branch}
+                  {subject?.branch}
                 </Badge>
                 <Badge
                   variant="outline"
                   className="text-sm bg-primary/5 border-primary/20"
                 >
                   <BookOpen className="h-3.5 w-3.5 mr-1" />
-                  Semester : {subject.semester}
+                  Semester : {subject?.semester}
                 </Badge>
                 <Badge
                   variant="outline"
                   className="text-sm bg-primary/5 border-primary/20"
                 >
                   <GraduationCap className="h-3.5 w-3.5 mr-1" />
-                  University : {subject.university}
+                  University : {subject?.university}
                 </Badge>
               </div>
             </div>
@@ -153,16 +167,25 @@ export default function SubjectPage() {
             </div>
           </div>
           <Toaster />
-        </motion.div>
+        </div>
 
         {/* Dynamic Category Tabs */}
         {categories.length > 1 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="flex gap-3 overflow-x-auto px-8  mt-6 scrollbar-hide   mx-auto w-full "
+          <div
+           
+            className="px-4 md:px-0 mt-6 mx-4  md:w-fit  relative  "
           >
+            {showArrow && (
+              <div className="absolute right-0 dark:bg-background top-1/2 -translate-y-1/2  h-full   flex items-center justify-center   md:hidden pointer-events-none">
+                <ChevronRight className="h-5 w-5" />
+              </div>
+            )}
+            <div
+              ref={scrollRef}
+              onScroll={checkOverflow}
+              className="overflow-x-auto no-scrollbar flex gap-3 pr-8"
+            >
+
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -172,33 +195,34 @@ export default function SubjectPage() {
                 className={cn(
                   "px-4 py-2.5   rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer",
                   activeTab === cat
-                    ? "bg-black text-white dark:bg-white dark:text-black shadow-md "
-                    : "bg-black/5 dark:bg-white/5 text-neutral-600 dark:text-neutral-400 hover:bg-black/10 dark:hover:bg-white/10"
+                  ? "bg-black text-white dark:bg-white dark:text-black shadow-md "
+                  : "bg-black/5 dark:bg-white/5 text-neutral-600 dark:text-neutral-400 hover:bg-black/10 dark:hover:bg-white/10"
                 )}
               >
                 {cat}
               </button>
             ))}
-          </motion.div>
+            </div>
+          
+          </div>
         )}
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+        <div
+           
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center pt-8 px-4 md:px-0"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center pt-8 px-4 md:px-0 md:mx-4"
         >
           {isLoading ? (
             <p className="text-gray-400 text-center col-span-full py-10">
               Loading notes...
             </p>
-          ) : filteredFiles.length === 0 ? (
+          ) : filteredFiles?.length === 0 ? (
             <p className="text-gray-400 text-center col-span-full py-10">
               No notes found matching your criteria kindly try different filters
               or search terms.
             </p>
           ) : (
-            filteredFiles.slice(0, visibleCount).map((note, index) => (
+            filteredFiles?.slice(0, visibleCount).map((note, index) => (
               <CardofNote
                 key={`${note.fileId}-${index}`}
                 id={note.fileId}
@@ -214,8 +238,8 @@ export default function SubjectPage() {
               />
             ))
           )}
-        </motion.div>
-        {filteredFiles.length > visibleCount && (
+        </div>
+        {filteredFiles?.length > visibleCount && (
             <div className="flex justify-center mt-10">
               <button
                 onClick={() => setVisibleCount(visibleCount + 9)}

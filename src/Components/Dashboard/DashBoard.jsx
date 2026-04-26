@@ -1,15 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-import { BookOpen, GraduationCap, Settings, University } from "lucide-react";
+import { BookOpen, GraduationCap, Settings } from "lucide-react";
 import { Badge } from "../ui/badge";
-import { motion } from "framer-motion";
+
 import { Button } from "../ui/button";
 import ProfileDialogBox from "./ProfileDialogBox";
 import { NotesProvider } from "../../lib/NotesProvider.js";
 import CardofNote from "../CardofNote";
 
 export default function DashBoard() {
+  const [visibleCount, setVisibleCount] = useState(9)
   const [profile, setProfile] = useState(() => {
     const defaultProfile = {
       university: null,
@@ -18,6 +19,8 @@ export default function DashBoard() {
       semester: null,
       setUp: false,
     };
+
+    
 
     if (typeof window === "undefined") return defaultProfile;
 
@@ -65,7 +68,7 @@ export default function DashBoard() {
       <section
         id="dashboardSection"
         className="md:max-w-350 
-        mx-auto text-black dark:text-white font-Figtree  mb-20  "
+        mx-auto text-black dark:text-white font-Figtree select-none  mb-20  "
       >
         <ProfileDialogBox
           isOpen={isOpen}
@@ -74,11 +77,9 @@ export default function DashBoard() {
           changeDialog={changeDialog}
         />
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative bg-white dark:bg-[#0a0a0a] mx-auto max-w-5xl w-full flex flex-col pt-8 pb-4 border-t border-b  border-primary/20"
+        <div
+  
+          className="relative bg-zinc-50 dark:bg-background mx-auto max-w-5xl w-full flex flex-col pt-8 pb-4 border-t border-b  border-primary/20"
         >
           <div className="flex flex-col md:flex-row px-4 md:px-8 py-4 md:items-center  gap-8 md:justify-between ">
             <div className="flex flex-col gap-2">
@@ -119,7 +120,7 @@ export default function DashBoard() {
               </Button>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {!profile.setUp ? (
           <main className="p-8">
@@ -136,10 +137,8 @@ export default function DashBoard() {
           </main>
         ) : (
           <main className="pt-8 max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+            <div
+          
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center "
             >
               {isLoading ? (
@@ -152,7 +151,7 @@ export default function DashBoard() {
                   filters or search terms.
                 </p>
               ) : (
-                filteredData.map((note) => (
+                filteredData.slice(0, visibleCount).map((note) => (
                   <CardofNote
                   note={note}
                     key={note.id}
@@ -170,9 +169,21 @@ export default function DashBoard() {
                   />
                 ))
               )}
-            </motion.div>
+            </div>
+            {filteredData.length > visibleCount && (
+            <div className="flex justify-center mt-10">
+              <button
+                onClick={() => setVisibleCount(visibleCount + 9)}
+                className="px-6 py-3 dark:bg-white dark:text-black bg-neutral-800  text-neutral-200 rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors"
+              >
+                Load More
+              </button>
+            </div>
+          )}
           </main>
         )}
+
+        
       </section>
     </>
   );

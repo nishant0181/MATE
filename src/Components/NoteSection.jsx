@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { NotesProvider } from "../lib/NotesProvider.js";
 import InputFilter from "./InputFilter";
 import SelectionFilterMenu from "./SelectionFilterMenu";
@@ -27,7 +26,7 @@ export default function NoteSection() {
         className="md:max-w-350 scroll-smooth 
         font-Inter mx-auto text-white  
         mb-20 
-        relative
+        relative select-none
         "
       >
 
@@ -37,10 +36,8 @@ export default function NoteSection() {
           <ElipseDarkGradient />
           
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+          <div
+           
             className=" mx-auto pt-18  flex flex-col items-center gap-15 dark:bg-blacfk/50 bg-whitde/50 p-4 rounded-lg z-30"
           >
             <div className="">
@@ -58,7 +55,7 @@ export default function NoteSection() {
               filteredData={filteredData}
               setFilteredData={setFilteredData}
             />
-          </motion.div>
+          </div>
         </div>
 
         <div className="mx-auto max-w-6xl px-6 py-6">
@@ -81,10 +78,8 @@ export default function NoteSection() {
             )}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+          <div
+           
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center "
           >
             {isLoading ? (
@@ -116,7 +111,7 @@ export default function NoteSection() {
                 />
               ))
             )}
-          </motion.div>
+          </div>
           {filteredData.length > visibleCount && (
             <div className="flex justify-center mt-10">
               <button

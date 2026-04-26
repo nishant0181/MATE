@@ -37,8 +37,7 @@ import { Rotation } from "@embedpdf/models";
 import { Rotate, RotatePluginPackage } from "@embedpdf/plugin-rotate/react";
 import { ExportPluginPackage } from "@embedpdf/plugin-export/react";
 import PDFLoadingSkeleton from "./PDFLoadingSkeleton";
-import { Button } from "../ui/button";
-import { Fullscreen, FullscreenIcon, LucideFullscreen } from "lucide-react";
+import {  LucideFullscreen } from "lucide-react";
 
 type PDFViewerProps = {
   documentUrl?: string;
@@ -114,12 +113,47 @@ export default function PDFViewer({
   // 3. Wrap your UI with the <EmbedPDF> provider
   return (
     <div className="h-dvh flex flex-col ">
+   
+  
       <EmbedPDF engine={engine} plugins={plugins}>
         {({ activeDocumentId }) =>
           activeDocumentId && (
             <DocumentContent documentId={activeDocumentId}>
-              {({ isLoaded }) =>
-                isLoaded ? (
+              {({ isLoaded, isError }) => {
+                if (isError) {
+                  return (
+                    <div className="flex h-full w-full flex-col items-center justify-center backdrop-blur-xs text-white p-4 text-center relative">
+                      <div className="absolute top-0 left-0 w-full  text-xl font-Inter font-medium tracking-[3.5px] text-[#f4efe6] p-4 0">
+                      MATE
+
+                      </div>
+                      <div className="mb-6 flex flex-col items-center gap-2">
+                        <div className="rounded-full  p-4">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                          </svg>
+                        </div>
+                        <h2 className="text-xl font-bold">We are very sorry for the inconvinience.</h2>
+                        <p className="text-sm text-neutral-400 max-w-sm">
+                          The selected document could not be loaded. Kindly try again.
+                        </p>
+                      </div>
+                      <div className="flex gap-4">
+                        
+                        <button
+                          onClick={() => setIsOpen && setIsOpen(false)}
+                          className="cursor-pointer rounded-lg bg-white text-black px-6 py-2.5 text-sm font-semibold hover:bg-neutral-200 transition-colors"
+                        >
+                          Back & Try Again
+                        </button>
+                      </div>
+                    </div>
+                  );
+                }
+
+                return isLoaded ? (
                   <div
                     className="select-none backdrop-blur-xs"
                     style={{
@@ -231,12 +265,19 @@ export default function PDFViewer({
                     documentUrl={documentUrl}
                     setIsOpen={setIsOpen}
                   />
-                )
-              }
+                );
+              }}
             </DocumentContent>
           )
         }
       </EmbedPDF>
+      
+   
+   
+        
+     
+        <div></div>
+      
     </div>
   );
 }

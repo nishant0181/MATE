@@ -132,7 +132,7 @@ li:hover::after {
 }
 
 .dark {
-  --background: hsl(0, 0%, 3.9%);
+  --background: oklch(0.227 0 281.65);
   --foreground: hsl(0, 0%, 98%);
   --card: hsl(0, 0%, 3.9%);
   --card-foreground: hsl(0, 0%, 98%);
@@ -241,17 +241,31 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 .bg-dashed {
-  background-image: linear-gradient(
-    45deg,
-    var(--border) 12.5%,
-    transparent 12.5%,
-    transparent 50%,
-    var(--border) 50%,
-    var(--border) 62.5%,
-    transparent 62.5%,
-    transparent 100%
-  );
+  background-image: linear-gradient(45deg,
+      var(--border) 12.5%,
+      transparent 12.5%,
+      transparent 50%,
+      var(--border) 50%,
+      var(--border) 62.5%,
+      transparent 62.5%,
+      transparent 100%);
   background-size: 0.25rem 0.25rem;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-}         
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+html,
+body {
+  touch-action: pan-x pan-y;
+}

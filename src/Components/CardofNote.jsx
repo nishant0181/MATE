@@ -50,18 +50,28 @@ export default function CardofNote({
       <motion.div
         id={id}
         onMouseEnter={() => preloadPDFViewerChunk()}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-0 flex flex-col bg-white dark:bg-[#151516]  border border-neutral-300 dark:border-[#3c3c3c] rounded-lg p-7 
-        transition-all duration-300
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, delay:0.01, ease: "linear" }}
+        className="relative z-0 flex flex-col bg-white dark:bg-[oklch(.205_0_0)]   border-neutral-300 dark:border-black border-2 rounded-lg p-7 
+       
+
+
         shadow-[14px_14px_0px_-1px_rgba(0,0,0,0.10)]
-        hover:shadow-[8px_8px_0px_-1px_rgba(0,0,0,0.15)]
-        dark:shadow-[14px_14px_0px_-1px_rgba(255,255,255,0.10)]
-        dark:hover:shadow-[8px_8px_0px_-1px_rgba(255,255,255,0.15)]
+        dark:shadow-[14px_14px_0px_-1px_rgba(0,0,0,0.80)]
+        transition-all duration-300 hover:translate-x-1 hover:translate-y-1 
+        hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.10)]
+        dark:hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
+
+
         h-full max-w-[350px] w-full
+
         dark:bg-[radial-gradient(#323236_1px,transparent_1px)] bg-size-[16px_16px] 
-        bg-[radial-gradient(rgba(0,0,0,0.05)_1px,transparent_1px)]"
+        bg-[radial-gradient(rgba(0,0,0,0.05)_1px,transparent_1px)]
+        
+        select-none
+        "
         >
         <div className="flex flex-1 flex-col">
         <div className="z-60 flex items-start justify-between mb-4">
@@ -94,31 +104,31 @@ export default function CardofNote({
                 {title}
               </h3>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">
+            <p className="text-sm text-gray-600 dark:text-[#909092] mb-3 line-clamp-2">
               {description}
             </p>
           </div>
         </div>
         <div className="flex flex-wrap gap-2 mb-4">
-          <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-zinc-300 px-3 py-1 rounded-full border border-zinc-400">
+          <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-[#b6b5b5] px-3 py-1 rounded-full border border-zinc-400">
             {subject}
           </span>
-          <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-zinc-300 px-3 py-1 rounded-full border border-zinc-400">
+          <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-[#b6b5b5] px-3 py-1 rounded-full border border-zinc-400">
             Sem : {semester}
           </span>
           {branch && (
-            <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-zinc-300 px-3 py-1 rounded-full border border-zinc-400">
+            <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-[#b6b5b5] px-3 py-1 rounded-full border border-zinc-400">
               {branch == "all" ? "All Branches" : branch}
             </span>
           )}
           {university && (
-            <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-zinc-300 px-3 py-1 rounded-full border border-zinc-400">
+            <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-[#b6b5b5] px-3 py-1 rounded-full border border-zinc-400">
               {university}
             </span>
           )}
           {
             pages && (
-              <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-zinc-300 px-3 py-1 rounded-full border border-zinc-400">
+              <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-[#b6b5b5] px-3 py-1 rounded-full border border-zinc-400">
                 {pages} Pages
               </span>
             )

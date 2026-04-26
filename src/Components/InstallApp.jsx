@@ -96,7 +96,7 @@ export default function InstallApp() {
                   <div className="relative mx-auto w-full h-full  max-w-75 aspect-9/16 border-8 border-border rounded-[1.5rem] bg-background shadow-2xl overflow-hidden">
                     <div className="h-full w-full bg-linear-to-br from-primary/10 via-background to-primary/5 flex flex-col items-center justify-center p-6">
                       <div className="w-16 h-16 border-2 border-border bg-muted rounded-md flex items-center justify-center mb-4">
-                        {/* <Smartphone className="h-8 w-8 text-primary" /> */}
+                        
                         <img src="/icons/icon-512x512.png" alt="MATE Logo" className="rounded-md invert dark:invert-1"/>
                       </div>
                       <h3 className="font-semibold text-lg mb-2 text-center">
@@ -113,9 +113,6 @@ export default function InstallApp() {
                       </div>
                     </div>
                   </div>
-
-                  <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
-                  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
                 </div>
               </div>
             </div>

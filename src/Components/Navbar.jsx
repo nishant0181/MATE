@@ -19,7 +19,7 @@ export default function Navbar() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.8, ease: "easeInOut" }}
-        className="overflow-hidden z-40 bg-white text-black dark:bg-[#0a0a0a] font-Inter sticky top-0 dark:text-white flex justify-between p-4  max-w-360 mx-auto "
+        className="overflow-hidden z-40 bg-background text-black  font-Inter sticky top-0 dark:text-white flex justify-between p-4  max-w-360 mx-auto select-none "
       >
         <Link
           to="/"
@@ -69,7 +69,7 @@ export default function Navbar() {
         <SearchDialog  isOpen={isOpen} setIsOpen={setIsOpen} />
         <div className="
         bg-[linear-gradient(0deg,transparent_0%,#ffffff_97%)]
-         dark:bg-[linear-gradient(0deg,transparent_0%,#09090b_97%)] w-full fixed top-14 h-16 md:h-18 pointer-events-none "></div>
+         dark:bg-[linear-gradient(0deg,transparent_0%,oklch(0.227_0_281.65)_97%)] w-full fixed top-14 h-16 md:h-18 pointer-events-none "></div>
 
       </motion.header>
     </>

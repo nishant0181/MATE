@@ -75,7 +75,7 @@ export default function PDFLoadingSkeleton({ documentUrl, setIsOpen }) {
               onClick={() => setIsOpen && setIsOpen(false)}
               className="cursor-pointer rounded bg-[#2a2d2f] px-4 py-3 text-xs font-semibold text-white hover:bg-[#2a2a2a] transition-colors"
             >
-              Cancel
+              Back
             </button>
           </div>
         </div>
@@ -128,15 +128,15 @@ export default function PDFLoadingSkeleton({ documentUrl, setIsOpen }) {
         </div>
 
         {/* Bottom Toolbar (Mobile) Mock */}
-        <div className="flex md:hidden justify-between items-center gap-4 bg-[#0c0c0c] px-6 py-2 rounded-lg shadow-lg z-10 animate-pulse">
-          <div className="bg-[#2a2d2f] h-8 w-10 rounded"></div>
-          <div className="bg-[#2a2d2f] h-8 w-24 rounded"></div>
-          <div className="flex justify-between items-center gap-2">
+        <div className="flex md:hidden justify-between items-center gap-4 bg-[#0c0c0c] px-6 py-2 rounded-lg shadow-lg z-10 ">
+          <div className="bg-[#2a2d2f] h-8 w-10 rounded animate-pulse"></div>
+          <div className="bg-[#2a2d2f] h-8 w-24 rounded animate-pulse"></div>
+          <div className="flex justify-between items-center gap-2 ">
             <button
               onClick={() => setIsOpen && setIsOpen(false)}
-              className="flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#2a2d2f] p-2 px-4 py-2 text-xs font-semibold text-white hover:bg-[#2a2a2a] transition-colors"
+              className="flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#2a2d2f] p-2 px-4 py-2 text-xs font-semibold text-white hover:bg-[#2a2a2a] transition-colors "
             >
-              Cancel
+              Back
             </button>
           </div>
         </div>

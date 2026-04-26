@@ -11,8 +11,8 @@ export default function NotesFeedOnHome() {
   const { data } = NotesProvider();
   const words = ["faster", "better", "easier", "smarter"];
   return (
-    <section className="bg-white dark:bg-[#0a0a0a] text-white mx-auto max-w-5xl flex flex-col items-center md:mt-16 mb-20 ">
-      <div className="pb-4 pt-4  tracking-tighter max-w-4xl mx-auto font-extrabold  leading-[1.05] md:leading-none font-Inter text-[44px] text-center sm:text-[50px] md:text-[52px] lg:text-[58px] text-zinc-900 dark:text-gray-200 z-10 ">
+    <section className=" text-white mx-auto max-w-5xl flex flex-col items-center md:mt-16 mb-20 ">
+      <div className="pb-4 pt-4 px-4  tracking-tighter max-w-4xl mx-auto font-extrabold  leading-[1.05] md:leading-none font-Inter text-[44px] text-center sm:text-[50px] md:text-[52px] lg:text-[58px] text-zinc-900 dark:text-gray-200 z-10 ">
         Learn
         <span className="ml-1">
           <FlipWords words={words} />

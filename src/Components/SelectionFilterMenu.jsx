@@ -17,7 +17,7 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
 
   return (
     <>
-      <div className="max-w-4xl md:max-w-6xl  dark:bg-[#0c0c0c] bg-white rounded-lg p-7 md:p-16   border border-neutral-300 dark:border-[#3c3c3c] flex flex-wrap  justify-center gap-4">
+      <div className="max-w-4xl md:max-w-6xl  dark:bg-background/90 bg-white rounded-lg p-7 md:p-16   border border-neutral-300 dark:border-[#3c3c3c] flex flex-wrap  justify-center gap-4">
         <div>
           <label className="block text-sm font-medium dark:text-gray-100 text-black mb-2">
             UNIVERSITY
