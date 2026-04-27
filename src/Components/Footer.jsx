@@ -3,11 +3,11 @@ import { Link } from "react-router";
 export default function Footer() {
   return (
     <footer className="bg-background  text-white mx-auto max-w-7xl flex flex-col items-center mb-28 z-50 md:mb-10  px-4 select-none ">
-      <div className="pb-10 w-full flex flex-col justify-between border-dashed border-t-2 border-b-2 border-neutral-200 dark:border-neutral-800 pt-10 mb-10     ">
+      <div className="pb-10 w-full flex flex-col justify-between border-dashed border-t-2 border-b-2 border-neutral-200 dark:border-neutral-800 pt-10 mb-10 items-center gap-4     ">
+              <div className="text-neutral-800 dark:text-neutral-200">
+                © {new Date().getFullYear()} MATE all rights reserved.
+              </div>
         <div className="flex justify-between items-start ">
-          <div className="text-neutral-800 dark:text-neutral-200">
-            © {new Date().getFullYear()} MATE all rights reserved.
-          </div>
           <ul className="flex gap-4 flex-wrap justify-end items-center">
             <Link
               to="/contact"
@@ -33,6 +33,18 @@ export default function Footer() {
               }
             >
               About
+            </Link>
+            <Link
+              to="/upload"
+              className="bg-[oklch(.269_0_0)]  font-medium text-sm  px-6 py-2 rounded-full "
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
+              }
+            >
+              Upload Notes
             </Link>
           </ul>
         </div>

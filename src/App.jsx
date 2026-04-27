@@ -20,6 +20,7 @@ import { ReactLenis } from "lenis/react";
 import About from "./Components/About";
 import ContactUs from "./Components/ContactUs";
 import { Toaster } from "@/Components/ui/sonner";
+import Upload from "./Components/Upload";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
               <Route path="/share-target" element={<ShareTargetHandler />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<ContactUs />} />
+              <Route path="/upload" element={<Upload />} />
             </Routes>
             <Footer />
           </ThemeGiver>

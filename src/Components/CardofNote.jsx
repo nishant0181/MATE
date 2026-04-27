@@ -31,7 +31,7 @@ export default function CardofNote({
   imageUrl,
   index = 0,
 }) {
-  const [setNoteId] = useRecentNotes();
+  const [,addNoteId] = useRecentNotes();
   const shareUrl =
     typeof window !== "undefined"
       ? window.location.origin + "/subject/" + id
@@ -178,9 +178,7 @@ export default function CardofNote({
                     to={`/subject/${id}`}
                     className="mx-auto text-center transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 font-Figtree font-medium leading-tight text-sm dark:text-black text-zinc-900 flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full "
                     onClick={() => {
-                      setNoteId(id);
-
-                      setIsOpen(false);
+                      addNoteId(id);
                     }}
                   >
                     View Notes

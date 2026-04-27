@@ -105,10 +105,12 @@ export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
     <div
       onClick={closeModal}
       className="fixed inset-0 z-70 flex  justify-center bg-black/80 "
+      data-lenis-prevent="true"
     >
       <div
         className="relative w-full max-w-6xl"
         onClick={(event) => event.stopPropagation()}
+        data-lenis-prevent="true"
       >
 
       
