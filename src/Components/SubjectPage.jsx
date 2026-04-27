@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, BookOpen, ChevronRight, GraduationCap, Share2 } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { Toaster } from "./ui/sonner";
+
 import { toast } from "sonner";
 import PDFviewProvider from "../lib/PDFviewProvider.js";
 import FInalPDFView from "./PDFViewer/FInalPDFView.jsx";
@@ -94,8 +94,21 @@ export default function SubjectPage() {
     return file.tag === activeTab;
   });
 
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
+  const handleCopyLink = async () => {
+   try {
+     await navigator.share({
+      title: 'MATE : ' + subject?.title,
+      text: subject?.description,
+      url: window.location.href,
+    });
+  } catch (err) {
+    if (err.name !== 'AbortError') {
+      console.error("Error sharing:", err);
+      await navigator.clipboard.writeText(window.location.href);
+      toast.success("Link copied to clipboard!");
+    }
+  }
+
   };
 
 
@@ -166,7 +179,7 @@ export default function SubjectPage() {
               </Button>
             </div>
           </div>
-          <Toaster />
+        
         </div>
 
         {/* Dynamic Category Tabs */}

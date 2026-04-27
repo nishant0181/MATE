@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { preloadPDFViewerChunk } from "./PDFViewer/pdfViewerPreload";
 import { Link } from "react-router";
 import { QrCode, Share2 } from "lucide-react";
-import { Toaster } from "./ui/sonner";
+
 import { toast } from "sonner";
 import { Button } from "./ui/button";
 import { Heart } from "lucide-react";
@@ -235,7 +235,7 @@ export default function CardofNote({
             </>
           )}
         </div>
-        <Toaster />
+       
       </motion.div>
     </>
   );
