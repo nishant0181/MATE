@@ -27,9 +27,10 @@ export default function NoteCardsGenerator() {
             or search terms.
           </p>
         ) : (
-          filteredData.map((note) => (
+          filteredData.map((note, index) => (
             <CardofNote
               key={note.id}
+              index={index}
               title={note.title}
               description={note.description}
               subject={note.subject}

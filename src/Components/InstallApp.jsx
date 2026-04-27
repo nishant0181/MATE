@@ -78,13 +78,19 @@ export default function InstallApp() {
                 </span>
               </h1>
 
-              <p className=" max-w-sm text-gray-600 dark:text-neutral-400">
+              <p className=" max-w-sm text-gray-600 text-lg dark:text-neutral-400">
                 Become <span className="text-primary">Fast</span> because you
                 deserve it.
               </p>
-              <div className="mt-4 font-Figtree self-end">
-                <Button onClick={handleInstall}>
-                  <Download />
+              <p className=" max-w-sm text-gray-600 text-sm dark:text-neutral-300 mt-3">
+               Add it to your home screen for a faster and better experience.
+              </p>
+              <div className="mt-4 font-Figtree self-end md:self-start ">
+                <Button
+                  onClick={handleInstall}
+                   className="text-lg px-8  py-6"
+                >
+                  <Download size={36} />
                   Install App
                 </Button>
               </div>

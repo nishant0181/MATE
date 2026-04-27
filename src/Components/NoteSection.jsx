@@ -92,10 +92,11 @@ export default function NoteSection() {
                 filters or search terms.
               </p>
             ) : (
-              filteredData.slice(0, visibleCount).map((note) => (
+              filteredData.slice(0, visibleCount).map((note, index) => (
                 <CardofNote
                 note={note}
                   key={note.id}
+                  index={index}
                   id={note.id}
                   title={note.title}
                   description={note.description}

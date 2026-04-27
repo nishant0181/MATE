@@ -225,6 +225,7 @@ export default function SubjectPage() {
             filteredFiles?.slice(0, visibleCount).map((note, index) => (
               <CardofNote
                 key={`${note.fileId}-${index}`}
+                index={index}
                 id={note.fileId}
                 title={note.title}
                 description={note.description}

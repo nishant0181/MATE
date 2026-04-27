@@ -56,13 +56,15 @@ export default function Features() {
     },
   };
   const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.7,
-        delay: 0,
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        mass: 1,
       },
     },
   };
@@ -70,13 +72,19 @@ export default function Features() {
     <section className="md:pt-32 pt-20 max-w-7xl mx-auto mb-28  border-b border-border ">
       <div className="max-w-full  mx-auto ">
         <motion.div
-          className="pb-4 pt-4  tracking-tighter max-w-4xl mx-auto  leading-[1.05] md:leading-none font-Inter text-[44px] text-center sm:text-[50px] md:text-[52px] lg:text-[58px] text-zinc-900 dark:text-gray-200 z-10 font-extrabold "
+          className=" flex flex-col items-center gap-2"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          Features of this Legacy
+          <div className="pb-4 pt-4  tracking-tighter max-w-4xl mx-auto  leading-[1.05] md:leading-none font-Inter text-[44px] text-center sm:text-[50px] md:text-[52px] lg:text-[58px] text-zinc-900 dark:text-gray-200 z-10 font-extrabold  ">
+            Features of this Legacy
+          </div>
+          <p className="text-sm sm:text-base text-[#18181b] dark:text-[#909090] leading-relaxed px-1 sm:px-0 mt-1 max-w-3xl text-center ">
+            Simplifying the grind: Smarter, faster exam prep for the modern
+            student.
+          </p>
         </motion.div>
 
         <motion.div
@@ -108,9 +116,6 @@ export default function Features() {
         bg-[radial-gradient(rgba(0,0,0,0.05)_1px,transparent_1px)]
                 "
                 variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
               >
                 {/* Icon */}
                 <div className="inline-flex p-2 sm:p-3 border border-border bg-zinc-200 dark:bg-black rounded-sm mb-3 sm:mb-4 w-fit">

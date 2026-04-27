@@ -60,10 +60,8 @@ export default function Hero() {
             </span>
           </div>
 
-          <p className="px-6 md:px-0 font-sans text-sm sm:text-base md:text-xm text-center leading-relaxed mt-10 md:mt-10 text-zinc-600 dark:text-[#909092] max-w-2xl mx-auto z-10 font-medium">
-            Preparing for exams is already challenging enough.{" "}
-            <br className="hidden md:block" /> Avoid further complications by
-            ditching outdated study methods.
+          <p className="px-6 md:px-0 font-sans text-sm sm:text-base md:text-xm text-center leading-relaxed mt-10 md:mt-10 text-zinc-600 dark:text-[#909092] max-w-xl mx-auto z-20 font-medium">
+           Stop fighting old-school methods. Simplify your study sessions with tools built for today.
           </p>
 
           <div className="pt-10 z-20 flex flex-wrap justify-center items-center gap-4  mt-2">

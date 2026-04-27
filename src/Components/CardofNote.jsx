@@ -29,6 +29,7 @@ export default function CardofNote({
   onViewPDF,
   setIsOpen,
   imageUrl,
+  index = 0,
 }) {
   const [setNoteId] = useRecentNotes();
   const shareUrl =
@@ -50,10 +51,16 @@ export default function CardofNote({
       <motion.div
         id={id}
         onMouseEnter={() => preloadPDFViewerChunk()}
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.7, delay:0.01, ease: "linear" }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ 
+          type: "spring",
+          stiffness: 100,
+          damping: 15,
+          mass: 1,
+          delay: (index % 12) * 0.05 
+        }}
         className="relative z-0 flex flex-col bg-white dark:bg-[oklch(.205_0_0)]   border-neutral-300 dark:border-black border-2 rounded-lg p-7 
        
 

@@ -39,9 +39,10 @@ export default function FavoritesPage() {
               </div>
               </div>
             ) : (
-              favorites.map((note) => (
+              favorites.map((note, index) => (
                 <CardofNote
                   key={note.id}
+                  index={index}
                   note={note}
                   id={note.id}
                   title={note.title}

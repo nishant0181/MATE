@@ -16,9 +16,13 @@ import ShareTargetHandler from "./Components/ShareTargetHandler";
 
 import BackButtonHandler from "./Components/BackButtonHandler";
 
+import { ReactLenis } from "lenis/react";
+import About from "./Components/About";
+import ContactUs from "./Components/ContactUs";
+
 function App() {
   return (
-    <>
+    <ReactLenis root>
       <FavoritesProvider>
         <BrowserRouter>
           <BackButtonHandler />
@@ -41,13 +45,15 @@ function App() {
               <Route path="/subject/:id" element={<SubjectPage />} />
               <Route path="/favorites" element={<FavoritesPage />} />
               <Route path="/share-target" element={<ShareTargetHandler />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<ContactUs />} />
             </Routes>
             <Footer />
           </ThemeGiver>
         </BrowserRouter>
       </FavoritesProvider>
       <PDFViewerWarmup enabled={true} />
-    </>
+    </ReactLenis>
   );
 }
 

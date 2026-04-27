@@ -21,12 +21,13 @@ export default function NotesFeedOnHome() {
 
       <div className="pt-10   px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
-          {recentNotes.map((id) => {
+          {recentNotes.map((id, index) => {
             const n = data.find((n) => n.id === id);
             if (!n) return null;
             return (
               <CardofNote
                 key={n.id}
+                index={index}
                 note={n}
                 id={n.id}
                 title={n.title}

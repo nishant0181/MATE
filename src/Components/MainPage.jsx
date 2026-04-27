@@ -3,6 +3,7 @@ import Hero from "./Hero";
 import NotesFeedOnHome from "./NotesFeedOnHome";
 import Features from "./Features";
 import InstallApp from "./InstallApp";
+import Faq from "./Faq";
 
 export default function MainPage() {
   return (
@@ -11,6 +12,7 @@ export default function MainPage() {
       <NotesFeedOnHome />
       <Features />
       <InstallApp />
+      <Faq />
     </div>
   );
 }

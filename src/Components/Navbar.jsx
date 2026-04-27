@@ -24,6 +24,12 @@ export default function Navbar() {
         <Link
           to="/"
           className="text-2xl font-Inter font-medium tracking-[3.5px] text-black dark:text-[#f4efe6]"
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }
         >
           MATE
         </Link>
@@ -42,8 +48,11 @@ export default function Navbar() {
               <li className="px-4 py-2 rounded-xl cursor-pointer">
                 <Link to="/favorites">Favorites</Link>
               </li>
-              <li className="px-4 py-2 rounded-xl cursor-pointer">
+              {/* <li className="px-4 py-2 rounded-xl cursor-pointer">
                 <Link to="/upload">Upload</Link>
+              </li> */}
+              <li className="px-4 py-2 rounded-xl cursor-pointer">
+                <Link to="/about">About</Link>
               </li>
               {/* <li className="px-4 py-2 rounded-xl cursor-pointer">GTU</li> */}
               {/* <li className="px-4 py-2 rounded-xl cursor-pointer">About US</li> */}
