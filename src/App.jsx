@@ -19,7 +19,7 @@ import BackButtonHandler from "./Components/BackButtonHandler";
 import { ReactLenis } from "lenis/react";
 import About from "./Components/About";
 import ContactUs from "./Components/ContactUs";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "@/Components/ui/sonner";
 
 function App() {
   return (

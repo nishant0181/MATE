@@ -12,15 +12,27 @@ export default function Footer() {
             <Link
               to="/contact"
               className="bg-[oklch(.269_0_0)] text-sm font-medium px-6 py-2 rounded-full "
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
+              }
             >
-              Contact us
+              Contact Us
             </Link>
 
             <Link
               to="/about"
               className="bg-[oklch(.269_0_0)]  font-medium text-sm  px-6 py-2 rounded-full "
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
+              }
             >
-              About us
+              About
             </Link>
           </ul>
         </div>

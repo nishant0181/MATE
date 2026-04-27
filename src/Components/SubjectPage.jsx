@@ -103,7 +103,7 @@ export default function SubjectPage() {
     });
   } catch (err) {
     if (err.name !== 'AbortError') {
-      console.error("Error sharing:", err);
+     
       await navigator.clipboard.writeText(window.location.href);
       toast.success("Link copied to clipboard!");
     }

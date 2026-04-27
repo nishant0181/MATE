@@ -42,7 +42,7 @@ export default function About() {
         ))}
       </div>
       <div className="text-center max-w-sm text-sm mt-8">
-        MATE  started because we were tired of the 'information overload.' We help you skip the noise and get straight to the stuff that matters
+        MATE  started because we were tired of the 'information overload.' We help you skip the noise and get straight to the stuff that matters.
       </div>
     </div>
   );
