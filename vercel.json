@@ -2,7 +2,31 @@
     "rewrites": [
         {
             "source": "/subject/:id",
-            "destination": "/api/preview?id=:id"
+            "destination": "/api/preview?path=subject&id=:id"
+        },
+        {
+            "source": "/dashboard",
+            "destination": "/api/preview?path=dashboard"
+        },
+        {
+            "source": "/notes",
+            "destination": "/api/preview?path=notes"
+        },
+        {
+            "source": "/favorites",
+            "destination": "/api/preview?path=favorites"
+        },
+        {
+            "source": "/about",
+            "destination": "/api/preview?path=about"
+        },
+        {
+            "source": "/contact",
+            "destination": "/api/preview?path=contact"
+        },
+        {
+            "source": "/upload",
+            "destination": "/api/preview?path=upload"
         },
         {
             "source": "/(.*)",
