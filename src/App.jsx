@@ -21,12 +21,14 @@ import About from "./Components/About";
 import ContactUs from "./Components/ContactUs";
 import { Toaster } from "@/Components/ui/sonner";
 import Upload from "./Components/Upload";
+import RouteMetaData from "./Components/RouteMetaData";
 
 function App() {
   return (
     <ReactLenis root>
       <FavoritesProvider>
         <BrowserRouter>
+          <RouteMetaData />
           <BackButtonHandler />
           <ScrollToTop />
           <ThemeGiver>

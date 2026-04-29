@@ -24,7 +24,7 @@ export default defineConfig({
       theme_color: '#1c1c1c',
       background_color: '#1c1c1c',
       display: 'standalone',
-      description: 'Step into the future of learning with MATE. Your seamlessly designed, all-in-one platform for premium study materials, syllabus tracking, and past year papers—built to supercharge your college journey.',
+      description: 'The future of learning with MATE. Your seamlessly designed, all-in-one platform for premium study materials to supercharge your college journey.',
       categories: ['education', 'productivity'],
 
       screenshots: [
