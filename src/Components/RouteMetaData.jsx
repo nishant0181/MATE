@@ -9,7 +9,7 @@ const pagesConfig = {
   '/about': { title: "Our Vision | MATE", desc: "Discover the mission behind MATE. We're rethinking how students interact with their curriculum by blending premium design with unparalleled academic utility." },
   '/contact': { title: "Let's Connect | MATE", desc: "Have questions or feedback? Reach out to the MATE team. We are constantly evolving to build the ultimate academic operating system with your input." },
   '/upload': { title: "Contribute to the Legacy | MATE", desc: "Help shape the future of learning. Upload and share your high-quality study materials to empower the community and build an unparalleled knowledge base." },
-  '/': { title: "MATE — The Next-Gen Academic Hub", desc: "Step into the future of learning with MATE. Your seamlessly designed, all-in-one platform for premium study materials, syllabus tracking, and past year papers—built to supercharge your college journey." }
+  '/': { title: "MATE — Your All in One Study Companion", desc: "The future of learning with MATE. Your seamlessly designed, all-in-one platform for premium study materials to supercharge your college journey." }
 };
 
 export default function RouteMetaData() {

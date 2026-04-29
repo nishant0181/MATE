@@ -19,8 +19,8 @@ export default function handler(req, res) {
         const subjectId = req.query?.id || req.url.split('?')[0].split('/').pop();
 
         // 3. Set default fallbacks
-        let title = "MATE — The Next-Gen Academic Hub";
-        let description = "Step into the future of learning with MATE. Your seamlessly designed, all-in-one platform for premium study materials, syllabus tracking, and past year papers—built to supercharge your college journey.";
+        let title = "MATE — Your All in One Study Companion";
+        let description = "The future of learning with MATE. Your seamlessly designed, all-in-one platform for premium study materials to supercharge your college journey.";
         let url = "https://mate-three-rho.vercel.app/";
         let imageUrl = "https://mate-three-rho.vercel.app/Preview.png";
 
@@ -62,12 +62,16 @@ export default function handler(req, res) {
             }
         }
 
-        // 5. Swap Strings globally to cover both og:* and twitter:* tags
+        // 5. Swap Strings using robust regex matching for meta tags
         htmlString = htmlString
-            .replace(/content="MATE \| Your College Notes"/g, `content="${title}"`)
-            .replace(/content="Get all your college syllabus, notes, and pyq in one click!"/g, `content="${description}"`)
-            .replace(/content="https:\/\/mate-three-rho\.vercel\.app\/Preview\.png"/g, `content="${imageUrl}"`)
-            .replace(/content="https:\/\/mate-three-rho\.vercel\.app\/"/g, `content="${url}"`);
+            .replace(/<title>.*?<\/title>/ig, `<title>${title}</title>`)
+            .replace(/<meta property="og:title" content="[^"]*"/g, `<meta property="og:title" content="${title}"`)
+            .replace(/<meta property="twitter:title" content="[^"]*"/g, `<meta property="twitter:title" content="${title}"`)
+            .replace(/<meta property="og:description" content="[^"]*"/g, `<meta property="og:description" content="${description}"`)
+            .replace(/<meta property="twitter:description" content="[^"]*"/g, `<meta property="twitter:description" content="${description}"`)
+            .replace(/<meta property="og:image" content="[^"]*"/g, `<meta property="og:image" content="${imageUrl}"`)
+            .replace(/<meta property="twitter:image" content="[^"]*"/g, `<meta property="twitter:image" content="${imageUrl}"`)
+            .replace(/<meta property="og:url" content="[^"]*"/g, `<meta property="og:url" content="${url}"`);
 
         res.setHeader('Content-Type', 'text/html');
         res.status(200).send(htmlString);
