@@ -21,21 +21,21 @@ export default function handler(req, res) {
         // 3. Set default fallbacks
         let title = "MATE — Your All in One Study Companion";
         let description = "The future of learning with MATE. Your seamlessly designed, all-in-one platform for premium study materials to supercharge your college journey.";
-        let url = "https://mate-three-rho.vercel.app/";
-        let imageUrl = "https://mate-three-rho.vercel.app/Preview.png";
+        let url = "https://www.mateapp.tech/";
+        let imageUrl = "https://www.mateapp.tech/Preview.png";
 
         // 4. Assign custom metadata based on route
         if (pathParam === 'subject' && subjectId) {
             const subject = localNotes.find((item) => item.id === subjectId) || {};
             title = subject.title ? `${subject.title} | MATE` : title;
             description = subject.description || description;
-            url = `https://mate-three-rho.vercel.app/subject/${subjectId}`;
+            url = `https://www.mateapp.tech/subject/${subjectId}`;
             
             const firstFile = subject.files && subject.files.length > 0 ? subject.files[0] : null;
             
             if (subject.previewImage) {
                 // If you manually specify a previewImage in localNotes.js for the subject
-                imageUrl = subject.previewImage.startsWith('http') ? subject.previewImage : `https://mate-three-rho.vercel.app${subject.previewImage}`;
+                imageUrl = subject.previewImage.startsWith('http') ? subject.previewImage : `https://www.mateapp.tech${subject.previewImage}`;
             } else if (firstFile && firstFile.imageUrl) {
                 // Fallback to the thumbnail of the first file in the subject
                 imageUrl = firstFile.imageUrl;
@@ -43,19 +43,19 @@ export default function handler(req, res) {
         } else if (pathParam) {
             // Configuration for all other static pages
             const pagesConfig = {
-                'dashboard': { title: "Your Command Center | MATE", desc: "Take control of your academic life. Track your progress, resume recent subjects, and dive back into a distraction-free study environment tailored just for you.", img: "https://mate-three-rho.vercel.app/DashboardPreview.png" },
-                'notes': { title: "The Knowledge Vault | MATE", desc: "Explore an expansive library of meticulously curated notes, slide decks, and previous year question papers. Everything you need to ace your exams, beautifully organized.", img: "https://mate-three-rho.vercel.app/NotesPreview.png" },
-                'favorites': { title: "Your Curated Collection | MATE", desc: "Access your most crucial study assets instantly. A personalized space for your saved notes and essential materials, ready whenever inspiration strikes.", img: "https://mate-three-rho.vercel.app/FavoritesPreview.png" },
-                'about': { title: "Our Vision | MATE", desc: "Discover the mission behind MATE. We're rethinking how students interact with their curriculum by blending premium design with unparalleled academic utility.", img: "https://mate-three-rho.vercel.app/AboutPreview.png" },
-                'contact': { title: "Let's Connect | MATE", desc: "Have questions or feedback? Reach out to the MATE team. We are constantly evolving to build the ultimate academic operating system with your input.", img: "https://mate-three-rho.vercel.app/ContactPreview.png" },
-                'upload': { title: "Contribute to the Legacy | MATE", desc: "Help shape the future of learning. Upload and share your high-quality study materials to empower the community and build an unparalleled knowledge base.", img: "https://mate-three-rho.vercel.app/UploadPreview.png" }
+                'dashboard': { title: "Your Command Center | MATE", desc: "Take control of your academic life. Track your progress, resume recent subjects, and dive back into a distraction-free study environment tailored just for you.", img: "https://www.mateapp.tech/DashboardPreview.png" },
+                'notes': { title: "The Knowledge Vault | MATE", desc: "Explore an expansive library of meticulously curated notes, slide decks, and previous year question papers. Everything you need to ace your exams, beautifully organized.", img: "https://www.mateapp.tech/NotesPreview.png" },
+                'favorites': { title: "Your Curated Collection | MATE", desc: "Access your most crucial study assets instantly. A personalized space for your saved notes and essential materials, ready whenever inspiration strikes.", img: "https://www.mateapp.tech/FavoritesPreview.png" },
+                'about': { title: "Our Vision | MATE", desc: "Discover the mission behind MATE. We're rethinking how students interact with their curriculum by blending premium design with unparalleled academic utility.", img: "https://www.mateapp.tech/AboutPreview.png" },
+                'contact': { title: "Let's Connect | MATE", desc: "Have questions or feedback? Reach out to the MATE team. We are constantly evolving to build the ultimate academic operating system with your input.", img: "https://www.mateapp.tech/ContactPreview.png" },
+                'upload': { title: "Contribute to the Legacy | MATE", desc: "Help shape the future of learning. Upload and share your high-quality study materials to empower the community and build an unparalleled knowledge base.", img: "https://www.mateapp.tech/UploadPreview.png" }
             };
             
             const config = pagesConfig[pathParam];
             if (config) {
                 title = config.title;
                 description = config.desc;
-                url = `https://mate-three-rho.vercel.app/${pathParam}`;
+                url = `https://www.mateapp.tech/${pathParam}`;
                 if (config.img) {
                     imageUrl = config.img;
                 }
