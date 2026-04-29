@@ -64,7 +64,7 @@ export default function ContactUs() {
       
       <div className="w-full max-w-lg mx-auto font-Inter text-lg text-zinc-900 dark:text-gray-200 z-10 font-medium text-center py-8 px-4">
         <p className="text-gray-700 dark:text-gray-300 mb-8">
-          We'd love to hear from you. Fill out the form below or reach us directly at <a href="mailto:mateforyou@proton.me" className="text-blue-600 dark:text-blue-400 hover:underline">mateforyou@proton.me</a>.
+          We'd love to hear from you. Fill out the form below or reach us directly at <a target='_blank' href="mailto:mateforyou@proton.me" className="text-blue-600 dark:text-blue-400 hover:underline cursor-pointer">mateforyou@proton.me</a>.
         </p>
 
         <div className="bg-white dark:bg-zinc-900/50 p-6 sm:p-8 rounded-2xl shadow-sm border border-zinc-200 dark:border-zinc-800 text-left">

@@ -54,7 +54,7 @@ export default function Footer() {
       </div>
       <div className="self-center text-neutral-600 dark:text-neutral-300  md:mt-14 z-20">
         a{" "}
-        <a className="font-medium underline-offset-4 text-lg font-serif text-neutral-800 dark:text-neutral-200  italic">
+        <a href="https://www.linkedin.com/in/nishant-dhanani/" target="_blank" className="font-medium  cursor-pointer text-lg   font-serif text-neutral-700 dark:text-neutral-300  italic">
           {" "}
           Nishant Dhanani
         </a>{" "}
