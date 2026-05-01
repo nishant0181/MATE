@@ -22,6 +22,7 @@ import ContactUs from "./Components/ContactUs";
 import { Toaster } from "@/Components/ui/sonner";
 import Upload from "./Components/Upload";
 import RouteMetaData from "./Components/RouteMetaData";
+import InstallPopup from "./Components/InstallPopup";
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
       </FavoritesProvider>
       <PDFViewerWarmup enabled={true} />
       <Toaster />
+      <InstallPopup />
     </ReactLenis>
   );
 }
