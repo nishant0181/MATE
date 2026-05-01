@@ -20,7 +20,7 @@ export default function NotesFeedOnHome() {
       </div>
 
       <div className="pt-10   px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  place-items-center">
           {recentNotes.map((id, index) => {
             const n = data.find((n) => n.id === id);
             if (!n) return null;

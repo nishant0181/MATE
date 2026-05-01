@@ -18,7 +18,7 @@ export default function NoteSection() {
   }, [filteredData]);
 
   const [visibleCount, setVisibleCount] = useState(9)
-
+console.log("Test")
   return (
     <>
       <section
