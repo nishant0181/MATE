@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Download, Smartphone } from "lucide-react";
+import useHaptic from "../hooks/useHaptic";
 
 export default function InstallApp() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
   const [Installed, setInstalled] = useState(false);
+  const haptic = useHaptic();
 
   useEffect(() => {
     const checkStatus = async () => {
@@ -87,7 +89,10 @@ export default function InstallApp() {
               </p>
               <div className="mt-4 font-Figtree self-end md:self-start ">
                 <Button
-                  onClick={handleInstall}
+                  onClick={() =>{
+                     handleInstall()
+                     haptic.lightTap()
+                  }}
                    className="text-lg px-8  py-6"
                 >
                   <Download size={36} />

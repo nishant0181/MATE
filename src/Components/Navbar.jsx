@@ -8,8 +8,10 @@ import SearchDialog from "./SearchDialog";
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeGiver";
 import { Button } from "./ui/button";
+import useHaptic from '../hooks/useHaptic';
 
 export default function Navbar() {
+  const haptic = useHaptic();
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useContext(ThemeContext);
 
@@ -60,7 +62,9 @@ export default function Navbar() {
             </ul>
           </nav>
           <InputGroup
-            onClick={() => setIsOpen(true)}
+            onClick={() =>{
+              haptic.lightTap()
+              setIsOpen(true) }}
             className="font-Figtree max-w-[120px] md:max-w-[200px] "
           >
             <InputGroupInput placeholder="Search..." className="cursor-pointer md:text-sm text-xs" />
@@ -71,7 +75,7 @@ export default function Navbar() {
               <Kbd>⌘K</Kbd>
             </InputGroupAddon>
           </InputGroup>
-          <Button className="cursor-pointer" variant="ghost" size="icon" onClick={toggleTheme}>
+          <Button className="cursor-pointer" variant="ghost" size="icon" onClick={toggleTheme} onTouchStart={() => haptic.lightTap()}>
             {theme === "dark" ? <SunIcon /> : <MoonIcon />}
           </Button>
         </div>

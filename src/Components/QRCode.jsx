@@ -9,10 +9,12 @@ import {
 } from "./ui/dialog";
 import QRCode from "react-qr-code";
 import { QrCode } from "lucide-react";
+import useHaptic from "../hooks/useHaptic";
 
-export default function MyQRCode({shareUrl}) {
+export default function MyQRCode({shareUrl,name}) {
+  const haptic = useHaptic();
   return (
-    <Dialog>
+    <Dialog onOpenChange={() => haptic.lightTap()}>
       <DialogTrigger>
         <div
           className="     cursor-pointer transition-colors duration-300  text-black
@@ -30,7 +32,7 @@ export default function MyQRCode({shareUrl}) {
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="font-bold text-lg ">
-            Scan the QR Code to Share
+            Scan QR Code to View : <span>{name}</span>
           </DialogTitle>
 
           {shareUrl && (

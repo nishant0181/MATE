@@ -4,8 +4,10 @@ import InputFilter from "./InputFilter";
 import SelectionFilterMenu from "./SelectionFilterMenu";
 import CardofNote from "./CardofNote";
 import ElipseDarkGradient from "./ui/ElipseDarkGradient";
+import useHaptic from '../hooks/useHaptic';
 
 export default function NoteSection() {
+  const haptic = useHaptic();
   const { data, dataSource, isEmptyRemote, isLoading } = NotesProvider();
   const [filteredData, setFilteredData] = useState(data);
 
@@ -116,7 +118,9 @@ console.log("Test")
           {filteredData.length > visibleCount && (
             <div className="flex justify-center mt-10">
               <button
-                onClick={() => setVisibleCount(visibleCount + 9)}
+                onClick={() => {setVisibleCount(visibleCount + 9)
+                  haptic.lightTap()
+                }}
                 className="px-6 py-3 dark:bg-white dark:text-black bg-neutral-800  text-neutral-200 rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors"
               >
                 Load More

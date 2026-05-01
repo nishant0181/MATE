@@ -4,9 +4,10 @@ import { Link } from "react-router";
 import { LayoutDashboard, Search } from "lucide-react";
 import { motion } from "framer-motion";
 import ElipseDarkGradient from "./ui/ElipseDarkGradient";
-
+import useHaptic from "../hooks/useHaptic";
 
 export default function Hero() {
+  const haptic = useHaptic();
   return (
     <>
       <motion.section
@@ -17,10 +18,8 @@ export default function Hero() {
       >
         <div className="relative overflow-hidden bg-zinc-50 dark:bg-background w-full flex flex-col items-center pb-24 md:pb-32">
           <div className="absolute inset-0 bg-[url('/Images/Gridwithstars.svg')] bg-cover bg-center bg-no-repeat invert dark:invert-0 z-0 pointer-events-none mask-[radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
-          <ElipseDarkGradient  />
+          <ElipseDarkGradient />
 
-    
-    
           <div className="mt-20 lg:mt-28 mb-8 text-[12px] md:text-sm font-Inter text-black/80 dark:text-white/80 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md rounded-full px-4 py-1.5 flex items-center justify-center gap-2 hover:bg-black/10 dark:hover:bg-white/10 hover:text-black dark:hover:text-white transition-all cursor-pointer z-10 shadow-[0_0_15px_rgba(0,0,0,0.05)] dark:shadow-[0_0_15px_rgba(255,255,255,0.03)]">
             Now it&apos;s time for comeback
             <svg
@@ -61,17 +60,28 @@ export default function Hero() {
           </div>
 
           <p className="px-6 md:px-0 font-sans text-sm sm:text-base md:text-xm text-center leading-relaxed mt-10 md:mt-10 text-zinc-600 dark:text-[#909092] max-w-xl mx-auto z-20 font-medium">
-           Stop fighting old-school methods. Simplify your study sessions with tools built for today.
+            Stop fighting old-school methods. Simplify your study sessions with
+            tools built for today.
           </p>
 
           <div className="pt-10 z-20 flex flex-wrap justify-center items-center gap-4  mt-2">
-            <Link to="/notes">
+            <Link
+              to="/notes"
+              onClick={() => {
+                haptic.mediumTap();
+              }}
+            >
               <div className="bg-black text-white dark:bg-white hover:bg-zinc-800 dark:hover:bg-gray-200 transition-colors font-Inter font-semibold leading-tight text-sm dark:text-black flex items-center gap-2 py-3 px-6 rounded-full cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(255,255,255,0.15)]">
                 <Search size={16} />
                 Search Notes
               </div>
             </Link>
-            <Link to="/dashboard">
+            <Link
+              to="/dashboard"
+              onClick={() => {
+                haptic.mediumTap();
+              }}
+            >
               <div className="bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-black dark:text-white leading-tight font-Inter flex items-center gap-2 font-medium text-sm py-3 px-6 rounded-full border border-black/10 dark:border-white/10 transition-colors cursor-pointer backdrop-blur-sm">
                 <LayoutDashboard size={16} />
                 DashBoard

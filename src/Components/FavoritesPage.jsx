@@ -4,10 +4,12 @@ import { FavoritesContext } from "../contexts/FavoritesProvider";
 
 import { Link } from "react-router";
 import { Button } from "./ui/button";
+import useHaptic from "../hooks/useHaptic";
 
 
 export default function FavoritesPage() {
   const { favorites } = useContext(FavoritesContext);
+  const haptic = useHaptic();
   return (
     <>
       <section className="max-w-5xl mx-auto">
@@ -33,8 +35,8 @@ export default function FavoritesPage() {
                 Let's fill it with some notes.
               </p>
               <div className="flex justify-center">
-                <Button  asChild>
-                  <Link to="/notes">Go to NotesPage</Link>
+                <Button  onTouchStart={() => haptic.lightTap()} asChild>
+                  <Link  to="/notes">Go to NotesPage</Link>
                 </Button>
               </div>
               </div>

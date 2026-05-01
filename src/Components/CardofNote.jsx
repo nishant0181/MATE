@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import { FavoritesContext } from "@/contexts/FavoritesProvider";
 import useRecentNotes from "../hooks/useRecentNotes";
+import useHaptic from "../hooks/useHaptic";
 
 import MyQRCode from "./QRCode";
 
@@ -31,7 +32,8 @@ export default function CardofNote({
   imageUrl,
   index = 0,
 }) {
-  const [,addNoteId] = useRecentNotes();
+  const haptic = useHaptic();
+  const [, addNoteId] = useRecentNotes();
   const shareUrl =
     typeof window !== "undefined"
       ? window.location.origin + "/subject/" + id
@@ -54,12 +56,12 @@ export default function CardofNote({
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ 
+        transition={{
           type: "spring",
           stiffness: 100,
           damping: 15,
           mass: 1,
-          delay: (index % 12) * 0.05 
+          delay: (index % 12) * 0.05,
         }}
         className="relative z-0 flex flex-col bg-white dark:bg-[oklch(.205_0_0)]   border-neutral-300 dark:border-black border-2 rounded-lg p-7 
        
@@ -79,77 +81,74 @@ export default function CardofNote({
         
         select-none
         "
-        >
+      >
         <div className="flex flex-1 flex-col">
-        <div className="z-60 flex items-start justify-between mb-4">
-          <div className="w-full">
-            {/* Dynamic Thumbnail Preview */}
-            {
-              FileMode && (
-                
+          <div className="z-60 flex items-start justify-between mb-4">
+            <div className="w-full">
+              {/* Dynamic Thumbnail Preview */}
+              {FileMode && (
                 <div className="relative w-full aspect-video rounded-md overflow-hidden bg-zinc-100 dark:bg-zinc-900 mb-6 border border-neutral-200 dark:border-neutral-800">
-              {imageUrl ? (
-                <img
-                  src={imageUrl}
-                  alt={title}
-                  loading="lazy"
-                  className="w-full h-full object-top object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-neutral-200 to-neutral-300 dark:from-zinc-800 dark:to-zinc-900">
-                   <div className="text-xl font-Inter font-medium tracking-[3.5px] text-zinc-500/50 select-none">
+                  {imageUrl ? (
+                    <img
+                      src={imageUrl}
+                      alt={title}
+                      loading="lazy"
+                      className="w-full h-full object-top object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-neutral-200 to-neutral-300 dark:from-zinc-800 dark:to-zinc-900">
+                      <div className="text-xl font-Inter font-medium tracking-[3.5px] text-zinc-500/50 select-none">
                         MATE
+                      </div>
                     </div>
+                  )}
                 </div>
               )}
-            </div>
-                )
-              }
 
-            <div className="flex items-center justify-between gap-3 w-full">
-              <h3 className="text-2xl font-bold text-black dark:text-white mb-2 line-clamp-1 w-full">
-                {title}
-              </h3>
+              <div className="flex items-center justify-between gap-3 w-full">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-2 line-clamp-1 w-full">
+                  {title}
+                </h3>
+              </div>
+              <p className="text-sm text-gray-600 dark:text-[#909092] mb-3 line-clamp-2">
+                {description}
+              </p>
             </div>
-            <p className="text-sm text-gray-600 dark:text-[#909092] mb-3 line-clamp-2">
-              {description}
-            </p>
           </div>
-        </div>
-        <div className="flex flex-wrap gap-2 mb-4">
-          <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-[#b6b5b5] px-3 py-1 rounded-full border border-zinc-400">
-            {subject}
-          </span>
-          <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-[#b6b5b5] px-3 py-1 rounded-full border border-zinc-400">
-            Sem : {semester}
-          </span>
-          {branch && (
+          <div className="flex flex-wrap gap-2 mb-4">
             <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-[#b6b5b5] px-3 py-1 rounded-full border border-zinc-400">
-              {branch == "all" ? "All Branches" : branch}
+              {subject}
             </span>
-          )}
-          {university && (
             <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-[#b6b5b5] px-3 py-1 rounded-full border border-zinc-400">
-              {university}
+              Sem : {semester}
             </span>
-          )}
-          {
-            pages && (
+            {branch && (
+              <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-[#b6b5b5] px-3 py-1 rounded-full border border-zinc-400">
+                {branch == "all" ? "All Branches" : branch}
+              </span>
+            )}
+            {university && (
+              <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-[#b6b5b5] px-3 py-1 rounded-full border border-zinc-400">
+                {university}
+              </span>
+            )}
+            {pages && (
               <span className="text-xs dark:bg-zinc-900 bg-gray-200 text-black dark:text-[#b6b5b5] px-3 py-1 rounded-full border border-zinc-400">
                 {pages} Pages
               </span>
-            )
-          }
-        </div>
-
+            )}
+          </div>
         </div>
 
         <div className="flex items-center justify-center gap-4 ">
           {FileMode && (
             <>
               <button
-                onClick={() => onViewPDF({ url })}
                 className="mx-auto text-center transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 font-Figtree font-medium leading-tight text-sm dark:text-black text-zinc-900 flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full "
+                onClick={() => {
+                  onViewPDF({ url });
+                  haptic.mediumTap();
+                }}
               >
                 View Notes
                 <svg
@@ -171,7 +170,7 @@ export default function CardofNote({
             <>
               <div className="flex flex-col w-full gap-4">
                 <div className="flex justify-end  w-full">
-                  <MyQRCode shareUrl={shareUrl}/>
+                  <MyQRCode shareUrl={shareUrl} haptic={haptic} name={title}/>
                 </div>
                 <div className="flex gap-2">
                   <Link
@@ -179,6 +178,7 @@ export default function CardofNote({
                     className="mx-auto text-center transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 font-Figtree font-medium leading-tight text-sm dark:text-black text-zinc-900 flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full "
                     onClick={() => {
                       addNoteId(id);
+                      haptic.mediumTap();
                     }}
                   >
                     View Notes
@@ -198,7 +198,10 @@ export default function CardofNote({
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => toggleFavorite(note)}
+                    onClick={() => {
+                      toggleFavorite(note);
+                      haptic.lightTap();
+                    }}
                     className={cn(
                       "h-8 w-8 p-0 hover:scale-105 active:scale-95 transition-all",
                       isFavorite(note)
@@ -223,9 +226,11 @@ export default function CardofNote({
                   <button
                     className="  transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 text-black  flex items-center gap-4 py-2 px-2 rounded-md cursor-pointer justify-center "
                     title="Share"
-                    onClick={handleShare}
+                    onClick={() => {
+                      handleShare();
+                      haptic.lightTap();
+                    }}
                   >
-                    {" "}
                     <Share2 className="size-4" />{" "}
                   </button>
                 </div>
@@ -233,7 +238,6 @@ export default function CardofNote({
             </>
           )}
         </div>
-       
       </motion.div>
     </>
   );

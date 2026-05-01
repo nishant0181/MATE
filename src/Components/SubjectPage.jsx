@@ -13,11 +13,14 @@ import FInalPDFView from "./PDFViewer/FInalPDFView.jsx";
 import { useNavigate } from "react-router";
 import { cn } from "@/lib/utils";
 import MyQRCode from "./QRCode.jsx";
+import useHaptic from "../hooks/useHaptic";
+
 
 export default function SubjectPage() {
   const [visibleCount, setVisibleCount] = useState(9)
   const [activeTab, setActiveTab] = useState("All");
   const scrollRef = useRef(null);
+  const haptic = useHaptic();
   const [showArrow, setShowArrow] = useState(false);
 
   const checkOverflow = () => {
@@ -164,7 +167,7 @@ export default function SubjectPage() {
               </div>
             </div>
             <div className="self-end md:self-auto flex gap-2">
-              <MyQRCode shareUrl={window.location.href} />
+              <MyQRCode shareUrl={window.location.href} name={subject?.title} />
               <Button
                 variant="outline"
                 onClick={() => {
@@ -204,6 +207,7 @@ export default function SubjectPage() {
                 key={cat}
                 onClick={() => {setActiveTab(cat)
                   setVisibleCount(9)
+                  haptic.lightTap()
                 }}
                 className={cn(
                   "px-4 py-2.5   rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer",
@@ -256,7 +260,9 @@ export default function SubjectPage() {
         {filteredFiles?.length > visibleCount && (
             <div className="flex justify-center mt-10">
               <button
-                onClick={() => setVisibleCount(visibleCount + 9)}
+                onClick={() => {setVisibleCount(visibleCount + 9)
+                  haptic.lightTap()
+                }}
                 className="px-6 py-3 dark:bg-white dark:text-black bg-neutral-800  text-neutral-200 rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors"
               >
                 Load More
