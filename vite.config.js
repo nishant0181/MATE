@@ -29,24 +29,83 @@ export default defineConfig({
 
       screenshots: [
         {
-          src: '/Preview.png',
+          src: '/screenshot-wide.png',
           sizes: '1280x800',
           type: 'image/png',
           form_factor: 'wide',
           label: 'MATE — Your College Notes Dashboard'
         },
         {
-          src: '/Preview.png',
+          src: '/screenshot-narrow.png',
           sizes: '640x1136',
           type: 'image/png',
           form_factor: 'narrow',
           label: 'MATE — Browse and Study Notes'
-        }
+        },
+       
+        {
+          src: '/dash-wide.png',
+          sizes: '1280x800',
+          type: 'image/png',
+          form_factor: 'wide',
+          label: 'Dashboard Preview'
+        },
+        {
+          src: '/note-wide.png',
+          sizes: '1280x800',
+          type: 'image/png',
+          form_factor: 'wide',
+          label: 'Notes Preview'
+        },
+        {
+          src: '/fav-wide.png',
+          sizes: '1280x800',
+          type: 'image/png',
+          form_factor: 'wide',
+          label: 'Favorites Preview'
+        },
+        {
+          src: '/about-wide.png',
+          sizes: '1280x800',
+          type: 'image/png',
+          form_factor: 'wide',
+          label: 'About Preview'
+        },
+        // Add more narrow (mobile) screenshots below
+        {
+          src: '/dash-narrow.png',
+          sizes: '640x1136',
+          type: 'image/png',
+          form_factor: 'narrow',
+          label: 'Mobile Dashboard Preview'
+        },
+        {
+          src: '/note-narrow.png',
+          sizes: '640x1136',
+          type: 'image/png',
+          form_factor: 'narrow',
+          label: 'Mobile Notes Preview'
+        },
+        {
+          src: '/fav-narrow.png',
+          sizes: '640x1136',
+          type: 'image/png',
+          form_factor: 'narrow',
+          label: 'Mobile Favorites Preview'
+        },
+        {
+          src: '/about-narrow.png',
+          sizes: '640x1136',
+          type: 'image/png',
+          form_factor: 'narrow',
+          label: 'Mobile About Preview'
+        },
       ],
 
       share_target: {
         action: '/share-target',
         method: 'GET',
+        enctype: 'application/x-www-form-urlencoded',
         params: { title: 'title', text: 'text', url: 'url' }
       },
 
@@ -74,16 +133,16 @@ export default defineConfig({
         }
       ],
       icons: [
-        { src: '/icons/icon-48x48.png', sizes: '48x48', type: 'image/png' },
-        { src: '/icons/icon-72x72.png', sizes: '72x72', type: 'image/png' },
-        { src: '/icons/icon-96x96.png', sizes: '96x96', type: 'image/png' },
-        { src: '/icons/icon-128x128.png', sizes: '128x128', type: 'image/png' },
-        { src: '/icons/icon-144x144.png', sizes: '144x144', type: 'image/png' },
-        { src: '/icons/icon-152x152.png', sizes: '152x152', type: 'image/png' },
-        { src: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
-        { src: '/icons/icon-256x256.png', sizes: '256x256', type: 'image/png' },
-        { src: '/icons/icon-384x384.png', sizes: '384x384', type: 'image/png' },
-        { src: '/icons/icon-512x512.png', sizes: '512x512', type: 'image/png' },
+        { src: '/icons/icon-48x48.png', sizes: '48x48', type: 'image/png', purpose: 'any maskable' },
+        { src: '/icons/icon-72x72.png', sizes: '72x72', type: 'image/png', purpose: 'any maskable' },
+        { src: '/icons/icon-96x96.png', sizes: '96x96', type: 'image/png', purpose: 'any maskable' },
+        { src: '/icons/icon-128x128.png', sizes: '128x128', type: 'image/png', purpose: 'any maskable' },
+        { src: '/icons/icon-144x144.png', sizes: '144x144', type: 'image/png', purpose: 'any maskable' },
+        { src: '/icons/icon-152x152.png', sizes: '152x152', type: 'image/png', purpose: 'any maskable' },
+        { src: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+        { src: '/icons/icon-256x256.png', sizes: '256x256', type: 'image/png', purpose: 'any maskable' },
+        { src: '/icons/icon-384x384.png', sizes: '384x384', type: 'image/png', purpose: 'any maskable' },
+        { src: '/icons/icon-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
       ]
     }
   })

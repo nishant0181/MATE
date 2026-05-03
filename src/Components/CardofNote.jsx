@@ -42,8 +42,8 @@ export default function CardofNote({
   const handleShare = async () => {
     try {
       await navigator.share({
-        title: "MATE : " + subject?.title,
-        text: subject?.description,
+        title: "MATE : " + title,
+        text: "Subject : " + subject + "\n" + description,
         url: window.location.href,
       });
     } catch (err) {
