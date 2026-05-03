@@ -77,7 +77,6 @@ export default function handler(req, res) {
         res.status(200).send(htmlString);
         
     } catch (error) {
-        console.error("Preview generation error:", error);
         res.status(500).send("Error generating preview snippet");
     }
 }

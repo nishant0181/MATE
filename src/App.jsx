@@ -23,6 +23,8 @@ import { Toaster } from "@/Components/ui/sonner";
 import Upload from "./Components/Upload";
 import RouteMetaData from "./Components/RouteMetaData";
 import InstallPopup from "./Components/InstallPopup";
+import NetworkStatusTracker from "./Components/NetworkStatusTracker";
+import NotFound from "./Components/NotFound";
 
 function App() {
   return (
@@ -53,12 +55,14 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/upload" element={<Upload />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
           </ThemeGiver>
         </BrowserRouter>
       </FavoritesProvider>
       <PDFViewerWarmup enabled={true} />
+      <NetworkStatusTracker />
       <Toaster />
       <InstallPopup />
     </ReactLenis>

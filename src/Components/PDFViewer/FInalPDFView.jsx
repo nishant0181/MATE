@@ -30,7 +30,6 @@ export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
       try {
         wakeLockRef.current = await navigator.wakeLock.request('screen');
       } catch (err) {
-        console.warn('[MATE] Wake Lock denied:', err.message);
       }
     };
 

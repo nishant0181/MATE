@@ -102,7 +102,7 @@ export default function InstallPopup() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.95 }}
           transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-          className="fixed bottom-24 md:bottom-4 left-4 right-4 md:left-auto md:right-8 md:w-96 z-50 p-5 
+          className="fixed bottom-24 md:bottom-4 left-4 right-4 md:left-auto md:right-8 md:max-w-96 z-50 p-5 
                      bg-background/80 backdrop-blur-xl border border-border shadow-2xl rounded-2xl select-none"
         >
           <button 
@@ -123,7 +123,7 @@ export default function InstallPopup() {
                 Install MATE for a Home Screen App with  10x faster loading, and  better study environment.
               </p>
               
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <Button onClick={handleInstallClick} className="flex-1 text-sm h-9">
                   <Download className="mr-2 h-4 w-4" /> Install App
                 </Button>

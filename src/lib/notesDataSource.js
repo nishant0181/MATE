@@ -6,36 +6,39 @@ const MANIFEST_URL =
 
 
 export async function fetchNotes() {
-  try {
-    const res = await fetch(MANIFEST_URL, { cache: "no-cache" });
+  if (!globalThis._notesFetchPromise) {
+    globalThis._notesFetchPromise = (async () => {
+      try {
+        const res = await fetch(MANIFEST_URL, { cache: "default" });
 
-    if (!res.ok) {
-      throw new Error(`Manifest fetch failed: ${res.status}`);
-    }
+        if (!res.ok) {
+          throw new Error(`Manifest fetch failed: ${res.status}`);
+        }
 
-    const manifest = await res.json();
+        const manifest = await res.json();
 
-    if (!Array.isArray(manifest) || manifest.length === 0) {
-      throw new Error("Manifest is empty or malformed");
-    }
+        if (!Array.isArray(manifest) || manifest.length === 0) {
+          throw new Error("Manifest is empty or malformed");
+        }
 
-    return {
-      notes: manifest,
-      source: "cdn",
-      error: null,
-      isEmptyRemote: false,
-    };
-  } catch (err) {
-    console.warn(
-      "[MATE] Could not load manifest from CDN, using local notes.",
-      err.message,
-    );
 
-    return {
-      notes: getLocalNotes(),
-      source: "local",
-      error: err,
-      isEmptyRemote: false,
-    };
+        return {
+          notes: manifest,
+          source: "cdn",
+          error: null,
+          isEmptyRemote: false,
+        };
+      } catch (err) {
+
+        return {
+          notes: localNotes,
+          source: "local",
+          error: err,
+          isEmptyRemote: false,
+        };
+      }
+    })();
   }
+
+  return globalThis._notesFetchPromise;
 }

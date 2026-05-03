@@ -58,7 +58,7 @@ export default function SearchDialog({isOpen, setIsOpen}) {
               
               <Input placeholder="Type to search" value={query} onChange={(e) => setQuery(e.target.value)}   />
               
-              <div className="mt-4 overflow-auto h-96 w-full no-scrollbar items-center   flex flex-col gap-8">
+              <div className="mt-4 px-4 overflow-auto h-96 w-full no-scrollbar items-center   flex flex-col gap-8">
              {filteredNotes.map((note, index) => (
               <CardofNote
               note={note}

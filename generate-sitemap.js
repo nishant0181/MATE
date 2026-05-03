@@ -37,7 +37,6 @@ function generateSitemap() {
     const sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml');
     fs.writeFileSync(sitemapPath, sitemapXML);
     
-    console.log(`✅ Sitemap automatically generated with ${urls.length} URLs!`);
 }
 
 generateSitemap();

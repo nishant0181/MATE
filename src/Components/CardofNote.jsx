@@ -39,11 +39,19 @@ export default function CardofNote({
       ? window.location.origin + "/subject/" + id
       : "";
 
-  const handleShare = () => {
-    navigator.clipboard.writeText(shareUrl);
-    toast.success("Link copied to clipboard!", {
-      position: "bottom-right",
-    });
+  const handleShare = async () => {
+    try {
+      await navigator.share({
+        title: "MATE : " + subject?.title,
+        text: subject?.description,
+        url: window.location.href,
+      });
+    } catch (err) {
+      if (err.name !== "AbortError") {
+        await navigator.clipboard.writeText(window.location.href);
+        toast.success("Link copied to clipboard!");
+      }
+    }
   };
 
   const { toggleFavorite, isFavorite } = useContext(FavoritesContext);
@@ -170,7 +178,7 @@ export default function CardofNote({
             <>
               <div className="flex flex-col w-full gap-4">
                 <div className="flex justify-end  w-full">
-                  <MyQRCode shareUrl={shareUrl} haptic={haptic} name={title}/>
+                  <MyQRCode shareUrl={shareUrl} haptic={haptic} name={title} />
                 </div>
                 <div className="flex gap-2">
                   <Link

@@ -10,7 +10,7 @@ export default function GlassDock() {
       <div className="fixed bottom-0  left-1/2 -translate-x-1/2 z-50 md:bottom-2 md:hidden dark:bg-background bg-white w-full  ">
    
 
-        <div className="flex items-center justify-between px-8 py-8">
+        <div className="flex items-center justify-between px-8 py-4">
           <NavLink to="/" 
           style={({ isActive }) => ({ color: isActive ? '#8a8a8a' : '' } )}
            onClick={() =>{
