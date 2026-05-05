@@ -1,4 +1,4 @@
-export const localNotes = [
+[
   {
     "id": "bce",
     "title": "BCE",
@@ -252,6 +252,78 @@ export const localNotes = [
         "pages": 5,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/be/Syllabus/be-syllabus-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/be/Syllabus/be-syllabus-pdf.pdf"
+      },
+      {
+        "fileId": "be-ch-1",
+        "title": "Ch 1",
+        "description": "Essential insights into foundational concepts. Develop a comprehensive understanding for academic success.",
+        "tag": "Books",
+        "pages": 43,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/be/Books/technical/ch-1_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9a2f40010188db55f/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "be-ch-2",
+        "title": "Ch 2",
+        "description": "Mastering core topics and fundamental principles for robust academic understanding.",
+        "tag": "Books",
+        "pages": 93,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/be/Books/technical/ch-2_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9a3ef0028dee2e235/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "be-ch-3",
+        "title": "Ch 3",
+        "description": "",
+        "tag": "Books",
+        "pages": 32,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/be/Books/technical/ch-3_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9a4210010167cefd8/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "be-ch-4",
+        "title": "Ch 4",
+        "description": "Concise overview of fundamental academic concepts, fostering a strong foundation for deeper understanding.",
+        "tag": "Books",
+        "pages": 17,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/be/Books/technical/ch-4_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9a44000221d4a31c8/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "be-ch-5",
+        "title": "Ch 5",
+        "description": "",
+        "tag": "Books",
+        "pages": 41,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/be/Books/technical/ch-5_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9a44c0003188eea54/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "be-ch-6",
+        "title": "Ch 6",
+        "description": "",
+        "tag": "Books",
+        "pages": 34,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/be/Books/technical/ch-6_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9a45c0015f50604a5/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "be-ch-7",
+        "title": "Ch 7",
+        "description": "",
+        "tag": "Books",
+        "pages": 15,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/be/Books/technical/ch-7_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9a474002eded67910/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "be-ch-8",
+        "title": "Ch 8",
+        "description": "",
+        "tag": "Books",
+        "pages": 42,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/be/Books/technical/ch-8_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9a4900015b7990a6b/view?project=69f97f8e0001b58277a4"
       }
     ]
   },
@@ -416,6 +488,15 @@ export const localNotes = [
         "pages": 8,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/bee/Syllabus/bee-syllabus_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/bee/Syllabus/bee-syllabus.pdf"
+      },
+      {
+        "fileId": "bee-bee-atul-book",
+        "title": "BEE Atul Book",
+        "description": "",
+        "tag": "Books",
+        "pages": 377,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/bee/Books/bee-atul-book_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9a59f00328534a372/view?project=69f97f8e0001b58277a4"
       }
     ]
   },
@@ -499,6 +580,33 @@ export const localNotes = [
         "pages": 5,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/bme/Syllabus/bme-syllabus-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/bme/Syllabus/bme-syllabus-pdf.pdf"
+      },
+      {
+        "fileId": "bme-bme-mahajan-book",
+        "title": "BME Mahajan Book",
+        "description": "Basic Mechanical Engineering for GTU B.E. First Year students, aligned with the 2018 syllabus.",
+        "tag": "Books",
+        "pages": 195,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/bme/Books/bme-mahajan-book_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f98a0e000b37a7b032/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "bme-ch-7",
+        "title": "Ch 7",
+        "description": "ification of I.C. engines, 7.3 Engine details, 7.4 I.C. engine\nterminology, 7.5 Four stroke petrol engine or spark ignition (SI) engine – Otto cycle engine,\n7.6 Four stroke diesel engine or compression ignition (CI) engine",
+        "tag": "Books",
+        "pages": 38,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/bme/Books/technical/ch-7_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9a667000c560eac03/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "bme-bme-techneo-book",
+        "title": "BME TechNeo Book",
+        "description": "Understanding of basic princ iples of Mechanica l Engineering is required in various field of engineering.",
+        "tag": "Books",
+        "pages": 227,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/bme/Books/bme-techneo-book_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9b0cb0025eb0d72f7/view?project=69f97f8e0001b58277a4"
       }
     ]
   },
@@ -748,6 +856,15 @@ export const localNotes = [
         "pages": 5,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/egd/Syllabus/egd-syllabus-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/egd/Syllabus/egd-syllabus-pdf.pdf"
+      },
+      {
+        "fileId": "egd-engineering-drawing-mcgrawhill-book",
+        "title": "Engineering Drawing McGrawHill Book",
+        "description": "Engineering Drawing book is mainly intended to meet the requirements of the first year BE/B.Tech.",
+        "tag": "Books",
+        "pages": 778,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/egd/Books/engineering-drawing-mcgrawhill-book_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9b10f003927b69731/view?project=69f97f8e0001b58277a4"
       }
     ]
   },
@@ -872,12 +989,12 @@ export const localNotes = [
       },
       {
         "fileId": "mos-unit-7-pdf",
-        "title": "Unit 7",
-        "description": "Comprehensive Study materials and notes for MOS. Includes 5 pages of content.",
-        "tag": "Notes",
-        "pages": 5,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/mos/Notes/unit-7-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/mos/Notes/unit-7-pdf.pdf"
+        "title": "Unit 7 Pdf",
+        "description": "",
+        "tag": "PPTs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/mos/PPTs/unit-7-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/mos/PPTs/unit-7-pdf.pdf"
       },
       {
         "fileId": "mos-unit-1-pdf",
@@ -926,11 +1043,11 @@ export const localNotes = [
       },
       {
         "fileId": "mos-unit-7-pdf",
-        "title": "Unit 7",
-        "description": "Comprehensive Study materials and notes for MOS. Includes 5 pages of content.",
-        "tag": "Notes",
-        "pages": 5,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/mos/Notes/unit-7-pdf_thumb.webp",
+        "title": "Unit 7 Pdf",
+        "description": "",
+        "tag": "PPTs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/mos/PPTs/unit-7-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/mos/PPTs/unit-7-pdf.pdf"
       },
       {
@@ -959,6 +1076,15 @@ export const localNotes = [
         "pages": 7,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/mos/Syllabus/mos-syllabus-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/mos/Syllabus/mos-syllabus-pdf.pdf"
+      },
+      {
+        "fileId": "mos-mechanics-of-materials-book",
+        "title": "Mechanics Of Materials Book",
+        "description": "",
+        "tag": "Books",
+        "pages": 584,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/mos/Books/mechanics-of-materials-book_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9ae9a00258ebcc2c9/view?project=69f97f8e0001b58277a4"
       }
     ]
   },
@@ -974,29 +1100,29 @@ export const localNotes = [
       {
         "fileId": "physics-ch-2-pdf",
         "title": "Ch 2",
-        "description": "Comprehensive Study materials and notes for Physics. Includes 9 pages of content.",
-        "tag": "Notes",
-        "pages": 9,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/Notes/ch-2-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/Notes/ch-2-pdf.pdf"
+        "description": "Comprehensive Presentation slides for Physics. Includes 187 pages of content.",
+        "tag": "PPTs",
+        "pages": 187,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PPTs/ch-2-pdf_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9acee002b00357e7b/view?project=69f97f8e0001b58277a4"
       },
       {
         "fileId": "physics-ch-4-pdf",
-        "title": "Ch 4",
-        "description": "Comprehensive Study materials and notes for Physics. Includes 38 pages of content.",
-        "tag": "Notes",
-        "pages": 38,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/Notes/ch-4-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/Notes/ch-4-pdf.pdf"
+        "title": "Ch 4 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-4-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-4-pdf.pdf"
       },
       {
         "fileId": "physics-ch-5-pdf",
-        "title": "Ch 5",
-        "description": "Comprehensive Study materials and notes for Physics. Includes 13 pages of content.",
-        "tag": "Notes",
-        "pages": 13,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/Notes/ch-5-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/Notes/ch-5-pdf.pdf"
+        "title": "Ch 5 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-5-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-5-pdf.pdf"
       },
       {
         "fileId": "physics-ch-6-a-pdf",
@@ -1018,12 +1144,12 @@ export const localNotes = [
       },
       {
         "fileId": "physics-ch-6-pdf",
-        "title": "Ch 6",
-        "description": "Comprehensive Study materials and notes for Physics. Includes 13 pages of content.",
-        "tag": "Notes",
-        "pages": 13,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/Notes/ch-6-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/Notes/ch-6-pdf.pdf"
+        "title": "Ch 6 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-6-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-6-pdf.pdf"
       },
       {
         "fileId": "physics-physics-darshan-notes-pdf",
@@ -1046,11 +1172,11 @@ export const localNotes = [
       {
         "fileId": "physics-ch-1-pdf",
         "title": "Ch 1",
-        "description": "Comprehensive Past Year Papers for Physics. Includes 7 pages of content.",
-        "tag": "PYQs",
-        "pages": 7,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-1-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-1-pdf.pdf"
+        "description": "Comprehensive Presentation slides for Physics. Includes 64 pages of content.",
+        "tag": "PPTs",
+        "pages": 64,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PPTs/ch-1-pdf_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9acdf000533db5a5a/view?project=69f97f8e0001b58277a4"
       },
       {
         "fileId": "physics-ch-2-waves-motion-pdf",
@@ -1064,37 +1190,37 @@ export const localNotes = [
       {
         "fileId": "physics-ch-3-pdf",
         "title": "Ch 3",
-        "description": "Comprehensive Past Year Papers for Physics. Includes 4 pages of content.",
-        "tag": "PYQs",
-        "pages": 4,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-3-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-3-pdf.pdf"
+        "description": "Comprehensive Presentation slides for Physics. Includes 57 pages of content.",
+        "tag": "PPTs",
+        "pages": 57,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PPTs/ch-3-pdf_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9ad0d000b78a6fe4d/view?project=69f97f8e0001b58277a4"
       },
       {
         "fileId": "physics-ch-4-pdf",
-        "title": "Ch 4",
-        "description": "Comprehensive Study materials and notes for Physics. Includes 38 pages of content.",
-        "tag": "Notes",
-        "pages": 38,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/Notes/ch-4-pdf_thumb.webp",
+        "title": "Ch 4 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-4-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-4-pdf.pdf"
       },
       {
         "fileId": "physics-ch-5-pdf",
-        "title": "Ch 5",
-        "description": "Comprehensive Study materials and notes for Physics. Includes 13 pages of content.",
-        "tag": "Notes",
-        "pages": 13,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/Notes/ch-5-pdf_thumb.webp",
+        "title": "Ch 5 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-5-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-5-pdf.pdf"
       },
       {
         "fileId": "physics-ch-6-pdf",
-        "title": "Ch 6",
-        "description": "Comprehensive Study materials and notes for Physics. Includes 13 pages of content.",
-        "tag": "Notes",
-        "pages": 13,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/Notes/ch-6-pdf_thumb.webp",
+        "title": "Ch 6 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-6-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/physics/PYQs/ch-6-pdf.pdf"
       },
       {
@@ -1173,12 +1299,12 @@ export const localNotes = [
       },
       {
         "fileId": "pps-ch-1-pdf",
-        "title": "Ch 1",
-        "description": "Comprehensive Presentation slides for PPS. Includes 14 pages of content.",
-        "tag": "PPTs",
-        "pages": 14,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-1-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/Notes/ch-1-pdf.pdf"
+        "title": "Ch 1 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-1-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-1-pdf.pdf"
       },
       {
         "fileId": "pps-ch-10-pdf",
@@ -1200,10 +1326,10 @@ export const localNotes = [
       },
       {
         "fileId": "pps-ch-1-pdf",
-        "title": "Ch 1",
-        "description": "Comprehensive Presentation slides for PPS. Includes 14 pages of content.",
+        "title": "Ch 1 Pdf",
+        "description": "",
         "tag": "PPTs",
-        "pages": 14,
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-1-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-1-pdf.pdf"
       },
@@ -1236,12 +1362,12 @@ export const localNotes = [
       },
       {
         "fileId": "pps-ch-2-pdf",
-        "title": "Ch 2",
-        "description": "Comprehensive Presentation slides for PPS. Includes 17 pages of content.",
-        "tag": "PPTs",
-        "pages": 17,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-2-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-2-pdf.pdf"
+        "title": "Ch 2 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-2-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-2-pdf.pdf"
       },
       {
         "fileId": "pps-ch-3-loops-pdf",
@@ -1254,12 +1380,12 @@ export const localNotes = [
       },
       {
         "fileId": "pps-ch-3-pdf",
-        "title": "Ch 3",
-        "description": "Comprehensive Presentation slides for PPS. Includes 16 pages of content.",
-        "tag": "PPTs",
-        "pages": 16,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-3-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-3-pdf.pdf"
+        "title": "Ch 3 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-3-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-3-pdf.pdf"
       },
       {
         "fileId": "pps-ch-4-functions-pdf",
@@ -1290,12 +1416,12 @@ export const localNotes = [
       },
       {
         "fileId": "pps-ch-5-pdf",
-        "title": "Ch 5",
-        "description": "Comprehensive Presentation slides for PPS. Includes 15 pages of content.",
-        "tag": "PPTs",
-        "pages": 15,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-5-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-5-pdf.pdf"
+        "title": "Ch 5 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-5-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-5-pdf.pdf"
       },
       {
         "fileId": "pps-ch-6-pdf",
@@ -1344,38 +1470,38 @@ export const localNotes = [
       },
       {
         "fileId": "pps-ch-1-pdf",
-        "title": "Ch 1",
-        "description": "Comprehensive Presentation slides for PPS. Includes 14 pages of content.",
-        "tag": "PPTs",
-        "pages": 14,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-1-pdf_thumb.webp",
+        "title": "Ch 1 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-1-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-1-pdf.pdf"
       },
       {
         "fileId": "pps-ch-2-pdf",
-        "title": "Ch 2",
-        "description": "Comprehensive Presentation slides for PPS. Includes 17 pages of content.",
-        "tag": "PPTs",
-        "pages": 17,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-2-pdf_thumb.webp",
+        "title": "Ch 2 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-2-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-2-pdf.pdf"
       },
       {
         "fileId": "pps-ch-3-pdf",
-        "title": "Ch 3",
-        "description": "Comprehensive Presentation slides for PPS. Includes 16 pages of content.",
-        "tag": "PPTs",
-        "pages": 16,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-3-pdf_thumb.webp",
+        "title": "Ch 3 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-3-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-3-pdf.pdf"
       },
       {
         "fileId": "pps-ch-5-pdf",
-        "title": "Ch 5",
-        "description": "Comprehensive Presentation slides for PPS. Includes 15 pages of content.",
-        "tag": "PPTs",
-        "pages": 15,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PPTs/ch-5-pdf_thumb.webp",
+        "title": "Ch 5 Pdf",
+        "description": "",
+        "tag": "PYQs",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-5-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/PYQs/ch-5-pdf.pdf"
       },
       {
@@ -1422,6 +1548,71 @@ export const localNotes = [
         "pages": 6,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/Syllabus/pps-syllabus-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/Syllabus/pps-syllabus-pdf.pdf"
+      },
+      {
+        "fileId": "pps-pps-techneo-book",
+        "title": "PPS TechNeo Book",
+        "description": "",
+        "tag": "Books",
+        "pages": 247,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/pps/Books/pps-techneo-book_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9af2a002d797f4137/view?project=69f97f8e0001b58277a4"
+      }
+    ]
+  },
+  {
+    "id": "sem-1-2-files",
+    "title": "Sem 1 2 Files",
+    "description": "Comprehensive Official syllabus for SEM 1-2 Files. Includes 4 pages of content.",
+    "subject": "Sem 1 2 Files",
+    "semester": "1-2",
+    "branch": "all",
+    "university": "GTU",
+    "files": [
+      {
+        "fileId": "sem-1-2-files-gtu-exam-paper-format-pdf",
+        "title": "GTU Exam Paper Format",
+        "description": "Comprehensive Study materials and notes for SEM 1-2 Files. Includes 2 pages of content.",
+        "tag": "Notes",
+        "pages": 2,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/sem-1-2-files/Notes/gtu-exam-paper-format-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/sem-1-2-files/Notes/gtu-exam-paper-format-pdf.pdf"
+      },
+      {
+        "fileId": "sem-1-2-files-dfw-syllabus-pdf",
+        "title": "DFW Syllabus",
+        "description": "Comprehensive Official syllabus for SEM 1-2 Files. Includes 4 pages of content.",
+        "tag": "Syllabus",
+        "pages": 4,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/sem-1-2-files/Syllabus/dfw-syllabus-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/sem-1-2-files/Syllabus/dfw-syllabus-pdf.pdf"
+      },
+      {
+        "fileId": "sem-1-2-files-dt-syllabus-pdf",
+        "title": "DT Syllabus",
+        "description": "Comprehensive Official syllabus for SEM 1-2 Files. Includes 4 pages of content.",
+        "tag": "Syllabus",
+        "pages": 4,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/sem-1-2-files/Syllabus/dt-syllabus-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/sem-1-2-files/Syllabus/dt-syllabus-pdf.pdf"
+      },
+      {
+        "fileId": "sem-1-2-files-sqe-syllabus-pdf",
+        "title": "SQE Syllabus",
+        "description": "Comprehensive Official syllabus for SEM 1-2 Files. Includes 6 pages of content.",
+        "tag": "Syllabus",
+        "pages": 6,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/sem-1-2-files/Syllabus/sqe-syllabus-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/sem-1-2-files/Syllabus/sqe-syllabus-pdf.pdf"
+      },
+      {
+        "fileId": "sem-1-2-files-wmf-syllabus-pdf",
+        "title": "WMF Syllabus",
+        "description": "Comprehensive Official syllabus for SEM 1-2 Files. Includes 4 pages of content.",
+        "tag": "Syllabus",
+        "pages": 4,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/sem-1-2-files/Syllabus/wmf-syllabus-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1-2/sem-1-2-files/Syllabus/wmf-syllabus-pdf.pdf"
       }
     ]
   },
@@ -1471,21 +1662,21 @@ export const localNotes = [
       },
       {
         "fileId": "maths-1-unit-1-a",
-        "title": "UNIT 1_A",
-        "description": "Improper Integrals, Gamma Function & Beta Function",
+        "title": "Unit 1 A",
+        "description": "",
         "tag": "PPTs",
-        "pages": 43,
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-1-a_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/Notes/nlj-maths-notes/unit-1-a.pdf"
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-1-a.pdf"
       },
       {
         "fileId": "maths-1-unit-1-b",
         "title": "Unit 1 B",
-        "description": "Application of\nDefinite Integral",
+        "description": "",
         "tag": "PPTs",
-        "pages": 14,
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-1-b_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/Notes/nlj-maths-notes/unit-1-b.pdf"
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-1-b.pdf"
       },
       {
         "fileId": "maths-1-unit-1-c",
@@ -1535,20 +1726,20 @@ export const localNotes = [
       {
         "fileId": "maths-1-unit-5-a",
         "title": "Unit 5 A",
-        "description": "Module 5: Multiple Integral \n(Double Integrals)",
-        "tag": "Notes",
-        "pages": 77,
+        "description": "",
+        "tag": "PPTs",
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-5-a_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/Notes/nlj-maths-notes/unit-5-a.pdf"
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-5-a.pdf"
       },
       {
         "fileId": "maths-1-unit-5-b",
         "title": "Unit 5 B",
-        "description": "Module 5: Multivariable Calculus",
-        "tag": "Notes",
-        "pages": 22,
+        "description": "",
+        "tag": "PPTs",
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-5-b_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/Notes/nlj-maths-notes/unit-5-b.pdf"
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-5-b.pdf"
       },
       {
         "fileId": "maths-1-ch-6",
@@ -1570,19 +1761,19 @@ export const localNotes = [
       },
       {
         "fileId": "maths-1-unit-1-a",
-        "title": "UNIT 1_A",
-        "description": "Improper Integrals, Gamma Function & Beta Function",
+        "title": "Unit 1 A",
+        "description": "",
         "tag": "PPTs",
-        "pages": 43,
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-1-a_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-1-a.pdf"
       },
       {
         "fileId": "maths-1-unit-1-b",
         "title": "Unit 1 B",
-        "description": "Application of\nDefinite Integral",
+        "description": "",
         "tag": "PPTs",
-        "pages": 14,
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-1-b_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-1-b.pdf"
       },
@@ -1652,18 +1843,18 @@ export const localNotes = [
       {
         "fileId": "maths-1-unit-5-a",
         "title": "Unit 5 A",
-        "description": "Module 5: Multiple Integral \n(Double Integrals)",
-        "tag": "Notes",
-        "pages": 77,
+        "description": "",
+        "tag": "PPTs",
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-5-a_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-5-a.pdf"
       },
       {
         "fileId": "maths-1-unit-5-b",
         "title": "Unit 5 B",
-        "description": "Module 5: Multivariable Calculus",
-        "tag": "Notes",
-        "pages": 22,
+        "description": "",
+        "tag": "PPTs",
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-5-b_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/maths-1/PPTs/darshan-ppt/unit-5-b.pdf"
       },
@@ -1803,6 +1994,60 @@ export const localNotes = [
         "pages": 6,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/uhv/Syllabus/uhv-syllabus-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/uhv/Syllabus/uhv-syllabus-pdf.pdf"
+      },
+      {
+        "fileId": "uhv-ch-1-pdf",
+        "title": "Ch 1",
+        "description": "Comprehensive Study materials and notes for UHV. Includes 22 pages of content.",
+        "tag": "Books",
+        "pages": 22,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/uhv/Books/ch-1-pdf_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9b01e00345b5d4072/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "uhv-ch-2-pdf",
+        "title": "Ch 2",
+        "description": "Comprehensive Study materials and notes for UHV. Includes 28 pages of content.",
+        "tag": "Books",
+        "pages": 28,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/uhv/Books/ch-2-pdf_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9b02c0020d642862c/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "uhv-ch-3-pdf",
+        "title": "Ch 3",
+        "description": "Comprehensive Study materials and notes for UHV. Includes 37 pages of content.",
+        "tag": "Books",
+        "pages": 37,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/uhv/Books/ch-3-pdf_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9b03b000862ff2c94/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "uhv-ch-4-pdf",
+        "title": "Ch 4",
+        "description": "Comprehensive Study materials and notes for UHV. Includes 35 pages of content.",
+        "tag": "Books",
+        "pages": 35,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/uhv/Books/ch-4-pdf_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9b049003587e99b83/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "uhv-ch-5-pdf",
+        "title": "Ch 5",
+        "description": "Comprehensive Study materials and notes for UHV. Includes 38 pages of content.",
+        "tag": "Books",
+        "pages": 38,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/uhv/Books/ch-5-pdf_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9b056002f0a63767f/view?project=69f97f8e0001b58277a4"
+      },
+      {
+        "fileId": "uhv-ch-6-pdf",
+        "title": "Ch 6",
+        "description": "Comprehensive Study materials and notes for UHV. Includes 28 pages of content.",
+        "tag": "Books",
+        "pages": 28,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem1/uhv/Books/ch-6-pdf_thumb.webp",
+        "url": "https://sfo.cloud.appwrite.io/v1/storage/buckets/69f97fce000d0a55d805/files/69f9b067000b1b67ad42/view?project=69f97f8e0001b58277a4"
       }
     ]
   },
@@ -1815,6 +2060,60 @@ export const localNotes = [
     "branch": "all",
     "university": "GTU",
     "files": [
+      {
+        "fileId": "english-ch-1-pdf",
+        "title": "Ch 1",
+        "description": "Comprehensive Study materials and notes for English. Includes 32 pages of content.",
+        "tag": "Books",
+        "pages": 32,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/english/Books/ch-1-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/english/Books/ch-1-pdf.pdf"
+      },
+      {
+        "fileId": "english-ch-2-pdf",
+        "title": "Ch 2",
+        "description": "Comprehensive Study materials and notes for English. Includes 29 pages of content.",
+        "tag": "Books",
+        "pages": 29,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/english/Books/ch-2-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/english/Books/ch-2-pdf.pdf"
+      },
+      {
+        "fileId": "english-ch-3-pdf",
+        "title": "Ch 3",
+        "description": "Comprehensive Study materials and notes for English. Includes 22 pages of content.",
+        "tag": "Books",
+        "pages": 22,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/english/Books/ch-3-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/english/Books/ch-3-pdf.pdf"
+      },
+      {
+        "fileId": "english-ch-4-pdf",
+        "title": "Ch 4",
+        "description": "Comprehensive Study materials and notes for English. Includes 17 pages of content.",
+        "tag": "Books",
+        "pages": 17,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/english/Books/ch-4-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/english/Books/ch-4-pdf.pdf"
+      },
+      {
+        "fileId": "english-ch-5-pdf",
+        "title": "Ch 5",
+        "description": "Comprehensive Study materials and notes for English. Includes 11 pages of content.",
+        "tag": "Books",
+        "pages": 11,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/english/Books/ch-5-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/english/Books/ch-5-pdf.pdf"
+      },
+      {
+        "fileId": "english-ch-6-pdf",
+        "title": "Ch 6",
+        "description": "Comprehensive Study materials and notes for English. Includes 15 pages of content.",
+        "tag": "Books",
+        "pages": 15,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/english/Books/ch-6-pdf_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/english/Books/ch-6-pdf.pdf"
+      },
       {
         "fileId": "english-english-lecture-notes-pdf",
         "title": "Lecture Notes",
@@ -1937,11 +2236,11 @@ export const localNotes = [
       {
         "fileId": "fai-ch-5",
         "title": "Ch 5",
-        "description": "Large Language Models (LLMs) \n,Transformer Model , Key Components",
-        "tag": "Books",
-        "pages": 18,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/fai/Books/technical/ch-5_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/fai/Books/technical/ch-5.pdf"
+        "description": "",
+        "tag": "Short-Notes",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/fai/Short-Notes/shortnotes/ch-5_thumb.webp",
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/fai/Short-Notes/shortnotes/ch-5.pdf"
       },
       {
         "fileId": "fai-fai-imp",
@@ -2108,10 +2407,10 @@ export const localNotes = [
       {
         "fileId": "fai-ch-5",
         "title": "Ch 5",
-        "description": "Large Language Models (LLMs) \n,Transformer Model , Key Components",
-        "tag": "Books",
-        "pages": 18,
-        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/fai/Books/technical/ch-5_thumb.webp",
+        "description": "",
+        "tag": "Short-Notes",
+        "pages": 0,
+        "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/fai/Short-Notes/shortnotes/ch-5_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/fai/Short-Notes/shortnotes/ch-5.pdf"
       },
       {
@@ -2136,21 +2435,21 @@ export const localNotes = [
     "files": [
       {
         "fileId": "ipr-ch-1-pdf",
-        "title": "Ch 1",
-        "description": "Comprehensive Study materials and notes for IPR. Includes 2 pages of content.",
+        "title": "Ch 1 Pdf",
+        "description": "",
         "tag": "Notes",
-        "pages": 2,
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/ipr/Notes/ch-1-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/ipr/Books/ch-1-pdf.pdf"
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/ipr/Notes/ch-1-pdf.pdf"
       },
       {
         "fileId": "ipr-ch-2-pdf",
-        "title": "Ch 2",
-        "description": "Comprehensive Study materials and notes for IPR. Includes 3 pages of content.",
+        "title": "Ch 2 Pdf",
+        "description": "",
         "tag": "Notes",
-        "pages": 3,
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/ipr/Notes/ch-2-pdf_thumb.webp",
-        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/ipr/Books/ch-2-pdf.pdf"
+        "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/ipr/Notes/ch-2-pdf.pdf"
       },
       {
         "fileId": "ipr-ch-3-pdf",
@@ -2181,19 +2480,19 @@ export const localNotes = [
       },
       {
         "fileId": "ipr-ch-1-pdf",
-        "title": "Ch 1",
-        "description": "Comprehensive Study materials and notes for IPR. Includes 2 pages of content.",
+        "title": "Ch 1 Pdf",
+        "description": "",
         "tag": "Notes",
-        "pages": 2,
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/ipr/Notes/ch-1-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/ipr/Notes/ch-1-pdf.pdf"
       },
       {
         "fileId": "ipr-ch-2-pdf",
-        "title": "Ch 2",
-        "description": "Comprehensive Study materials and notes for IPR. Includes 3 pages of content.",
+        "title": "Ch 2 Pdf",
+        "description": "",
         "tag": "Notes",
-        "pages": 3,
+        "pages": 0,
         "imageUrl": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/ipr/Notes/ch-2-pdf_thumb.webp",
         "url": "https://cdn.jsdelivr.net/gh/nishantdhanani02-ops/MATE-storage@main/sem2/ipr/Notes/ch-2-pdf.pdf"
       },
