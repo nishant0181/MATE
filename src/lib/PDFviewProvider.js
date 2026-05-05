@@ -5,12 +5,14 @@ import { preloadPDFViewerChunk } from "../Components/PDFViewer/pdfViewerPreload.
 export default function PDFviewProvider() {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedPdfUrl, setSelectedPdfUrl] = useState("");
+    const [selectedPdfName, setSelectedPdfName] = useState("");
 
 
 
-    const handleViewPDF = ({ url }) => {
+    const handleViewPDF = ({ url, name }) => {
         void preloadPDFViewerChunk();
         setSelectedPdfUrl(url);
+        if (name) setSelectedPdfName(name);
         setIsOpen(true);
     };
     return {
@@ -18,6 +20,8 @@ export default function PDFviewProvider() {
         setIsOpen,
         selectedPdfUrl,
         setSelectedPdfUrl,
+        selectedPdfName,
+        setSelectedPdfName,
         handleViewPDF,
     }
 }

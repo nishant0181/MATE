@@ -41,6 +41,7 @@ import {  LucideFullscreen } from "lucide-react";
 
 type PDFViewerProps = {
   documentUrl?: string;
+  documentName?: string;
   setIsOpen?: (isOpen: boolean) => void;
 };
 
@@ -61,12 +62,13 @@ export function PDFEngineWarmup() {
 
 export default function PDFViewer({
   documentUrl = "",
+  documentName = "",
   setIsOpen,
 }: PDFViewerProps) {
-  const documentName = useMemo(
-    () => getDocumentName(documentUrl),
-    [documentUrl],
-  );
+  const finalDocumentName = useMemo(() => {
+    if (documentName) return documentName;
+    return getDocumentName(documentUrl);
+  }, [documentUrl, documentName]);
 
   const plugins = useMemo(
     () => [
@@ -106,7 +108,7 @@ export default function PDFViewer({
 
   if (isLoading || !engine) {
     return (
-      <PDFLoadingSkeleton documentUrl={documentUrl} setIsOpen={setIsOpen} />
+      <PDFLoadingSkeleton documentUrl={documentUrl} setIsOpen={setIsOpen} documentName={finalDocumentName}/>
     );
   }
 
@@ -169,11 +171,11 @@ export default function PDFViewer({
                       </div>
                       <div className="flex items-center justify-center gap-4">
                         <div className="text-sm font-Inter text-white">
-                          {documentName.length > 30
-                            ? (documentName.slice(0, 30) + "...")
+                          {finalDocumentName.length > 30
+                            ? (finalDocumentName.slice(0, 30) + "...")
                                 .toUpperCase()
                                 .replace(/-/g, " ")
-                            : documentName.toUpperCase().replace(/-/g, " ")}
+                            : finalDocumentName.toUpperCase().replace(/-/g, " ")}
                         </div>
                         <div className="hidden md:block">
                           <PageControls documentId={activeDocumentId} />
@@ -264,6 +266,7 @@ export default function PDFViewer({
                   <PDFLoadingSkeleton
                     documentUrl={documentUrl}
                     setIsOpen={setIsOpen}
+                    documentName={finalDocumentName}
                   />
                 );
               }}

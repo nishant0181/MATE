@@ -7,7 +7,7 @@ const LazyPDFViewer = lazy(() =>
   loadPDFViewerModule().then((module) => ({ default: module.default })),
 );
 
-export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
+export default function FInalPDFView({ isOpen, setIsOpen, documentUrl, documentName }) {
   const hasModalHistoryEntry = useRef(false);
 
   const closeModal = useCallback(() => {
@@ -113,8 +113,8 @@ export default function FInalPDFView({ isOpen, setIsOpen, documentUrl }) {
       >
 
       
-        <Suspense fallback={<PDFLoadingSkeleton documentUrl={documentUrl} setIsOpen={setIsOpen} />}>
-          <LazyPDFViewer documentUrl={documentUrl} setIsOpen={setIsOpen} />
+        <Suspense fallback={<PDFLoadingSkeleton documentUrl={documentUrl} documentName={documentName} setIsOpen={setIsOpen} />}>
+          <LazyPDFViewer documentUrl={documentUrl} documentName={documentName} setIsOpen={setIsOpen} />
         </Suspense>
       </div>
     </div>,

@@ -154,7 +154,7 @@ export default function CardofNote({
               <button
                 className="mx-auto text-center transition-colors duration-300 bg-zinc-200 dark:bg-white dark:hover:bg-zinc-200 hover:bg-zinc-300 font-Figtree font-medium leading-tight text-sm dark:text-black text-zinc-900 flex items-center gap-4 py-2 px-4 rounded-md cursor-pointer justify-center w-full "
                 onClick={() => {
-                  onViewPDF({ url });
+                  onViewPDF({ url, name: title });
                   haptic.mediumTap();
                 }}
               >

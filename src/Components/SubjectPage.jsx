@@ -31,7 +31,7 @@ export default function SubjectPage() {
   };
 
 
-  const { isOpen, setIsOpen, selectedPdfUrl, handleViewPDF } =
+  const { isOpen, setIsOpen, selectedPdfUrl, selectedPdfName, handleViewPDF } =
     PDFviewProvider();
 
 
@@ -274,6 +274,7 @@ export default function SubjectPage() {
           isOpen={isOpen}
           setIsOpen={setIsOpen}
           documentUrl={selectedPdfUrl}
+          documentName={selectedPdfName}
         />
       </section>
     </>

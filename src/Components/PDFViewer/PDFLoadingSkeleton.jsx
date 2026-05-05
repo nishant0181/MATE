@@ -5,7 +5,7 @@ const loadingPhrases = [
   "Organizing the pages...",
   "Brewing coffee...",
   "Fetching your material...",
-  "Solving for X...",
+  "Writing exam answers...",
   "Getting things ready...",
   "Almost there, you are the best...",
   "Preparing your workspace..."
@@ -18,8 +18,8 @@ const getDocumentName = (url) => {
   return cleanedName || "Loading...";
 };
 
-export default function PDFLoadingSkeleton({ documentUrl, setIsOpen }) {
-  const documentName = getDocumentName(documentUrl);
+export default function PDFLoadingSkeleton({ documentUrl, setIsOpen, documentName }) {
+   documentName = documentName || getDocumentName(documentUrl);
   const [progress, setProgress] = useState(0);
   const [phraseIndex, setPhraseIndex] = useState(0);
 
