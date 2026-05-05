@@ -44,11 +44,11 @@ export default function CardofNote({
       await navigator.share({
         title: "MATE : " + title,
         text: "Subject : " + subject + "\n" + description,
-        url: window.location.href,
+        url: window.location.origin + "/subject/" + id,
       });
     } catch (err) {
       if (err.name !== "AbortError") {
-        await navigator.clipboard.writeText(window.location.href);
+        await navigator.clipboard.writeText(window.location.origin + "/subject/" + id);
         toast.success("Link copied to clipboard!");
       }
     }
