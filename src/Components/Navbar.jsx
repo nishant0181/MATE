@@ -36,7 +36,7 @@ export default function Navbar() {
           MATE
         </Link>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center md:gap-2">
           <nav className="hidden md:block ">
             <ul className="flex  text-sm items-center justify-center ">
               <li className="px-4 py-2 rounded-xl cursor-pointer">
@@ -75,6 +75,11 @@ export default function Navbar() {
               <Kbd>⌘K</Kbd>
             </InputGroupAddon>
           </InputGroup>
+          <a target="_blank" rel="noopener noreferrer" href="https://chat.whatsapp.com/KabsuULchEZJlQNILhgRGC">
+          <Button className="cursor-pointer" variant="ghost" size="icon" onTouchStart={() => haptic.lightTap()}>
+            <img src="/Images/whatsapp.svg" alt="Whatsapp" height="20" width="20"/>
+          </Button>
+          </a>
           <Button className="cursor-pointer" variant="ghost" size="icon" onClick={toggleTheme} onTouchStart={() => haptic.lightTap()}>
             {theme === "dark" ? <SunIcon /> : <MoonIcon />}
           </Button>
