@@ -65,7 +65,7 @@ export default function DashBoard() {
       <section
         id="dashboardSection"
         className="md:max-w-350 
-        mx-auto text-black dark:text-white font-Figtree select-none  mb-20  "
+        mx-auto text-black dark:text-white  select-none  mb-20  "
       >
         <ProfileDialogBox
           isOpen={isOpen}
@@ -77,7 +77,7 @@ export default function DashBoard() {
         <div className="relative bg-zinc-50 dark:bg-background mx-auto max-w-5xl w-full flex flex-col pt-8 pb-4 border-t border-b  border-primary/20">
           <div className="flex flex-col md:flex-row px-4 md:px-8 py-4 md:items-center  gap-8 md:justify-between ">
             <div className="flex flex-col gap-2">
-              <h1 className="text-3xl font-bold font-Figtree leading-2xl text-black dark:text-neutral-100 ">
+              <h1 className="text-3xl font-extrabold font-Figtree leading-2xl text-black dark:text-neutral-100 ">
                 My Dashboard
               </h1>
 

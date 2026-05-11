@@ -43,12 +43,17 @@ export default function handler(req, res) {
         } else if (pathParam) {
             // Configuration for all other static pages
             const pagesConfig = {
-                'dashboard': { title: "Your Command Center | MATE", desc: "Take control of your academic life. Track your progress, resume recent subjects, and dive back into a distraction-free study environment tailored just for you.", img: "https://www.mateapp.tech/DashboardPreview.png" },
-                'notes': { title: "The Knowledge Vault | MATE", desc: "Explore an expansive library of meticulously curated notes, slide decks, and previous year question papers. Everything you need to ace your exams, beautifully organized.", img: "https://www.mateapp.tech/NotesPreview.png" },
-                'favorites': { title: "Your Curated Collection | MATE", desc: "Access your most crucial study assets instantly. A personalized space for your saved notes and essential materials, ready whenever inspiration strikes.", img: "https://www.mateapp.tech/FavoritesPreview.png" },
-                'about': { title: "Our Vision | MATE", desc: "Discover the mission behind MATE. We're rethinking how students interact with their curriculum by blending premium design with unparalleled academic utility.", img: "https://www.mateapp.tech/AboutPreview.png" },
-                'contact': { title: "Let's Connect | MATE", desc: "Have questions or feedback? Reach out to the MATE team. We are constantly evolving to build the ultimate academic operating system with your input.", img: "https://www.mateapp.tech/ContactPreview.png" },
-                'upload': { title: "Contribute to the Legacy | MATE", desc: "Help shape the future of learning. Upload and share your high-quality study materials to empower the community and build an unparalleled knowledge base.", img: "https://www.mateapp.tech/UploadPreview.png" }
+                'dashboard': { title: "The Dashboard | MATE", desc: "Take control of your academic life. Track your progress, resume recent subjects, and dive back into a distraction-free study environment tailored just for you.", img: "https://www.mateapp.tech/DashboardPreview.png" },
+
+                'notes': { title: "Notes | MATE", desc: "Explore an expansive library of meticulously curated notes, slide decks, and previous year question papers. Everything you need to ace your exams, beautifully organized.", img: "https://www.mateapp.tech/NotesPreview.png" },
+
+                'favorites': { title: "Favorites | MATE", desc: "Access your most crucial study assets instantly. A personalized space for your saved notes and essential materials, ready whenever inspiration strikes.", img: "https://www.mateapp.tech/FavoritesPreview.png" },
+
+                'about': { title: "About | MATE", desc: "Discover the mission behind MATE. We're rethinking how students interact with their curriculum by blending premium design with unparalleled academic utility.", img: "https://www.mateapp.tech/AboutPreview.png" },
+
+                'contact': { title: "Contact | MATE", desc: "Have questions or feedback? Reach out to the MATE team. We are constantly evolving to build the ultimate academic operating system with your input.", img: "https://www.mateapp.tech/ContactPreview.png" },
+                
+                'upload': { title: "Upload | MATE", desc: "Help shape the future of learning. Upload and share your high-quality study materials to empower the community and build an unparalleled knowledge base.", img: "https://www.mateapp.tech/UploadPreview.png" }
             };
             
             const config = pagesConfig[pathParam];

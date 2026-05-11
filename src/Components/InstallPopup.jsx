@@ -114,7 +114,7 @@ export default function InstallPopup() {
           
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20">
-              <img src="/icons/icon-192x192.png" alt="MATE Logo" className="w-8 h-8 rounded-md dark:invert" />
+              <img src="/icons/icon-192x192.png" loading='lazy' alt="MATE Logo" width="32" height="32" className="w-8 h-8 rounded-md dark:invert" />
             </div>
             
             <div className="flex-1 pt-1">

@@ -104,7 +104,7 @@ export default function InstallApp() {
                     <div className="h-full w-full bg-linear-to-br from-primary/10 via-background to-primary/5 flex flex-col items-center justify-center p-6">
                       <div className="w-16 h-16 border-2 border-border bg-muted rounded-md flex items-center justify-center mb-4">
                         
-                        <img src="/icons/icon-512x512.png" alt="MATE Logo" className="rounded-md invert dark:invert-1"/>
+                        <img src="/icons/icon-512x512.png" alt="MATE Logo" width="64" height="64" className="rounded-md invert dark:invert-1"/>
                       </div>
                       <h3 className="font-semibold text-lg mb-2 text-center">
                         MATE
