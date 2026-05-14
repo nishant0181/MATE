@@ -15,13 +15,15 @@ import RouteMetaData from "./Components/RouteMetaData";
 import InstallPopup from "./Components/InstallPopup";
 import NetworkStatusTracker from "./Components/NetworkStatusTracker";
 import LoadingFallback from "./Components/LoadingFallback";
+import MainPage from "./Components/MainPage";
 
 const DashBoard = lazy(() => import("./Components/Dashboard/DashBoard"));
-const MainPage = lazy(() => import("./Components/MainPage"));
 const NoteSection = lazy(() => import("./Components/NoteSection"));
 const SubjectPage = lazy(() => import("./Components/SubjectPage"));
 const FavoritesPage = lazy(() => import("./Components/FavoritesPage"));
-const ShareTargetHandler = lazy(() => import("./Components/ShareTargetHandler"));
+const ShareTargetHandler = lazy(
+  () => import("./Components/ShareTargetHandler"),
+);
 const About = lazy(() => import("./Components/About"));
 const ContactUs = lazy(() => import("./Components/ContactUs"));
 const Upload = lazy(() => import("./Components/Upload"));
