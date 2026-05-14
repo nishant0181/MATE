@@ -22,6 +22,17 @@
 
 
 
+/* figtree-extrabold - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/fonts/figtree-v9-latin-extrabold.woff2') format('woff2');
+}
+
+
+
 
 /* instrument-serif-regular - latin_latin-ext */
 @font-face {
@@ -29,7 +40,7 @@
   font-family: 'Instrument Serif';
   font-style: normal;
   font-weight: 400;
-  src: url('../public/fonts/instrument-serif-v5-latin_latin-ext-regular.woff2') format('woff2');
+  src: url('/fonts/instrument-serif-v5-latin_latin-ext-regular.woff2') format('woff2');
 }
 
 /* instrument-serif-italic - latin_latin-ext */
@@ -48,6 +59,16 @@
   font-style: normal;
   font-weight: 400;
   src: url('/fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+
+/* inter-extrabold - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/fonts/inter-v20-latin-extrabold.woff2') format('woff2');
 }
 html,
 body {
