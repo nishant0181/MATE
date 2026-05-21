@@ -6,9 +6,26 @@ import SelectionFilterMenu from "./SelectionFilterMenu";
 import CardofNote from "./CardofNote";
 import ElipseDarkGradient from "./ui/ElipseDarkGradient";
 import useHaptic from "../hooks/useHaptic";
+import { useLocation, useNavigate } from "react-router";
+import PDFviewProvider from "../lib/PDFviewProvider.js";
+import FInalPDFView from "./PDFViewer/FInalPDFView.jsx";
 
 export default function NoteSection() {
   const haptic = useHaptic();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { isOpen, setIsOpen, selectedPdfUrl, selectedPdfName, handleViewPDF } = PDFviewProvider();
+
+  useEffect(() => {
+    if (location.state?.autoOpenUrl) {
+      const url = location.state.autoOpenUrl;
+      const title = location.state.autoOpenTitle || "Shared PDF";
+      handleViewPDF({ url, name: title });
+      // Clear location state to prevent looping on page reload/refresh
+      navigate(location.pathname, { replace: true, state: null });
+    }
+  }, [location, navigate, handleViewPDF]);
+
   const { data, dataSource, isEmptyRemote, isLoading } = NotesProvider();
   const [filteredData, setFilteredData] = useState(data);
 
@@ -72,7 +89,7 @@ export default function NoteSection() {
                 Mate Notes
               </h1>
               <p className="md:text-lg text-center dark:text-gray-300 text-gray-600 mt-4">
-                Let's find your notes by filtering or searching.
+                Let&apos;s find your notes by filtering or searching.
               </p>
             </div>
           </div>
@@ -161,6 +178,12 @@ export default function NoteSection() {
             )}
           </div>
         </div>
+        <FInalPDFView
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          documentUrl={selectedPdfUrl}
+          documentName={selectedPdfName}
+        />
       </section>
     </>
   );

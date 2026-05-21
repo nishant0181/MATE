@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 import { BookOpen, GraduationCap, Settings } from "lucide-react";
 import { Badge } from "../ui/badge";
@@ -44,21 +44,18 @@ export default function DashBoard() {
 
   const { data, dataSource, isEmptyRemote, isLoading } = NotesProvider();
 
-  const [filteredData, setFilteredData] = useState(data);
-  useEffect(() => {
-    setFilteredData(data);
-  }, [data]);
+  const notes = useMemo(() => {
+    if (!data) return [];
+    return data.filter((note) => {
+      return (
+        note.university === profile.university &&
+        (note.branch.includes(profile.shortDergree) || note.branch === "all") &&
+        (note.semester === profile.semester ||
+          note.semester.includes(profile.semester))
+      );
+    });
+  }, [data, profile.university, profile.shortDergree, profile.semester]);
 
-  const notes = data.filter((note) => {
-    return (
-      note.university === profile.university &&
-      (note.branch.includes(profile.shortDergree) || note.branch === "all") &&
-      (note.semester === profile.semester ||
-        note.semester.includes(profile.semester))
-    );
-  });
-
-  filteredData.length !== notes.length && setFilteredData(notes);
 
   return (
     <>
@@ -133,7 +130,7 @@ export default function DashBoard() {
               <p className="text-gray-400 text-center col-span-full py-10">
                 Loading notes...
               </p>
-            ) : filteredData.length === 0 ? (
+            ) : notes.length === 0 ? (
               <main className="p-8 w-full">
                 <div className="flex flex-col items-center justify-center max-w-5xl mx-auto gap-2 h-60  border2 border-primary/20 rounded-lg bg-primary/5">
                   <BookOpen className="h-12 w-12 text-primary" />
@@ -153,7 +150,7 @@ export default function DashBoard() {
               </main>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center px-4 mx-auto w-full">
-                {filteredData.slice(0, visibleCount).map((note, index) => (
+                {notes.slice(0, visibleCount).map((note, index) => (
                   <CardofNote
                     note={note}
                     key={note.id}
@@ -174,7 +171,7 @@ export default function DashBoard() {
               </div>
             )}
 
-            {filteredData.length > visibleCount && (
+            {notes.length > visibleCount && (
               <div className="flex justify-center mt-10">
                 <button
                   onClick={() => setVisibleCount(visibleCount + 9)}

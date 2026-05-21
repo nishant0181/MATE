@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { fetchNotes } from "../lib/notesDataSource";
 
-export function NotesProvider() {
+const NotesContext = createContext(null);
+
+export function NotesContextProvider({ children }) {
   const [data, setData] = useState([]);
   const [dataSource, setDataSource] = useState("cdn");
   const [isEmptyRemote, setIsEmptyRemote] = useState(false);
@@ -28,7 +30,20 @@ export function NotesProvider() {
     return () => {
       isMounted = false;
     };
-  }, []); // ← empty array: fetch once on mount only
+  }, []);
 
-  return { data, dataSource, isEmptyRemote, isLoading };
+  return React.createElement(
+    NotesContext.Provider,
+    { value: { data, dataSource, isEmptyRemote, isLoading } },
+    children
+  );
 }
+
+export function NotesProvider() {
+  const context = useContext(NotesContext);
+  if (!context) {
+    throw new Error("NotesProvider hook must be used within a NotesContextProvider");
+  }
+  return context;
+}
+
