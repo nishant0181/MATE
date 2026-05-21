@@ -10,7 +10,7 @@ export default function Footer() {
                 © {new Date().getFullYear()} MATE all rights reserved.
               </div>
         <div className="flex justify-between items-start ">
-          <ul className="flex gap-4 flex-wrap justify-end items-center">
+          <ul className="flex gap-4 flex-wrap justify-end items-center ">
             <Link
               to="/contact"
               className="bg-[oklch(.269_0_0)] text-sm font-medium px-6 py-2 rounded-full "
@@ -60,12 +60,12 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="font-bold text-[150px] max-[420px]:text-[100px] md:text-[200px] leading-20 text-center text-neutral-200 dark:text-neutral-700 mt-10 mb-6 md:mb-0">
+      <div className="px-4 md:px-0 mx-auto font-bold max-[355px]:text-[80px] text-[130px] max-[420px]:text-[100px] md:text-[200px] leading-20 text-center text-neutral-200 dark:text-neutral-700 mt-10 mb-6 md:mb-0">
         MATE
       </div>
       <div className="self-center text-neutral-600 dark:text-neutral-300  md:mt-14 z-20">
         a{" "}
-        <a href="https://www.linkedin.com/in/nishant-dhanani/" target="_blank" className="font-medium  cursor-pointer text-lg   font-serif text-neutral-700 dark:text-neutral-300  italic"
+        <a href="https://linktr.ee/nishant_dhanani" target="_blank" className="font-medium  cursor-pointer text-lg    font-serif text-neutral-900 dark:text-neutral-100  italic underline underline-offset-4 decoration-2 decoration-neutral-300 dark:decoration-neutral-700 "
         onClick={()=>{
           haptic.success()
         }}

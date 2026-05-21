@@ -17,7 +17,7 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
 
   return (
     <>
-      <div className="max-w-4xl md:max-w-6xl  dark:bg-background/90 bg-white rounded-lg p-7 md:p-16   border border-neutral-300 dark:border-[#3c3c3c] flex flex-wrap  justify-center gap-4">
+      <div className="flex flex-col gap-6 w-full">
         <div>
           <label className="block text-sm font-medium dark:text-gray-100 text-black mb-2">
             UNIVERSITY
@@ -32,7 +32,7 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
               setSubject("");
             }}
           >
-            <SelectTrigger className="w-60  border-neutral-300 dark:border-[#3c3c3c]  dark:text-white text-black dark:bg-[#161616] bg-[#f5f5f5]">
+            <SelectTrigger className="w-full border-neutral-300 dark:border-[#3c3c3c] dark:text-white text-black dark:bg-[#161616] bg-[#f5f5f5]">
               <SelectValue
                 className="dark:text-white text-black"
                 placeholder="Select University"
@@ -72,7 +72,7 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
               setSubject("");
             }}
           >
-            <SelectTrigger className="w-48  border-neutral-300 dark:border-[#3c3c3c]  dark:text-white text-black dark:bg-[#161616] bg-[#f5f5f5]">
+            <SelectTrigger className="w-full border-neutral-300 dark:border-[#3c3c3c] dark:text-white text-black dark:bg-[#161616] bg-[#f5f5f5]">
               <SelectValue placeholder="Select Degree" />
             </SelectTrigger>
             <SelectContent className="dark:bg-[#161616] bg-[#f5f5f5] text-black border-[#383838] ">
@@ -125,7 +125,7 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
               setSubject("");
             }}
           >
-            <SelectTrigger className="max-[430px]:w-28 w-38  border-neutral-300 dark:border-[#3c3c3c]  dark:text-white text-black dark:bg-[#161616] bg-[#f5f5f5]">
+            <SelectTrigger className="w-full border-neutral-300 dark:border-[#3c3c3c] dark:text-white text-black dark:bg-[#161616] bg-[#f5f5f5]">
               <SelectValue placeholder="Select Semester" />
             </SelectTrigger>
             <SelectContent className="dark:bg-[#161616] bg-[#f5f5f5] text-black border-[#383838]">
@@ -164,7 +164,7 @@ export default function SelectionFilterMenu({ data, setFilteredData }) {
               );
             }}
           >
-            <SelectTrigger className="w-38  border-neutral-300 dark:border-[#3c3c3c]  dark:text-white text-black dark:bg-[#161616] bg-[#f5f5f5]">
+            <SelectTrigger className="w-full border-neutral-300 dark:border-[#3c3c3c] dark:text-white text-black dark:bg-[#161616] bg-[#f5f5f5]">
               <SelectValue placeholder="Select Subject" />
             </SelectTrigger>
             <SelectContent className="dark:bg-[#161616] bg-[#f5f5f5] text-black border-[#383838] max-w-48">
