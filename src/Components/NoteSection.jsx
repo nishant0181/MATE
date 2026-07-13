@@ -4,7 +4,6 @@ import { NotesProvider } from "../lib/NotesProvider.js";
 import InputFilter from "./InputFilter";
 import SelectionFilterMenu from "./SelectionFilterMenu";
 import CardofNote from "./CardofNote";
-import ElipseDarkGradient from "./ui/ElipseDarkGradient";
 import useHaptic from "../hooks/useHaptic";
 import { useLocation, useNavigate } from "react-router";
 import PDFviewProvider from "../lib/PDFviewProvider.js";
@@ -109,8 +108,8 @@ export default function NoteSection() {
           </aside>
 
           {/* Main Content (Notes Grid) */}
-          <div className="flex-1">
-            <div>
+          <div className="flex-1 flex justify-center items-center flex-col">
+            
               {/* <h2 className="text-3xl font-bold mb-2 text-black dark:text-white">
               The Legendary Notes
             </h2>
@@ -127,7 +126,7 @@ export default function NoteSection() {
                   Remote notes source is empty — no notes available.
                 </p>
               )}
-            </div>
+            
 
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 justify-items-center">
               {isLoading ? (
@@ -135,7 +134,7 @@ export default function NoteSection() {
                   Loading notes...
                 </p>
               ) : filteredData.length === 0 ? (
-                <p className="text-gray-400 text-center col-span-full py-10">
+                <p className="text-gray-700 dark:text-gray-400 text-center col-span-full py-10 md:max-w-sm ">
                   No notes found matching your criteria kindly try different
                   filters or search terms.
                 </p>
