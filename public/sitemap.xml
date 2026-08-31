@@ -36,6 +36,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.mateapp.tech/privacy-policy</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mateapp.tech/terms-and-conditions</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.mateapp.tech/subject/bce</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

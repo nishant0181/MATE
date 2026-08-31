@@ -8,7 +8,7 @@ function generateSitemap() {
     const urls = [];
 
     // Core static pages
-    const corePages = ['/', '/contact', '/notes', '/dashboard', '/favorites', '/about', '/upload'];
+    const corePages = ['/', '/contact', '/notes', '/dashboard', '/favorites', '/about', '/upload', '/privacy-policy', '/terms-and-conditions'];
     
     corePages.forEach(page => {
         urls.push(`

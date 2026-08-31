@@ -28,6 +28,8 @@ const ShareTargetHandler = lazy(
 const About = lazy(() => import("./Components/About"));
 const ContactUs = lazy(() => import("./Components/ContactUs"));
 const Upload = lazy(() => import("./Components/Upload"));
+const PrivacyPolicy = lazy(() => import("./Components/PrivacyPolicy"));
+const TermsConditions = lazy(() => import("./Components/TermsConditions"));
 const NotFound = lazy(() => import("./Components/NotFound"));
 
 function App() {
@@ -61,6 +63,8 @@ function App() {
                   <Route path="/about" element={<About />} />
                   <Route path="/contact" element={<ContactUs />} />
                   <Route path="/upload" element={<Upload />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms-and-conditions" element={<TermsConditions />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>

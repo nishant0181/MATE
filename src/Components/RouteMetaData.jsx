@@ -9,6 +9,8 @@ const pagesConfig = {
   '/about': { title: "Our Vision | MATE", desc: "Discover the mission behind MATE. We're rethinking how students interact with their curriculum by blending premium design with unparalleled academic utility." },
   '/contact': { title: "Let's Connect | MATE", desc: "Have questions or feedback? Reach out to the MATE team. We are constantly evolving to build the ultimate academic operating system with your input." },
   '/upload': { title: "Contribute to the Legacy | MATE", desc: "Help shape the future of learning. Upload and share your high-quality study materials to empower the community and build an unparalleled knowledge base." },
+  '/privacy-policy': { title: "Privacy Policy | MATE", desc: "Understand how MATE collects, uses, and safeguards your personal data. Your privacy and trust are our utmost priorities." },
+  '/terms-and-conditions': { title: "Terms & Conditions | MATE", desc: "Review the rules, guidelines, and terms of service governing your usage of the MATE platform." },
   '/': { title: "MATE — Your All in One Study Companion", desc: "The future of learning with MATE. Your seamlessly designed, all-in-one platform for premium study materials to supercharge your college journey." }
 };
 

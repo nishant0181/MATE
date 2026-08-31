@@ -56,9 +56,15 @@ export default function Navbar() {
               <li className="px-4 py-2 rounded-xl cursor-pointer">
                 <Link to="/about">About</Link>
               </li>
-              {/* <li className="px-4 py-2 rounded-xl cursor-pointer">GTU</li> */}
-              {/* <li className="px-4 py-2 rounded-xl cursor-pointer">About US</li> */}
-              <li></li>
+              <li className="px-4 py-2 rounded-xl cursor-pointer">
+                <Link to="/contact">Contact</Link>
+              </li>
+              <li className="px-4 py-2 rounded-xl cursor-pointer">
+                <Link to="/privacy-policy">Privacy</Link>
+              </li>
+              <li className="px-4 py-2 rounded-xl cursor-pointer">
+                <Link to="/terms-and-conditions">Terms</Link>
+              </li>
             </ul>
           </nav>
           <InputGroup

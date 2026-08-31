@@ -29,6 +29,14 @@
             "destination": "/api/preview?path=upload"
         },
         {
+            "source": "/privacy-policy",
+            "destination": "/api/preview?path=privacy-policy"
+        },
+        {
+            "source": "/terms-and-conditions",
+            "destination": "/api/preview?path=terms-and-conditions"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html"
         }

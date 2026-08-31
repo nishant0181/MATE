@@ -57,6 +57,36 @@ export default function Footer() {
             >
               Upload Notes
             </Link>
+            <Link
+              to="/privacy-policy"
+              className="bg-[oklch(.269_0_0)]  font-medium text-sm  px-6 py-2 rounded-full "
+              onClick={() =>{
+                
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
+                haptic.lightTap()
+              }
+              }
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms-and-conditions"
+              className="bg-[oklch(.269_0_0)]  font-medium text-sm  px-6 py-2 rounded-full "
+              onClick={() =>{
+                
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
+                haptic.lightTap()
+              }
+              }
+            >
+              Terms & Conditions
+            </Link>
           </ul>
         </div>
       </div>
